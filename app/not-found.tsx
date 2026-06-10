@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <main className="px-5 py-24"><div className="mx-auto max-w-3xl"><p className="mb-6 text-xs uppercase tracking-widest text-muted">404</p><h1 className="font-serif text-6xl leading-none md:text-8xl">Page not found.</h1><p className="mt-8 text-lg leading-8 text-graphite">The page you are looking for does not exist or has moved.</p><Link href="/" className="mt-10 inline-flex rounded-full bg-ink px-5 py-3 text-xs uppercase tracking-widest text-paper">Return Home</Link></div></main>}
