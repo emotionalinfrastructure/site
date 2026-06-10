@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+
 const nextConfig = {
-  experimental: {},
+  output: isGithubPages ? "export" : undefined,
+  images: {
+    unoptimized: isGithubPages
+  }
 };
 
 export default nextConfig;
