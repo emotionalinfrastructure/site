@@ -24,16 +24,24 @@
 - [ ] Test `/proof`
 - [ ] Test `/contact`
 
-## 3. Domain Setup
+## 3. GitHub Pages Fallback
 
-- [ ] Add `emotionalinfrastructure.org` in Vercel project settings
+- [x] Set Pages source to GitHub Actions
+- [x] Add GitHub Pages workflow
+- [x] Add static export support
+- [ ] Confirm Deploy to GitHub Pages workflow completes successfully
+- [ ] Open the GitHub Pages URL
+
+## 4. Domain Setup
+
+- [ ] Add `emotionalinfrastructure.org` in Vercel project settings or GitHub Pages custom domain settings
 - [ ] Add `www.emotionalinfrastructure.org` if desired
 - [ ] Update DNS records where the domain is registered
 - [ ] Confirm SSL certificate is active
 - [ ] Confirm root domain resolves
 - [ ] Confirm www redirects correctly
 
-## 4. Checkout Links
+## 5. Checkout Links
 
 Replace placeholders in `lib/site.ts`:
 
@@ -46,7 +54,7 @@ Recommended providers:
 - Lemon Squeezy
 - Gumroad
 
-## 5. Contact and Newsletter
+## 6. Contact and Newsletter
 
 Replace placeholders in `lib/site.ts`:
 
@@ -61,7 +69,7 @@ Recommended form providers:
 - ConvertKit
 - Beehiiv
 
-## 6. Brand Assets
+## 7. Brand Assets
 
 Add to `public/images/`:
 
@@ -72,17 +80,17 @@ Add to `public/images/`:
 - [ ] Article cover images
 - [ ] Media kit image assets
 
-## 7. Content Finalization
+## 8. Content Finalization
 
 - [ ] Add final founder bio
 - [ ] Add proof/documentation links
 - [ ] Add published articles
 - [ ] Add product delivery link for Creator Kit
-- [ ] Add privacy policy
-- [ ] Add terms of use
-- [ ] Add AI disclosure statement
+- [x] Add privacy policy
+- [x] Add terms of use
+- [x] Add AI disclosure statement
 
-## 8. Final Pre-Launch Review
+## 9. Final Pre-Launch Review
 
 - [ ] Test all links
 - [ ] Test mobile layout
@@ -92,3 +100,5 @@ Add to `public/images/`:
 - [ ] Confirm no unsupported legal or certification claims
 - [ ] Confirm analytics setup if used
 - [ ] Publish launch announcement
+
+Last deployment trigger: GitHub Pages source selected; checklist updated to trigger workflow.
