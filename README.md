@@ -12,7 +12,7 @@ GitHub repo: `emotionalinfrastructure/site`
 - React 18
 - Tailwind CSS 3
 - TypeScript
-- Vercel deployment target
+- GitHub Pages deployment target (static export)
 
 ## Local development
 
@@ -30,35 +30,29 @@ npm install
 npm run build
 ```
 
-## Vercel deployment
+## Deployment
 
-Import this repository into Vercel:
+Deployment is automatic. Every push to `main` triggers the
+`.github/workflows/pages.yml` workflow, which builds a static export
+(`GITHUB_PAGES=true npm run build`) and publishes `out/` to GitHub Pages.
+No manual build, upload, or third-party dashboard is needed.
 
-```text
-Add New → Project → Import Git Repository → emotionalinfrastructure/site
-```
+The `.github/workflows/build.yml` workflow runs a build check on every pull
+request and push to `main`.
 
-Recommended settings:
+## URL
 
-```text
-Framework Preset: Next.js
-Root Directory: ./
-Install Command: npm install
-Build Command: npm run build
-Output Directory: .next
-```
-
-A `vercel.json` file is included for deployment defaults.
-
-## Domain
-
-After deployment, add the custom domain inside Vercel:
+The site is served at the default GitHub Pages URL:
 
 ```text
-emotionalinfrastructure.org
+https://emotionalinfrastructure.github.io/site
 ```
 
-Use the DNS records Vercel provides for the root domain and any `www` alias.
+Because the site lives under the `/site` path, the static export sets
+`basePath`/`assetPrefix` to `/site` (see `next.config.mjs`) so assets and links
+resolve correctly. To move to a custom domain later, add it in
+**Settings → Pages**, write a `CNAME` file in the deploy workflow, and remove
+the `basePath`/`assetPrefix` so the site serves from the root.
 
 ## Current pages
 
@@ -73,8 +67,6 @@ Use the DNS records Vercel provides for the root domain and any `www` alias.
 
 ## Remaining launch items
 
-- Import GitHub repo into Vercel
-- Connect `emotionalinfrastructure.org`
 - Add checkout links for Creator Kit and Creator AI Trust Audit
 - Add contact form or email routing
 - Add founder photo, product mockups, and article images
