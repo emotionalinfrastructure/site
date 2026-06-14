@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isGithubPages = process.env.GITHUB_PAGES === "true";
-const repoName = "site";
+const isStaticExport = process.env.GITHUB_PAGES === "true";
 
 const nextConfig = {
-  output: isGithubPages ? "export" : undefined,
-  basePath: isGithubPages ? `/${repoName}` : undefined,
-  assetPrefix: isGithubPages ? `/${repoName}/` : undefined,
-  trailingSlash: isGithubPages,
+  output: isStaticExport ? "export" : undefined,
+  trailingSlash: isStaticExport,
   images: {
-    unoptimized: isGithubPages
+    unoptimized: isStaticExport
   }
 };
 
