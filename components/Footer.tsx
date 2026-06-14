@@ -1,3 +1,21 @@
-import Link from "next/link";
-const legal=[["Privacy","/privacy"],["Terms","/terms"],["AI Disclosure","/ai-disclosure"]];
-export default function Footer(){return <footer className="border-t border-line bg-ink text-paper"><div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 lg:grid-cols-4"><div><p className="font-serif text-3xl">Emotional Infrastructure™</p><p className="mt-4 text-sm leading-7 text-paper/70">Governance and trust infrastructure for AI-mediated emotional conditions, behavioral systems, creator ethics, and digital legitimacy.</p></div><div className="text-sm leading-8 text-paper/70"><p className="mb-2 uppercase tracking-widest text-paper">Navigate</p><Link href="/research" className="block">Research</Link><Link href="/creator-kit" className="block">Creator Kit</Link><Link href="/audit" className="block">Audit</Link><Link href="/media-kit" className="block">Media Kit</Link><Link href="/contact" className="block">Contact</Link></div><div className="text-sm leading-8 text-paper/70"><p className="mb-2 uppercase tracking-widest text-paper">Legal</p>{legal.map(([label,href])=><Link key={href} href={href} className="block">{label}</Link>)}</div><div className="text-sm leading-8 text-paper/70"><p className="mb-2 uppercase tracking-widest text-paper">Rights</p><p>© {new Date().getFullYear()} Brittany Wright.</p><p>All rights reserved.</p></div></div></footer>}
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container footer-grid">
+        <div>
+          <strong style={{ color: "#fff" }}>Brittany Wright</strong>
+          <br />
+          Founder, Emotional Infrastructure · AI Governance Research · Cybersecurity Student · CEITR-aligned research pathway
+          <br />
+          <span>Unauthorized Inference · Human-impact AI governance · Interaction-layer accountability</span>
+        </div>
+        <div>
+          © {new Date().getFullYear()} Brittany Wright. Materials are presented for review, critique, collaboration,
+          research development, and implementation discussion. Do not describe these artifacts as externally certified,
+          regulator-approved, standards-body adopted, legally validated, peer-reviewed accepted, production-proven, or
+          externally validated without separate evidence.
+        </div>
+      </div>
+    </footer>
+  );
+}

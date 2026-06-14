@@ -4,12 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Emotional Infrastructure | AI Governance for Human Trust",
-  description: "Emotional Infrastructure is a governance framework for AI-mediated emotional conditions, behavioral systems, digital trust, and ethical creator infrastructure.",
+  title: "Brittany Wright | Emotional Infrastructure",
+  description: "Master landing page for Brittany Wright's Emotional Infrastructure AI governance, cybersecurity, standards, SDK, and reference implementation portfolio.",
   metadataBase: new URL("https://emotionalinfrastructure.github.io/site"),
   openGraph: {
-    title: "Emotional Infrastructure",
-    description: "AI does not merely generate content. It generates emotional conditions.",
+    title: "Brittany Wright | Emotional Infrastructure",
+    description: "Infrastructure for the human-impact layer of AI: governance frameworks, technical specifications, audit models, and implementation-ready artifacts.",
     url: "https://emotionalinfrastructure.github.io/site",
     siteName: "Emotional Infrastructure",
     type: "website"

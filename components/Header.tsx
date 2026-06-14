@@ -1,3 +1,31 @@
 import Link from "next/link";
-const nav=[["Research","/research"],["Kit","/creator-kit"],["Audit","/audit"],["Articles","/articles"],["Media","/media-kit"],["Proof","/proof"],["Contact","/contact"]];
-export default function Header(){return <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4"><Link href="/" className="font-serif text-xl">Emotional Infrastructure™</Link><nav className="hidden gap-5 text-xs uppercase tracking-[.18em] text-muted lg:flex">{nav.map(([l,h])=><Link key={h} href={h} className="hover:text-ink">{l}</Link>)}</nav><Link href="/contact" className="rounded-full border border-ink px-4 py-2 text-xs uppercase tracking-[.18em]">Inquire</Link></div></header>}
+
+const nav = [
+  ["Home", "/"],
+  ["Research", "/research"],
+  ["Implementation", "/#framework"],
+  ["Artifacts", "/#evidence"],
+  ["Review", "/#review"]
+];
+
+export default function Header() {
+  return (
+    <header className="site-header">
+      <div className="container nav">
+        <Link className="brand" href="/" aria-label="Emotional Infrastructure home">
+          <div className="mark" aria-hidden="true">EI</div>
+          <div>
+            <div className="brand-title">Emotional Infrastructure</div>
+            <div className="brand-sub">Brittany Wright · AI Governance · Cybersecurity</div>
+          </div>
+        </Link>
+        <nav className="navlinks" aria-label="Primary navigation">
+          {nav.map(([label, href]) => (
+            <Link key={href} href={href}>{label}</Link>
+          ))}
+          <Link href="/contact" className="nav-cta">Contact</Link>
+        </nav>
+      </div>
+    </header>
+  );
+}

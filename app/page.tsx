@@ -1,5 +1,195 @@
-import Link from "next/link";
-import Section from "@/components/Section";
-import OfferCard from "@/components/OfferCard";
-const principles=["AI should disclose when it mediates trust, intimacy, advice, persuasion, or emotional interpretation.","Creators should define human review boundaries before automation reaches an audience.","Consent must be legible, revocable, and specific to the type of AI use involved.","Emotional safety should be treated as infrastructure, not brand sentiment."];
-export default function Home(){return <main><section className="px-5 py-20 lg:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_.8fr] lg:items-end"><div><p className="mb-8 text-xs uppercase tracking-[.28em] text-muted">Brittany Wright · AI Governance · Digital Trust</p><h1 className="font-serif text-6xl leading-[.9] tracking-tight md:text-8xl lg:text-9xl">AI does not merely generate content. It generates emotional conditions.</h1></div><div className="rounded-3xl border border-line bg-bone p-8 shadow-soft"><p className="text-lg leading-9 text-graphite">Emotional Infrastructure™ is a governance framework for the environments created when AI systems mediate attention, belief, trust, disclosure, dependency, and human interpretation across repeated interaction.</p><div className="mt-8 flex flex-wrap gap-3"><Link href="/research" className="rounded-full bg-ink px-5 py-3 text-xs uppercase tracking-[.18em] text-paper">Read Research</Link><Link href="/creator-kit" className="rounded-full border border-ink px-5 py-3 text-xs uppercase tracking-[.18em]">Creator Kit</Link></div></div></div></section><Section eyebrow="The thesis" title="Output is not the whole risk surface."><div className="grid gap-10 lg:grid-cols-2"><p className="font-serif text-3xl leading-tight">AI is becoming a relational layer between creators and audiences, a persuasive layer between brands and buyers, an interpretive layer between information and belief, and an emotional layer between digital systems and human agency.</p><div className="prose-ei text-lg"><p>Emotional Infrastructure names the layer most organizations have not yet learned to govern: the conditions that emerge when synthetic language, personalization, automation, recommendation, and trust signals combine into an environment that feels human enough to influence behavior, but opaque enough to evade ordinary accountability.</p></div></div></Section><Section eyebrow="Framework" title="What Emotional Infrastructure governs."><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{principles.map((p,i)=><div key={p} className="rounded-3xl border border-line bg-paper p-7"><p className="mb-8 font-serif text-5xl text-muted/40">0{i+1}</p><p className="leading-8 text-graphite">{p}</p></div>)}</div></Section><Section eyebrow="Founder" title="Built by Brittany Wright."><div className="grid gap-10 lg:grid-cols-2"><div className="rounded-3xl bg-ink p-8 text-paper"><p className="font-serif text-4xl leading-tight">Founder of Emotional Infrastructure™ and researcher working at the intersection of AI governance, behavioral systems, cybersecurity, ethical technology, and digital trust.</p></div><div className="prose-ei text-lg"><p>Brittany Wright develops governance language, creator-facing standards, research frameworks, and practical trust tools for a digital environment where AI is no longer neutral background software.</p><p>This site is the public home for the framework, research, creator tools, and commercial trust infrastructure built around Emotional Infrastructure™.</p></div></div></Section><Section eyebrow="Offers" title="Creator trust tools for AI-assisted brands."><div className="grid gap-6 lg:grid-cols-2"><OfferCard title="The Ethical AI Creator Kit" price="Founding Edition · $27" href="/creator-kit" description="Disclosure, consent, human review, emotional safety, child and teen safety, sales integrity, chatbot boundaries, and pre-publish review tools."/><OfferCard title="Creator AI Trust Audit" price="Premium service · $197" href="/audit" description="A focused review of a creator’s AI use, audience-facing claims, automation boundaries, disclosure language, and trust risks."/></div></Section><Section eyebrow="Public writing" title="Articles, essays, and governance notes."><div className="rounded-3xl border border-line bg-bone p-8 lg:p-12"><p className="max-w-4xl text-xl leading-9 text-graphite">Read long-form work on AI-mediated trust, creator ethics, emotional conditions, behavioral signal sovereignty, and governance.</p><Link href="/articles" className="mt-8 inline-flex rounded-full bg-ink px-5 py-3 text-xs uppercase tracking-[.18em] text-paper">Read Articles</Link></div></Section></main>}
+const email = "brittanywright@emotionalinfrastructure.org";
+
+export default function Home() {
+  return (
+    <main id="main">
+      <section className="hero">
+        <div className="container hero-grid">
+          <div>
+            <div className="eyebrow">Review-ready governance architecture · Public staging package</div>
+            <h1>Infrastructure for the human-impact layer of AI.</h1>
+            <p className="lead">
+              Brittany Wright builds governance frameworks, technical specifications, audit models, and
+              implementation-ready artifacts for AI systems that infer, adapt to, or shape human decision conditions
+              across time.
+            </p>
+            <div className="actions">
+              <a className="btn primary" href="#evidence">Open artifact library →</a>
+              <a className="btn secondary" href="#framework">Review technical stack</a>
+              <a className="btn secondary" href={`mailto:${email}`}>Email Brittany</a>
+            </div>
+            <p className="note">
+              This master site consolidates Emotional Infrastructure, the Authorization Boundary Framework, EI-Spec,
+              Trajectory Governance, LIL, TAR, PDEV, EIS SDK materials, EIT v1.2 full-stack implementation, outreach
+              controls, and public release artifacts.
+            </p>
+          </div>
+          <aside className="card">
+            <div className="card-inner">
+              <div className="card-title">
+                <div>
+                  <div className="small">Core thesis</div>
+                  <h3>The interaction is the evidence.</h3>
+                </div>
+                <span className="pill">Sequence-level accountability</span>
+              </div>
+              <div className="steps">
+                <div className="step">
+                  <div className="num">1</div>
+                  <div>
+                    <h4>Output review is not enough</h4>
+                    <p>AI systems must be evaluated by what repeated interaction does to human perception, judgment, behavior, and agency over time.</p>
+                  </div>
+                </div>
+                <div className="step">
+                  <div className="num">2</div>
+                  <div>
+                    <h4>Inference becomes governance-relevant</h4>
+                    <p>When inferred states change timing, framing, sequencing, or intervention, the system crosses into adaptive influence.</p>
+                  </div>
+                </div>
+                <div className="step">
+                  <div className="num">3</div>
+                  <div>
+                    <h4>Trajectory is the missing unit</h4>
+                    <p>The critical question is not only whether an answer was safe, but where the user-system relationship is moving.</p>
+                  </div>
+                </div>
+                <div className="step">
+                  <div className="num">4</div>
+                  <div>
+                    <h4>Agency must be engineered back in</h4>
+                    <p>Governance should produce notices, friction, contestability, redress pathways, and auditable decision bases.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="container two">
+          <div>
+            <div className="kicker">Founder profile</div>
+            <h2>Brittany Wright positions AI governance around the missing middle layer.</h2>
+          </div>
+          <div className="copy">
+            <p>
+              Brittany Wright is a cybersecurity student, AI governance researcher, and founder of Emotional
+              Infrastructure. Her work sits between trustworthy AI, cybersecurity-informed audit design, educational
+              technology governance, interaction-layer accountability, and human-system architecture.
+            </p>
+            <p>
+              The public posture is disciplined: the work is review-ready and public-staging ready, not externally
+              certified or formally adopted.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="framework">
+        <div className="container">
+          <div className="two" style={{ marginBottom: "34px" }}>
+            <div>
+              <div className="kicker">Framework architecture</div>
+              <h2>From isolated incidents to trajectory-aware governance.</h2>
+            </div>
+            <div className="copy">
+              <p>
+                Emotional Infrastructure defines a governance layer for cumulative human impact in AI-mediated
+                interaction. It treats adaptive AI as a feedback environment where influence can emerge through
+                reliability, availability, personalization, and repeated use, even when each individual output appears
+                acceptable.
+              </p>
+            </div>
+          </div>
+          <div className="grid-3">
+            <article className="tile">
+              <div className="icon">AB</div>
+              <div className="label">Authorization Boundary</div>
+              <h3>Where inference becomes influence</h3>
+              <p>Defines the threshold where inferred internal states become operational through adaptive system behavior and therefore require consent, purpose limits, and traceability.</p>
+              <div className="tags">
+                <span className="tag">Consent</span>
+                <span className="tag">Influence</span>
+                <span className="tag">Traceability</span>
+              </div>
+            </article>
+            <article className="tile">
+              <div className="icon">EI</div>
+              <div className="label">EI-Spec</div>
+              <h3>Control language for adaptive AI</h3>
+              <p>Organizes governance into risk classes, prohibited behaviors, audit requirements, user rights, red-line states, cessation thresholds, and conformance posture.</p>
+              <div className="tags">
+                <span className="tag">Risk tiers</span>
+                <span className="tag">Rights</span>
+                <span className="tag">Audit</span>
+              </div>
+            </article>
+            <article className="tile">
+              <div className="icon">TG</div>
+              <div className="label">Trajectory Governance</div>
+              <h3>Safety as a longitudinal property</h3>
+              <p>Reframes governance around cumulative influence, authority formation, contestability, attenuation, proportionality, and the pattern of interaction over time.</p>
+              <div className="tags">
+                <span className="tag">Longitudinal</span>
+                <span className="tag">Agency</span>
+                <span className="tag">Legitimacy</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section alt" id="evidence">
+        <div className="container">
+          <div className="kicker">Evidence dashboard</div>
+          <h2 style={{ maxWidth: "920px", marginBottom: "30px" }}>
+            A full evidence stack: research, specification, implementation, documentation, release control, and outreach.
+          </h2>
+          <div className="grid-4">
+            <div className="stat">
+              <strong className="green">20 passed</strong>
+              <span>Recorded EIT reference implementation test-suite result.</span>
+            </div>
+            <div className="stat">
+              <strong className="blue">75 files</strong>
+              <span>Full-stack EIT v1.2 package includes schemas, API, tests, docs, diagrams, Docker, and certification materials.</span>
+            </div>
+            <div className="stat">
+              <strong className="gold">255</strong>
+              <span>Master export file count excluding final zip.</span>
+            </div>
+            <div className="stat">
+              <strong>Review-ready</strong>
+              <span>review ready and public staging ready not externally certified</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="quote-wrap">
+            <p className="quote">
+              AI systems did not become influential because they failed. They became influential because they worked,
+              reliably and repeatedly, within the structure of human interaction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section alt" id="review">
+        <div className="container">
+          <div className="boundary-note">
+            <strong>Status boundary:</strong> Emotional Infrastructure is presented as a review-ready governance
+            architecture and implementation-planning package. It is not positioned as externally certified,
+            standards-body adopted, legally validated, regulator-approved, peer-reviewed accepted, production-proven, or
+            revenue-guaranteed. This claim boundary is part of the credibility architecture.
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
