@@ -40,13 +40,19 @@ No manual build, upload, or third-party dashboard is needed.
 The `.github/workflows/build.yml` workflow runs a build check on every pull
 request and push to `main`.
 
-## Domain
+## URL
 
-The site is served at the custom domain `emotionalinfrastructure.org`. The
-deploy workflow writes the `CNAME` marker automatically. The custom domain is
-configured once in **Settings → Pages**, and DNS at the domain registrar must
-point to GitHub Pages (A records to the GitHub Pages IPs, or an `ALIAS`/`CNAME`
-to `emotionalinfrastructure.github.io`).
+The site is served at the default GitHub Pages URL:
+
+```text
+https://emotionalinfrastructure.github.io/site
+```
+
+Because the site lives under the `/site` path, the static export sets
+`basePath`/`assetPrefix` to `/site` (see `next.config.mjs`) so assets and links
+resolve correctly. To move to a custom domain later, add it in
+**Settings → Pages**, write a `CNAME` file in the deploy workflow, and remove
+the `basePath`/`assetPrefix` so the site serves from the root.
 
 ## Current pages
 

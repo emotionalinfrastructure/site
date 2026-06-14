@@ -36,9 +36,6 @@ jobs:
       - name: Build static site
         run: GITHUB_PAGES=true npm run build
 
-      - name: Add custom domain marker
-        run: echo "emotionalinfrastructure.org" > out/CNAME
-
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
 
