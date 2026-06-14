@@ -14,8 +14,8 @@ export default function Home() {
               across time.
             </p>
             <div className="actions">
-              <a className="btn primary" href="#evidence">Open artifact library →</a>
-              <a className="btn secondary" href="#framework">Review technical stack</a>
+              <a className="btn primary" href="/artifacts">Open artifact library →</a>
+              <a className="btn secondary" href="/implementation">Review technical stack</a>
               <a className="btn secondary" href={`mailto:${email}`}>Email Brittany</a>
             </div>
             <p className="note">

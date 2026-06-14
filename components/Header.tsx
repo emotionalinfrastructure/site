@@ -3,9 +3,9 @@ import Link from "next/link";
 const nav = [
   ["Home", "/"],
   ["Research", "/research"],
-  ["Implementation", "/#framework"],
-  ["Artifacts", "/#evidence"],
-  ["Review", "/#review"]
+  ["Implementation", "/implementation"],
+  ["Artifacts", "/artifacts"],
+  ["Review", "/review"]
 ];
 
 export default function Header() {
