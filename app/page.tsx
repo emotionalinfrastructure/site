@@ -16,7 +16,8 @@ export default function Home() {
               across time.
             </p>
             <div className="actions">
-              <Link className="btn primary" href="/trust-receipt">Try the AI Trust Receipt live demo →</Link>
+              <Link className="btn primary" href="/trust-receipts">Explore AI Trust Receipts →</Link>
+              <Link className="btn secondary" href="/trust-receipt">Try the live demo</Link>
               <Link className="btn secondary" href="/artifacts">Open artifact library</Link>
               <Link className="btn secondary" href="/implementation">Review technical stack</Link>
               <a className="btn secondary" href={`mailto:${email}`}>Email Brittany</a>

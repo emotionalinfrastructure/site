@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import TrustReceiptDemo from "@/components/TrustReceiptDemo";
 
 const repoUrl = "https://github.com/emotionalinfrastructure/Trust-Receipts";
@@ -18,7 +19,10 @@ export default function TrustReceiptPage() {
     <main id="main">
       <section className="page-title">
         <div className="container">
-          <div className="kicker">Live demo · Candidate v0.1.1</div>
+          <div className="kicker">
+            <Link href="/trust-receipts" style={{ color: "var(--cyan)" }}>AI Trust Receipts</Link> · Live demo ·
+            Candidate v0.1.1
+          </div>
           <h1 style={{ fontSize: "clamp(38px,5.4vw,68px)" }}>AI Trust Receipt</h1>
           <p className="lead">
             A candidate governance specification and reference implementation for durable, user-legible,
