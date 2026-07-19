@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Review | Emotional Infrastructure",
@@ -83,8 +84,8 @@ export default function ReviewPage() {
             adopted, legally validated, peer-reviewed accepted, or production-proven without separate evidence.
           </div>
           <div className="actions">
-            <a className="btn primary" href="/contact">Request review access →</a>
-            <a className="btn secondary" href="/artifacts">Browse artifacts</a>
+            <Link className="btn primary" href="/contact">Request review access →</Link>
+            <Link className="btn secondary" href="/artifacts">Browse artifacts</Link>
           </div>
         </div>
       </section>
