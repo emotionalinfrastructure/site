@@ -10,9 +10,6 @@ export const metadata: Metadata = {
   description:
     "Governance architecture, technical specifications, audit models, and implementation tools for AI-mediated trust environments.",
   metadataBase: new URL(siteOrigin),
-  alternates: {
-    canonical: "/"
-  },
   openGraph: {
     title: "Brittany Wright | Emotional Infrastructure",
     description:
