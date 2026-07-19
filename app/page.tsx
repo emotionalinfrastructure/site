@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const email = "brittanywright@emotionalinfrastructure.org";
 
 export default function Home() {
@@ -14,8 +16,9 @@ export default function Home() {
               across time.
             </p>
             <div className="actions">
-              <a className="btn primary" href="/artifacts">Open artifact library →</a>
-              <a className="btn secondary" href="/implementation">Review technical stack</a>
+              <Link className="btn primary" href="/trust-receipt">Try the AI Trust Receipt live demo →</Link>
+              <Link className="btn secondary" href="/artifacts">Open artifact library</Link>
+              <Link className="btn secondary" href="/implementation">Review technical stack</Link>
               <a className="btn secondary" href={`mailto:${email}`}>Email Brittany</a>
             </div>
             <p className="note">

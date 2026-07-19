@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 const email = "brittanywright@emotionalinfrastructure.org";
 
@@ -43,7 +44,7 @@ export default function ContactPage() {
             </p>
             <div className="actions">
               <a className="btn primary" href={`mailto:${email}`}>Email Brittany →</a>
-              <a className="btn secondary" href="/review">How review works</a>
+              <Link className="btn secondary" href="/review">How review works</Link>
             </div>
           </div>
           <aside className="card">
