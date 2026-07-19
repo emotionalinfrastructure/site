@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emotional Infrastructure — Patreon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101d33;
+    --navy-deep:#0a1526;
+    --navy-panel:#17263f;
+    --navy-line:#26374f;
+    --gold:#c3a35a;
+    --gold-bright:#dcc07f;
+    --ivory:#f4efe4;
+    --ivory-dim:#e6dfce;
+    --ivory-line:#d9d1bd;
+    --ink:#1c2637;
+    --ink-soft:#495264;
+    --paper:#fbf9f3;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;background:#101d33;}
+  body{
+    margin:0;
+    background:#101d33;
+    color:var(--ivory);
+    font-family:"Newsreader", Georgia, serif;
+    font-size:19px;
+    line-height:1.65;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--gold);color:var(--navy-deep);}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#dcc07f;
+  }
+
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.06;margin:0;}
+
+  a{color:inherit;}
+  .btn{
+    display:inline-block;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:15px 26px;
+    border-radius:2px;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-primary{background:var(--gold);color:var(--navy-deep);border:1px solid var(--gold);font-weight:600;}
+  .btn-primary:hover{background:var(--gold-bright);border-color:var(--gold-bright);}
+  .btn-ghost{background:transparent;color:var(--ivory);border:1px solid var(--navy-line);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-bright);}
+  .btn:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;}
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead{
+    border-bottom:1px solid rgba(195,163,90,.32);
+    background:#0c1728;
+    box-shadow:0 8px 24px -18px rgba(0,0,0,.9);
+    position:sticky;top:0;z-index:50;
+  }
+  .masthead .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px;}
+  .lockup{display:flex;align-items:center;gap:12px;}
+  .seal{
+    width:30px;height:30px;flex:none;
+    border:1.5px solid var(--gold);border-radius:50%;
+    display:grid;place-items:center;
+    font-family:"Fraunces",serif;font-size:14px;font-weight:600;color:var(--gold);
+  }
+  .lockup b{font-family:"Fraunces",serif;font-weight:600;font-size:18.5px;letter-spacing:.01em;color:#fbf7ec;}
+  .lockup sup{color:var(--gold-bright);font-size:.55em;top:-.7em;}
+  .masthead nav{display:flex;gap:28px;}
+  .masthead nav a{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+    color:#dde3ec;text-decoration:none;transition:color .15s ease;
+  }
+  .masthead nav a:hover{color:var(--gold-bright);}
+  .masthead nav a:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:88px 0 96px;position:relative;overflow:hidden;background:#101d33;}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(60% 80% at 12% 0%, rgba(195,163,90,.10), transparent 60%),
+      radial-gradient(50% 60% at 100% 100%, rgba(195,163,90,.06), transparent 55%);
+    pointer-events:none;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;position:relative;}
+  .hero h1{font-size:clamp(40px,5.4vw,68px);margin:22px 0 26px;}
+  .hero h1 em{font-style:italic;color:var(--gold-bright);font-weight:400;}
+  .lede{font-size:20px;line-height:1.62;color:#eae5d8;max-width:34em;margin:0 0 34px;font-weight:400;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* ---------- TRUST RECEIPT (signature) ---------- */
+  .receipt{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:3px;
+    padding:34px 34px 30px;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.7), 0 2px 0 rgba(255,255,255,.04);
+    position:relative;
+    font-family:"IBM Plex Mono",monospace;
+    max-width:420px;
+    justify-self:end;
+    width:100%;
+  }
+  .receipt::after{
+    content:"";position:absolute;left:0;right:0;bottom:-11px;height:11px;
+    background:
+      radial-gradient(circle at 6px -1px, transparent 6px, var(--paper) 6.5px);
+    background-size:14px 14px;background-position:7px 0;
+  }
+  .r-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:4px;}
+  .r-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-weight:600;line-height:1.4;}
+  .r-no{font-size:11px;letter-spacing:.1em;color:var(--gold);font-weight:600;text-transform:uppercase;white-space:nowrap;}
+  .r-rule{border:0;border-top:1px dashed #c3b795;margin:16px 0;}
+  .rrow{display:flex;align-items:baseline;font-size:12.5px;gap:8px;margin:9px 0;color:var(--ink);}
+  .rrow .rk{white-space:nowrap;color:var(--ink-soft);letter-spacing:.02em;}
+  .rrow .rd{flex:1;border-bottom:1px dotted #c9bd9c;transform:translateY(-3px);min-width:14px;}
+  .rrow .rv{white-space:nowrap;font-weight:600;color:var(--ink);letter-spacing:.01em;}
+  .r-foot{display:flex;justify-content:space-between;gap:16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px;}
+  .r-foot b{color:var(--ink);font-weight:600;}
+  .stamp{
+    position:absolute;top:22px;right:24px;
+    font-family:"Fraunces",serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);border:1.5px solid var(--gold);border-radius:2px;padding:5px 8px;
+    transform:rotate(6deg);opacity:.85;font-weight:600;
+    display:none;
+  }
+
+  /* ---------- SECTION FRAME ---------- */
+  section{position:relative;}
+  .sec-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .sec-eyebrow::after{content:"";height:1px;flex:1;background:var(--navy-line);}
+  .light .sec-eyebrow::after{background:var(--ivory-line);}
+
+  /* ---------- THESIS ---------- */
+  .thesis{padding:96px 0;background:var(--navy-deep);border-top:1px solid var(--navy-line);border-bottom:1px solid var(--navy-line);}
+  .thesis h2{font-size:clamp(28px,3.6vw,44px);max-width:16ch;margin-bottom:30px;line-height:1.1;}
+  .thesis-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .thesis p{color:#cdd3dd;max-width:40em;margin:0 0 20px;}
+  .thesis p strong{color:var(--ivory);font-weight:500;}
+  .glossary{border-left:2px solid var(--gold);padding-left:26px;display:grid;gap:22px;}
+  .term b{font-family:"IBM Plex Mono",monospace;display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;font-weight:600;}
+  .term span{color:#c3c9d3;font-size:16.5px;line-height:1.5;display:block;font-weight:300;}
+
+  /* ---------- FUNDS ---------- */
+  .funds{padding:90px 0;background:var(--ivory);color:var(--ink);}
+  .funds .eyebrow,.tiers .eyebrow,.about .eyebrow,.faq .eyebrow{color:#9a7f3e;}
+  .funds h2{font-size:clamp(26px,3vw,38px);color:var(--ink);margin-bottom:44px;max-width:20ch;}
+  .fund-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--ivory-line);border:1px solid var(--ivory-line);border-radius:3px;overflow:hidden;}
+  .fund{background:var(--paper);padding:30px 26px 34px;}
+  .fund .n{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.1em;}
+  .fund h3{font-size:21px;color:var(--ink);margin:14px 0 10px;font-weight:500;}
+  .fund p{font-size:16px;line-height:1.55;color:var(--ink-soft);margin:0;}
+
+  /* ---------- TIERS ---------- */
+  .tiers{padding:96px 0;background:var(--ivory);color:var(--ink);border-top:1px solid var(--ivory-line);}
+  .tiers h2{font-size:clamp(26px,3vw,40px);color:var(--ink);margin-bottom:10px;}
+  .tiers .sub{color:var(--ink-soft);max-width:46em;margin:0 0 12px;font-size:17px;}
+  .price-note{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:#8a744a;background:#efe7d3;border:1px solid var(--ivory-line);border-radius:2px;padding:10px 14px;display:inline-block;margin-bottom:40px;}
+  .tier-grid{display:grid;gap:18px;}
+  .tier{
+    background:var(--paper);
+    border:1px solid var(--ivory-line);
+    border-radius:3px;
+    padding:30px 34px;
+    display:grid;
+    grid-template-columns:132px 1fr 1.3fr;
+    gap:34px;
+    align-items:start;
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .tier:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 18px 40px -28px rgba(16,29,51,.5);}
+  .tier .code{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+  .tier .price{font-family:"Fraunces",serif;font-size:34px;color:var(--ink);font-weight:500;line-height:1;}
+  .tier .per{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.06em;display:block;margin-top:8px;}
+  .tier h3{font-size:24px;color:var(--ink);font-weight:500;margin-bottom:8px;}
+  .tier .role{font-size:16px;color:var(--ink-soft);line-height:1.5;font-style:italic;}
+  .tier ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+  .tier li{position:relative;padding-left:22px;font-size:16px;line-height:1.5;color:var(--ink);}
+  .tier li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border:1.5px solid var(--gold);border-radius:50%;}
+  .tier li em{font-style:normal;color:var(--ink-soft);}
+  .tier.feature{border-color:var(--gold);box-shadow:0 20px 44px -30px rgba(16,29,51,.55);}
+  .tier .flag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-deep);background:var(--gold);border-radius:2px;padding:3px 8px;margin-top:14px;}
+  .tier-disclaimer{font-size:14px;color:var(--ink-soft);margin-top:26px;max-width:60em;font-style:italic;}
+
+  /* ---------- ABOUT ---------- */
+  .about{padding:96px 0;background:var(--navy);}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;}
+  .about h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:24px;}
+  .about h2 .amp{color:var(--gold);}
+  .about p{color:#cdd3dd;margin:0 0 20px;font-weight:300;}
+  .about p:first-of-type{font-size:20px;color:var(--ivory);font-weight:400;}
+  .cred{border-top:1px solid var(--navy-line);margin-top:8px;padding-top:22px;display:grid;gap:16px;}
+  .cred .row{display:flex;gap:16px;align-items:baseline;}
+  .cred .row b{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);white-space:nowrap;min-width:96px;}
+  .cred .row span{color:#c3c9d3;font-size:16px;font-weight:300;}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:90px 0 100px;background:var(--navy-deep);border-top:1px solid var(--navy-line);}
+  .faq h2{font-size:clamp(24px,2.6vw,34px);margin-bottom:40px;}
+  .faq-list{display:grid;gap:0;border-top:1px solid var(--navy-line);}
+  .qa{border-bottom:1px solid var(--navy-line);padding:26px 0;display:grid;grid-template-columns:.9fr 2fr;gap:40px;align-items:start;}
+  .qa .q{font-family:"Fraunces",serif;font-size:20px;color:var(--ivory);font-weight:500;line-height:1.25;}
+  .qa .a{color:#c3c9d3;font-size:17px;line-height:1.6;font-weight:300;margin:0;}
+
+  /* ---------- FOOTER CTA ---------- */
+  .cta{padding:96px 0;text-align:center;background:var(--navy);border-top:1px solid var(--navy-line);}
+  .cta .eyebrow{justify-content:center;}
+  .cta h2{font-size:clamp(30px,4vw,52px);margin:18px auto 30px;max-width:16ch;}
+  .cta h2 em{font-style:italic;color:var(--gold-bright);font-weight:400;}
+  .cta .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  footer{background:var(--navy-deep);border-top:1px solid var(--navy-line);padding:40px 0;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  footer .fine{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:#7f8 ; color:#7c879a;text-transform:uppercase;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:1;transform:none;}
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .js .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:940px){
+    .hero .wrap{grid-template-columns:1fr;gap:48px;}
+    .receipt{justify-self:start;max-width:440px;}
+    .thesis-grid{grid-template-columns:1fr;gap:40px;}
+    .fund-grid{grid-template-columns:1fr 1fr;}
+    .tier{grid-template-columns:1fr;gap:18px;}
+    .tier .head-col{display:flex;align-items:baseline;gap:16px;}
+    .about-grid{grid-template-columns:1fr;gap:36px;}
+    .qa{grid-template-columns:1fr;gap:10px;}
+    .masthead nav{display:none;}
+  }
+  @media (max-width:560px){
+    body{font-size:18px;}
+    .wrap{padding:0 20px;}
+    .hero{padding:60px 0 68px;}
+    .fund-grid{grid-template-columns:1fr;}
+    .receipt{padding:28px 24px 24px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .js .reveal{opacity:1;transform:none;transition:none;}
+    .btn,.tier{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="wrap">
+    <div class="lockup">
+      <div class="seal">EI</div>
+      <b>Emotional Infrastructure<sup>&#8482;</sup></b>
+    </div>
+    <nav aria-label="Primary">
+      <a href="#thesis">The Work</a>
+      <a href="#tiers">Membership</a>
+      <a href="#about">About</a>
+      <a href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Independent AI Governance Research</span>
+      <h1>Governing the influence AI <em>leaves behind.</em></h1>
+      <p class="lede">Most oversight asks whether a single answer was harmful, then moves on. My work governs what adaptive systems build up across hundreds of interactions: the trust, the interpretation, the trajectory. That accumulated influence is real, largely unmeasured, and almost ungoverned. Your support keeps this research independent.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#join">Become a member</a>
+        <a class="btn btn-ghost" href="#tiers">See the tiers</a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: TRUST RECEIPT -->
+    <div class="receipt reveal" role="img" aria-label="A Trust Receipt describing the research: field, AI governance research; scope, longitudinal influence; unit of analysis, trajectory not output; accountable to readers not clients; status independent; record public.">
+      <div class="r-head">
+        <div class="r-title">Emotional Infrastructure<br>Trust Receipt</div>
+        <div class="r-no">No. EI&#8209;MEMBER</div>
+      </div>
+      <hr class="r-rule">
+      <div class="rrow"><span class="rk">Field</span><span class="rd"></span><span class="rv">Governance research</span></div>
+      <div class="rrow"><span class="rk">Scope</span><span class="rd"></span><span class="rv">Longitudinal influence</span></div>
+      <div class="rrow"><span class="rk">Unit</span><span class="rd"></span><span class="rv">Trajectory, not output</span></div>
+      <div class="rrow"><span class="rk">Accountable to</span><span class="rd"></span><span class="rv">Readers, not clients</span></div>
+      <hr class="r-rule">
+      <div class="r-foot">
+        <span>Status <b>Independent</b></span>
+        <span>Record <b>Public</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS -->
+<section class="thesis" id="thesis">
+  <div class="wrap">
+    <div class="sec-eyebrow reveal"><span class="eyebrow">The Gap</span></div>
+    <div class="thesis-grid">
+      <div class="reveal">
+        <h2>The output was never the whole problem.</h2>
+        <p>A model does not only answer a question. Across a long relationship it shapes what a person trusts, how they read their own situation, and which decisions feel available to them. <strong>That is infrastructure, and right now almost no framework governs it.</strong></p>
+        <p>Emotional Infrastructure is the research and governance work built to make that influence visible and accountable. It treats the sequence, not the single response, as the thing that has to be checked.</p>
+      </div>
+      <div class="glossary reveal">
+        <div class="term"><b>Trajectory Governance</b><span>Governing AI influence across sequences of interactions, not isolated outputs or incidents.</span></div>
+        <div class="term"><b>Behavioral Signal Sovereignty</b><span>Users' right to visibility and control over how their signals are interpreted, stored, and operationalized.</span></div>
+        <div class="term"><b>Benevolent Capture</b><span>The risk state where a system appears helpful while quietly shaping dependence and agency over time.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT SUPPORT FUNDS -->
+<section class="funds light">
+  <div class="wrap">
+    <div class="sec-eyebrow reveal"><span class="eyebrow">What Your Support Funds</span></div>
+    <h2 class="reveal">Independent work answers to the record, not to whoever would otherwise pay for it.</h2>
+    <div class="fund-grid reveal">
+      <div class="fund"><div class="n">01</div><h3>Original research</h3><p>Longitudinal AI influence, consent, auditability, and agency preservation.</p></div>
+      <div class="fund"><div class="n">02</div><h3>The newsletter</h3><p>Unauthorized Inference and long-form essays translating the research for public readers.</p></div>
+      <div class="fund"><div class="n">03</div><h3>Open instruments</h3><p>Frameworks, standards, and audit tools released for others to use and scrutinize.</p></div>
+      <div class="fund"><div class="n">04</div><h3>The independence</h3><p>The time to keep the analysis accountable to readers rather than to a client's preferred conclusion.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="tiers light" id="tiers">
+  <div class="wrap">
+    <div class="sec-eyebrow reveal"><span class="eyebrow">Membership</span></div>
+    <h2 class="reveal">Five ways to back the work.</h2>
+    <p class="sub reveal">Each tier is a standing record of support. Pick the level that matches how close you want to be to the research.</p>
+    <div class="reveal"><span class="price-note">Prices shown are suggested starting points. Set your own before publishing.</span></div>
+
+    <div class="tier-grid">
+      <div class="tier reveal">
+        <div class="head-col"><div><div class="code">EI&#8209;P&#8209;01</div><div class="price">$6<span class="per">/ month</span></div></div></div>
+        <div><h3>Field Notes</h3><p class="role">For readers who want to fund the work and stay close to it.</p></div>
+        <ul>
+          <li>Full member feed and the complete <em>Unauthorized Inference</em> archive</li>
+          <li>Working notes, decisions, and what is in progress</li>
+          <li>You keep the research independent</li>
+        </ul>
+      </div>
+
+      <div class="tier reveal">
+        <div class="head-col"><div><div class="code">EI&#8209;P&#8209;02</div><div class="price">$18<span class="per">/ month</span></div></div></div>
+        <div><h3>The Ledger</h3><p class="role">For people who want the thinking before it is polished.</p></div>
+        <ul>
+          <li>Everything in Field Notes</li>
+          <li>One monthly research brief, a governance problem made usable</li>
+          <li>Early drafts open for your feedback</li>
+          <li>The running source ledger behind the work</li>
+        </ul>
+      </div>
+
+      <div class="tier feature reveal">
+        <div class="head-col"><div><div class="code">EI&#8209;P&#8209;03</div><div class="price">$45<span class="per">/ month</span></div><span class="flag">Most complete</span></div></div>
+        <div><h3>The Instrument Pack</h3><p class="role">For practitioners who want to apply the frameworks, not just read them.</p></div>
+        <ul>
+          <li>Everything in The Ledger</li>
+          <li>Frameworks, templates, and audit instruments as they are released</li>
+          <li>Quarterly office hours on applying the work</li>
+          <li>Early access to new tools before public release</li>
+        </ul>
+      </div>
+
+      <div class="tier reveal">
+        <div class="head-col"><div><div class="code">EI&#8209;P&#8209;04</div><div class="price">$120<span class="per">/ month</span></div></div></div>
+        <div><h3>Standards Circle</h3><p class="role">For those who want a direct line to the work and a hand in shaping it.</p></div>
+        <ul>
+          <li>Everything in The Instrument Pack</li>
+          <li>Your name in published framework acknowledgments <em>(opt-in)</em></li>
+          <li>Priority on questions raised in member channels</li>
+          <li>A standing discount on audit and consulting engagements</li>
+        </ul>
+      </div>
+
+      <div class="tier reveal">
+        <div class="head-col"><div><div class="code">EI&#8209;P&#8209;05</div><div class="price">$500<span class="per">/ month &#183; org</span></div></div></div>
+        <div><h3>Founding Member</h3><p class="role">For organizations backing independent governance research at scale.</p></div>
+        <ul>
+          <li>Everything in Standards Circle</li>
+          <li>Named organizational recognition on the platform <em>(opt-in)</em></li>
+          <li>Quarterly briefing on governance risks relevant to your context</li>
+          <li>A direct channel for collaboration and licensing conversations</li>
+        </ul>
+      </div>
+    </div>
+    <p class="tier-disclaimer">Benefits describe what each tier receives. They are not guarantees of specific research outcomes, legal conclusions, or regulatory positions.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-eyebrow reveal"><span class="eyebrow">About</span></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <h2>Brittany <span class="amp">Wright</span></h2>
+        <div class="cred">
+          <div class="row"><b>Founder</b><span>Emotional Infrastructure</span></div>
+          <div class="row"><b>Research</b><span>Principal Investigator, CEITR</span></div>
+          <div class="row"><b>Discipline</b><span>Cybersecurity &#183; Digital ethics</span></div>
+          <div class="row"><b>Writing</b><span>Unauthorized Inference</span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p>Brittany Wright is an independent AI governance researcher working at the intersection of cybersecurity, digital ethics, and human-centered systems.</p>
+        <p>She is the founder of Emotional Infrastructure and a Principal Investigator at the Center for Educational and Instructional Technology Research. She writes on trajectory governance, behavioral signal sovereignty, and the accountability gap in how AI influence is measured over time.</p>
+        <p>Her argument stays consistent across everything she builds. AI governance has to move past moderating discrete outputs toward genuine accountability for the sustained influence adaptive systems exert on the people who use them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-eyebrow reveal"><span class="eyebrow">Questions</span></div>
+    <h2 class="reveal">Before you join.</h2>
+    <div class="faq-list">
+      <div class="qa reveal"><div class="q">Why Patreon and not a grant or a company?</div><p class="a">Both are on the table. Patreon keeps the work independent right now, accountable to the record and to readers rather than to a funder's preferred findings.</p></div>
+      <div class="qa reveal"><div class="q">Can I support without a paid tier?</div><p class="a">Yes. A free follow gets you public posts. Paid tiers fund the research and unlock the deeper material.</p></div>
+      <div class="qa reveal"><div class="q">Do you offer audits or consulting?</div><p class="a">Yes, separately from Patreon. The Standards Circle and Founding Member tiers include a standing discount.</p></div>
+      <div class="qa reveal"><div class="q">Can I cancel anytime?</div><p class="a">Yes. Membership is month to month and you control it entirely.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="join">
+  <div class="wrap reveal">
+    <span class="eyebrow">Join</span>
+    <h2>Fund the governance of what AI <em>leaves behind.</em></h2>
+    <div class="actions">
+      <a class="btn btn-primary" href="#tiers">Choose a tier</a>
+      <a class="btn btn-ghost" href="#thesis">Read the work first</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="lockup"><div class="seal">EI</div><b>Emotional Infrastructure<sup>&#8482;</sup></b></div>
+    <span class="fine">Independent Research &#183; Governed Trajectories &#183; Public Record</span>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>
