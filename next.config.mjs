@@ -1,19 +1,20 @@
 /** @type {import('next').NextConfig} */
-const isStaticExport = process.env.GITHUB_PAGES === "true";
-// When the custom domain is bound (Settings → Pages → Custom domain), set the
-// PAGES_CUSTOM_DOMAIN repository variable (e.g. "emotionalinfrastructure.org").
-// The site then serves from the domain root, so no basePath/assetPrefix.
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
 const customDomain = process.env.PAGES_CUSTOM_DOMAIN || "";
 const repoName = "site";
-const usePath = isStaticExport && !customDomain;
+
+// The branded production site is deployed as a static export from the domain
+// root. GitHub Pages remains a fallback/supporting deployment under /site
+// unless a GitHub Pages custom domain is explicitly configured.
+const useGitHubProjectPath = isGitHubPages && !customDomain;
 
 const nextConfig = {
-  output: isStaticExport ? "export" : undefined,
-  basePath: usePath ? `/${repoName}` : undefined,
-  assetPrefix: usePath ? `/${repoName}/` : undefined,
-  trailingSlash: isStaticExport,
+  output: "export",
+  basePath: useGitHubProjectPath ? `/${repoName}` : undefined,
+  assetPrefix: useGitHubProjectPath ? `/${repoName}/` : undefined,
+  trailingSlash: true,
   images: {
-    unoptimized: isStaticExport
+    unoptimized: true
   }
 };
 
