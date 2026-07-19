@@ -1,0 +1,838 @@
+{
+  "generated_with": "trust_receipt reference implementation v0.1.1",
+  "created_at": "2026-07-19T00:00:00Z",
+  "presets": [
+    {
+      "id": "clean",
+      "label": "Clean execution",
+      "summary": "Valid authority, in-scope action, approved review, current evidence, remedy available. The gate allows execution and issues an executed receipt.",
+      "gate": {
+        "decision": "allow",
+        "failures": []
+      },
+      "receipt": {
+        "receipt_version": "0.1.1",
+        "receipt_id": "urn:trust-receipt:request:preference-update:001:8643c2258c9e48cd7b960793add7e5eaa0304a55fd8e37be1b05664a9c906cd7",
+        "event_time": "2026-07-15T14:30:00Z",
+        "created_at": "2026-07-19T00:00:00Z",
+        "schema_id": "https://emotionalinfrastructure.org/schemas/trust-receipt/trust-receipt.v0.1.1.schema.json",
+        "issuer": {
+          "organization_id": "org:reference-implementation",
+          "display_name": "AI Trust Receipt Reference Implementation",
+          "verification_uri": "https://trust-receipt.example/verify"
+        },
+        "agent": {
+          "agent_id": "agent:profile-maintainer",
+          "operator_id": "operator:example-service",
+          "deployment_id": "deployment:prod-us-01",
+          "version": "2026.07.1",
+          "accountable_organization": "Example Service Organization"
+        },
+        "action": {
+          "type": "account.profile.update",
+          "verb": "update",
+          "target": "account:subject-001",
+          "status": "executed",
+          "persistent_change": true,
+          "before_state": {
+            "weekly_summary": false
+          },
+          "after_state": {
+            "weekly_summary": true
+          }
+        },
+        "authority": {
+          "grant_id": "grant:profile-maintenance:001",
+          "granting_party_id": "party:subject-001",
+          "scope": "{\"allowed_actions\":[\"account.profile.update\"],\"allowed_targets\":[\"account:subject-001\"],\"excluded_actions\":[\"account.access.disable\",\"account.payment.update\"],\"max_consequence_class\":\"C2\"}",
+          "granted_at": "2026-07-01T00:00:00Z",
+          "expires_at": "2027-07-01T00:00:00Z",
+          "confirmation_status": "confirmed",
+          "validation_status": "valid"
+        },
+        "objective": {
+          "description": "Maintain the account holder's notification preference when explicitly requested.",
+          "version": "objective-1",
+          "hard_constraints": [
+            "Do not change identity, payment, eligibility, or access-control fields.",
+            "Create a receipt for every attempted persistent change."
+          ]
+        },
+        "material_inputs": [
+          {
+            "evidence_id": "evidence:confirmation:001",
+            "category": "user-confirmation",
+            "provenance": "Account confirmation service event confirmation:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          },
+          {
+            "evidence_id": "evidence:review:001",
+            "category": "human-review",
+            "provenance": "Independent account-change review event review:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          }
+        ],
+        "delegation": [
+          {
+            "recipient_id": "agent:preference-writer",
+            "task": "Write the confirmed weekly-summary preference.",
+            "authority_passed": "account.profile.update for account:subject-001 only",
+            "depth": 1,
+            "evidence_returned": true
+          }
+        ],
+        "human_review": {
+          "status": "approved",
+          "authority_to_intervene": true,
+          "reviewer_role": "account-change-reviewer",
+          "reviewed_at": "2026-07-15T14:29:00Z",
+          "evidence_viewed": [
+            "evidence:confirmation:001",
+            "evidence:review:001"
+          ],
+          "disposition": "approved"
+        },
+        "consequence": {
+          "class": "C2",
+          "affected_party": true,
+          "notice_required": true,
+          "persistent_change": true,
+          "protected_third_party_information": false
+        },
+        "remedy": {
+          "available": true,
+          "reversible": true,
+          "contestable": true,
+          "restoration_steps": "Restore the recorded before_state after accountable review.",
+          "review_owner": "Example Service Organization",
+          "status_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:001/remedy",
+          "time_limit": "Submit within 30 calendar days of notice."
+        },
+        "privacy": {
+          "retention_basis": "Retain the minimum event evidence required for verification, review, and remedy.",
+          "routine_access_expires": "2027-07-01T00:00:00Z",
+          "access_roles": [
+            "accountable-reviewer",
+            "affected-party-support"
+          ],
+          "prohibited_secondary_uses": [
+            "model-training",
+            "unrelated-profiling"
+          ],
+          "chain_of_thought_excluded": true,
+          "deletion_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:001/privacy"
+        },
+        "relationships": [],
+        "integrity": {
+          "method": "sha-256-digest-demo",
+          "digest": "sha256:fa3d595c2e12f140b6869af0d1c3a49c0608d985e0983804e72be4d7058542ab",
+          "canonicalization_profile": "ei-canonical-json-no-floats-v0.1",
+          "verification_status": "unverified"
+        }
+      },
+      "human": "AI TRUST RECEIPT\n================\nReceipt: urn:trust-receipt:request:preference-update:001:8643c2258c9e48cd7b960793add7e5eaa0304a55fd8e37be1b05664a9c906cd7\nEvent time: 2026-07-15T14:30:00Z\nCreated: 2026-07-19T00:00:00Z\n\nACTION\nStatus: executed\nType: account.profile.update\nVerb: update\nTarget: account:subject-001\nPersistent change: true\n\nACCOUNTABILITY AND AUTHORITY\nAgent: agent:profile-maintainer\nOperator: operator:example-service\nAccountable organization: Example Service Organization\nGrant: grant:profile-maintenance:001 (valid)\nConfirmation: confirmed\n\nCONSEQUENCE AND REVIEW\nClass: C2\nAffected party: true\nNotice required: true\nProtected third-party information: false\nHuman review: approved\nEvidence viewed:\n  - evidence:confirmation:001\n  - evidence:review:001\n\nMATERIAL EVIDENCE\n  - evidence:confirmation:001: available / current (required)\n  - evidence:review:001: available / current (required)\n\nDELEGATION\n  - agent:preference-writer at depth 1: Write the confirmed weekly-summary preference.\n\nRELATED RECEIPTS\n  - None\n\nREMEDY\nAvailable: true\nReversible: true\nContestable: true\nReview owner: Example Service Organization\nStatus: https://trust-receipt.example/trust-receipts/request:preference-update:001/remedy\n\nINTEGRITY\nMethod: sha-256-digest-demo\nProfile: ei-canonical-json-no-floats-v0.1\nDigest: sha256:fa3d595c2e12f140b6869af0d1c3a49c0608d985e0983804e72be4d7058542ab\nRecorded verification status: unverified\n\nThis receipt is an event record, not a claim that the action was fair, lawful, or correct.\n"
+    },
+    {
+      "id": "expired-authority",
+      "label": "Expired authority",
+      "summary": "The authority grant expired before the action was requested. The gate denies execution and the receipt records the expired-authority denial.",
+      "gate": {
+        "decision": "deny",
+        "failures": [
+          {
+            "code": "GRANT_EXPIRED",
+            "message": "Action occurs at or after grant expiration.",
+            "field": "grant.expires_at"
+          }
+        ]
+      },
+      "receipt": {
+        "receipt_version": "0.1.1",
+        "receipt_id": "urn:trust-receipt:request:preference-update:001:fb68c326c7695eba5cd537b9871e451df5d6557bb7bce8020adea0f6f913a156",
+        "event_time": "2026-07-15T14:30:00Z",
+        "created_at": "2026-07-19T00:00:00Z",
+        "schema_id": "https://emotionalinfrastructure.org/schemas/trust-receipt/trust-receipt.v0.1.1.schema.json",
+        "issuer": {
+          "organization_id": "org:reference-implementation",
+          "display_name": "AI Trust Receipt Reference Implementation",
+          "verification_uri": "https://trust-receipt.example/verify"
+        },
+        "agent": {
+          "agent_id": "agent:profile-maintainer",
+          "operator_id": "operator:example-service",
+          "deployment_id": "deployment:prod-us-01",
+          "version": "2026.07.1",
+          "accountable_organization": "Example Service Organization"
+        },
+        "action": {
+          "type": "account.profile.update",
+          "verb": "update",
+          "target": "account:subject-001",
+          "status": "denied",
+          "persistent_change": true,
+          "before_state": {
+            "weekly_summary": false
+          },
+          "after_state": {
+            "weekly_summary": false
+          },
+          "exception_code": "GRANT_EXPIRED"
+        },
+        "authority": {
+          "grant_id": "grant:profile-maintenance:002-expired",
+          "granting_party_id": "party:subject-001",
+          "scope": "{\"allowed_actions\":[\"account.profile.update\"],\"allowed_targets\":[\"account:subject-001\"],\"excluded_actions\":[\"account.access.disable\",\"account.payment.update\"],\"max_consequence_class\":\"C2\"}",
+          "granted_at": "2026-07-01T00:00:00Z",
+          "expires_at": "2026-07-10T00:00:00Z",
+          "confirmation_status": "confirmed",
+          "validation_status": "expired"
+        },
+        "objective": {
+          "description": "Maintain the account holder's notification preference when explicitly requested.",
+          "version": "objective-1",
+          "hard_constraints": [
+            "Do not change identity, payment, eligibility, or access-control fields.",
+            "Create a receipt for every attempted persistent change."
+          ]
+        },
+        "material_inputs": [
+          {
+            "evidence_id": "evidence:confirmation:001",
+            "category": "user-confirmation",
+            "provenance": "Account confirmation service event confirmation:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          },
+          {
+            "evidence_id": "evidence:review:001",
+            "category": "human-review",
+            "provenance": "Independent account-change review event review:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          }
+        ],
+        "delegation": [
+          {
+            "recipient_id": "agent:preference-writer",
+            "task": "Write the confirmed weekly-summary preference.",
+            "authority_passed": "account.profile.update for account:subject-001 only",
+            "depth": 1,
+            "evidence_returned": true
+          }
+        ],
+        "human_review": {
+          "status": "approved",
+          "authority_to_intervene": true,
+          "reviewer_role": "account-change-reviewer",
+          "reviewed_at": "2026-07-15T14:29:00Z",
+          "evidence_viewed": [
+            "evidence:confirmation:001",
+            "evidence:review:001"
+          ],
+          "disposition": "approved"
+        },
+        "consequence": {
+          "class": "C2",
+          "affected_party": true,
+          "notice_required": true,
+          "persistent_change": true,
+          "protected_third_party_information": false
+        },
+        "remedy": {
+          "available": true,
+          "reversible": true,
+          "contestable": true,
+          "restoration_steps": "Restore the recorded before_state after accountable review.",
+          "review_owner": "Example Service Organization",
+          "status_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:001/remedy",
+          "time_limit": "Submit within 30 calendar days of notice."
+        },
+        "privacy": {
+          "retention_basis": "Retain the minimum event evidence required for verification, review, and remedy.",
+          "routine_access_expires": "2026-07-10T00:00:00Z",
+          "access_roles": [
+            "accountable-reviewer",
+            "affected-party-support"
+          ],
+          "prohibited_secondary_uses": [
+            "model-training",
+            "unrelated-profiling"
+          ],
+          "chain_of_thought_excluded": true,
+          "deletion_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:001/privacy"
+        },
+        "relationships": [],
+        "integrity": {
+          "method": "sha-256-digest-demo",
+          "digest": "sha256:71692b69aea1b886586d03fcdfb045446cec7d969ca71ff2f171dcd3920f94f8",
+          "canonicalization_profile": "ei-canonical-json-no-floats-v0.1",
+          "verification_status": "unverified"
+        }
+      },
+      "human": "AI TRUST RECEIPT\n================\nReceipt: urn:trust-receipt:request:preference-update:001:fb68c326c7695eba5cd537b9871e451df5d6557bb7bce8020adea0f6f913a156\nEvent time: 2026-07-15T14:30:00Z\nCreated: 2026-07-19T00:00:00Z\n\nACTION\nStatus: denied\nType: account.profile.update\nVerb: update\nTarget: account:subject-001\nPersistent change: true\nException: GRANT_EXPIRED\n\nACCOUNTABILITY AND AUTHORITY\nAgent: agent:profile-maintainer\nOperator: operator:example-service\nAccountable organization: Example Service Organization\nGrant: grant:profile-maintenance:002-expired (expired)\nConfirmation: confirmed\n\nCONSEQUENCE AND REVIEW\nClass: C2\nAffected party: true\nNotice required: true\nProtected third-party information: false\nHuman review: approved\nEvidence viewed:\n  - evidence:confirmation:001\n  - evidence:review:001\n\nMATERIAL EVIDENCE\n  - evidence:confirmation:001: available / current (required)\n  - evidence:review:001: available / current (required)\n\nDELEGATION\n  - agent:preference-writer at depth 1: Write the confirmed weekly-summary preference.\n\nRELATED RECEIPTS\n  - None\n\nREMEDY\nAvailable: true\nReversible: true\nContestable: true\nReview owner: Example Service Organization\nStatus: https://trust-receipt.example/trust-receipts/request:preference-update:001/remedy\n\nINTEGRITY\nMethod: sha-256-digest-demo\nProfile: ei-canonical-json-no-floats-v0.1\nDigest: sha256:71692b69aea1b886586d03fcdfb045446cec7d969ca71ff2f171dcd3920f94f8\nRecorded verification status: unverified\n\nThis receipt is an event record, not a claim that the action was fair, lawful, or correct.\n"
+    },
+    {
+      "id": "out-of-scope",
+      "label": "Out-of-scope action",
+      "summary": "The requested action type is outside the granted action scope (and explicitly excluded). The gate denies execution.",
+      "gate": {
+        "decision": "deny",
+        "failures": [
+          {
+            "code": "ACTION_OUT_OF_SCOPE",
+            "message": "Requested action is not within the granted action scope.",
+            "field": "request.action.type"
+          }
+        ]
+      },
+      "receipt": {
+        "receipt_version": "0.1.1",
+        "receipt_id": "urn:trust-receipt:request:access-disable:003:8aa59f2c250a20ed66a685e4f785d56982bd29ac4236d035995cb390507c45fd",
+        "event_time": "2026-07-15T14:30:00Z",
+        "created_at": "2026-07-19T00:00:00Z",
+        "schema_id": "https://emotionalinfrastructure.org/schemas/trust-receipt/trust-receipt.v0.1.1.schema.json",
+        "issuer": {
+          "organization_id": "org:reference-implementation",
+          "display_name": "AI Trust Receipt Reference Implementation",
+          "verification_uri": "https://trust-receipt.example/verify"
+        },
+        "agent": {
+          "agent_id": "agent:profile-maintainer",
+          "operator_id": "operator:example-service",
+          "deployment_id": "deployment:prod-us-01",
+          "version": "2026.07.1",
+          "accountable_organization": "Example Service Organization"
+        },
+        "action": {
+          "type": "account.access.disable",
+          "verb": "disable",
+          "target": "account:subject-001",
+          "status": "denied",
+          "persistent_change": true,
+          "before_state": {
+            "access_enabled": true
+          },
+          "after_state": {
+            "access_enabled": true
+          },
+          "exception_code": "ACTION_OUT_OF_SCOPE"
+        },
+        "authority": {
+          "grant_id": "grant:profile-maintenance:001",
+          "granting_party_id": "party:subject-001",
+          "scope": "{\"allowed_actions\":[\"account.profile.update\"],\"allowed_targets\":[\"account:subject-001\"],\"excluded_actions\":[\"account.access.disable\",\"account.payment.update\"],\"max_consequence_class\":\"C2\"}",
+          "granted_at": "2026-07-01T00:00:00Z",
+          "expires_at": "2027-07-01T00:00:00Z",
+          "confirmation_status": "confirmed",
+          "validation_status": "out_of_scope"
+        },
+        "objective": {
+          "description": "Maintain the account holder's notification preference when explicitly requested.",
+          "version": "objective-1",
+          "hard_constraints": [
+            "Do not change identity, payment, eligibility, or access-control fields.",
+            "Create a receipt for every attempted persistent change."
+          ]
+        },
+        "material_inputs": [
+          {
+            "evidence_id": "evidence:confirmation:001",
+            "category": "user-confirmation",
+            "provenance": "Account confirmation service event confirmation:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          },
+          {
+            "evidence_id": "evidence:review:001",
+            "category": "human-review",
+            "provenance": "Independent account-change review event review:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          }
+        ],
+        "delegation": [
+          {
+            "recipient_id": "agent:preference-writer",
+            "task": "Write the confirmed weekly-summary preference.",
+            "authority_passed": "account.profile.update for account:subject-001 only",
+            "depth": 1,
+            "evidence_returned": true
+          }
+        ],
+        "human_review": {
+          "status": "approved",
+          "authority_to_intervene": true,
+          "reviewer_role": "account-change-reviewer",
+          "reviewed_at": "2026-07-15T14:29:00Z",
+          "evidence_viewed": [
+            "evidence:confirmation:001",
+            "evidence:review:001"
+          ],
+          "disposition": "approved"
+        },
+        "consequence": {
+          "class": "C2",
+          "affected_party": true,
+          "notice_required": true,
+          "persistent_change": true,
+          "protected_third_party_information": false
+        },
+        "remedy": {
+          "available": true,
+          "reversible": true,
+          "contestable": true,
+          "restoration_steps": "Restore the recorded before_state after accountable review.",
+          "review_owner": "Example Service Organization",
+          "status_uri": "https://trust-receipt.example/trust-receipts/request:access-disable:003/remedy",
+          "time_limit": "Submit within 30 calendar days of notice."
+        },
+        "privacy": {
+          "retention_basis": "Retain the minimum event evidence required for verification, review, and remedy.",
+          "routine_access_expires": "2027-07-01T00:00:00Z",
+          "access_roles": [
+            "accountable-reviewer",
+            "affected-party-support"
+          ],
+          "prohibited_secondary_uses": [
+            "model-training",
+            "unrelated-profiling"
+          ],
+          "chain_of_thought_excluded": true,
+          "deletion_uri": "https://trust-receipt.example/trust-receipts/request:access-disable:003/privacy"
+        },
+        "relationships": [],
+        "integrity": {
+          "method": "sha-256-digest-demo",
+          "digest": "sha256:13739ed07cd4340bec38c220c901f71ec30e2d199f965e8cc33ffed98f687177",
+          "canonicalization_profile": "ei-canonical-json-no-floats-v0.1",
+          "verification_status": "unverified"
+        }
+      },
+      "human": "AI TRUST RECEIPT\n================\nReceipt: urn:trust-receipt:request:access-disable:003:8aa59f2c250a20ed66a685e4f785d56982bd29ac4236d035995cb390507c45fd\nEvent time: 2026-07-15T14:30:00Z\nCreated: 2026-07-19T00:00:00Z\n\nACTION\nStatus: denied\nType: account.access.disable\nVerb: disable\nTarget: account:subject-001\nPersistent change: true\nException: ACTION_OUT_OF_SCOPE\n\nACCOUNTABILITY AND AUTHORITY\nAgent: agent:profile-maintainer\nOperator: operator:example-service\nAccountable organization: Example Service Organization\nGrant: grant:profile-maintenance:001 (out_of_scope)\nConfirmation: confirmed\n\nCONSEQUENCE AND REVIEW\nClass: C2\nAffected party: true\nNotice required: true\nProtected third-party information: false\nHuman review: approved\nEvidence viewed:\n  - evidence:confirmation:001\n  - evidence:review:001\n\nMATERIAL EVIDENCE\n  - evidence:confirmation:001: available / current (required)\n  - evidence:review:001: available / current (required)\n\nDELEGATION\n  - agent:preference-writer at depth 1: Write the confirmed weekly-summary preference.\n\nRELATED RECEIPTS\n  - None\n\nREMEDY\nAvailable: true\nReversible: true\nContestable: true\nReview owner: Example Service Organization\nStatus: https://trust-receipt.example/trust-receipts/request:access-disable:003/remedy\n\nINTEGRITY\nMethod: sha-256-digest-demo\nProfile: ei-canonical-json-no-floats-v0.1\nDigest: sha256:13739ed07cd4340bec38c220c901f71ec30e2d199f965e8cc33ffed98f687177\nRecorded verification status: unverified\n\nThis receipt is an event record, not a claim that the action was fair, lawful, or correct.\n"
+    },
+    {
+      "id": "missing-review",
+      "label": "Missing review",
+      "summary": "The grant requires independent human review for C2 consequences, and no review occurred. The gate denies execution.",
+      "gate": {
+        "decision": "deny",
+        "failures": [
+          {
+            "code": "HUMAN_REVIEW_REQUIRED",
+            "message": "Independent human approval is required.",
+            "field": "request.human_review.status"
+          }
+        ]
+      },
+      "receipt": {
+        "receipt_version": "0.1.1",
+        "receipt_id": "urn:trust-receipt:request:preference-update:004:6f5e2cd3b071dd4bab31d1d9e6ef280a9196e5dcfe0d1fd0ebcd70a5314171c8",
+        "event_time": "2026-07-15T14:30:00Z",
+        "created_at": "2026-07-19T00:00:00Z",
+        "schema_id": "https://emotionalinfrastructure.org/schemas/trust-receipt/trust-receipt.v0.1.1.schema.json",
+        "issuer": {
+          "organization_id": "org:reference-implementation",
+          "display_name": "AI Trust Receipt Reference Implementation",
+          "verification_uri": "https://trust-receipt.example/verify"
+        },
+        "agent": {
+          "agent_id": "agent:profile-maintainer",
+          "operator_id": "operator:example-service",
+          "deployment_id": "deployment:prod-us-01",
+          "version": "2026.07.1",
+          "accountable_organization": "Example Service Organization"
+        },
+        "action": {
+          "type": "account.profile.update",
+          "verb": "update",
+          "target": "account:subject-001",
+          "status": "denied",
+          "persistent_change": true,
+          "before_state": {
+            "weekly_summary": false
+          },
+          "after_state": {
+            "weekly_summary": false
+          },
+          "exception_code": "HUMAN_REVIEW_REQUIRED"
+        },
+        "authority": {
+          "grant_id": "grant:profile-maintenance:001",
+          "granting_party_id": "party:subject-001",
+          "scope": "{\"allowed_actions\":[\"account.profile.update\"],\"allowed_targets\":[\"account:subject-001\"],\"excluded_actions\":[\"account.access.disable\",\"account.payment.update\"],\"max_consequence_class\":\"C2\"}",
+          "granted_at": "2026-07-01T00:00:00Z",
+          "expires_at": "2027-07-01T00:00:00Z",
+          "confirmation_status": "confirmed",
+          "validation_status": "valid"
+        },
+        "objective": {
+          "description": "Maintain the account holder's notification preference when explicitly requested.",
+          "version": "objective-1",
+          "hard_constraints": [
+            "Do not change identity, payment, eligibility, or access-control fields.",
+            "Create a receipt for every attempted persistent change."
+          ]
+        },
+        "material_inputs": [
+          {
+            "evidence_id": "evidence:confirmation:001",
+            "category": "user-confirmation",
+            "provenance": "Account confirmation service event confirmation:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          },
+          {
+            "evidence_id": "evidence:review:001",
+            "category": "human-review",
+            "provenance": "Independent account-change review event review:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          }
+        ],
+        "delegation": [
+          {
+            "recipient_id": "agent:preference-writer",
+            "task": "Write the confirmed weekly-summary preference.",
+            "authority_passed": "account.profile.update for account:subject-001 only",
+            "depth": 1,
+            "evidence_returned": true
+          }
+        ],
+        "human_review": {
+          "status": "none",
+          "authority_to_intervene": true
+        },
+        "consequence": {
+          "class": "C2",
+          "affected_party": true,
+          "notice_required": true,
+          "persistent_change": true,
+          "protected_third_party_information": false
+        },
+        "remedy": {
+          "available": true,
+          "reversible": true,
+          "contestable": true,
+          "restoration_steps": "Restore the recorded before_state after accountable review.",
+          "review_owner": "Example Service Organization",
+          "status_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:004/remedy",
+          "time_limit": "Submit within 30 calendar days of notice."
+        },
+        "privacy": {
+          "retention_basis": "Retain the minimum event evidence required for verification, review, and remedy.",
+          "routine_access_expires": "2027-07-01T00:00:00Z",
+          "access_roles": [
+            "accountable-reviewer",
+            "affected-party-support"
+          ],
+          "prohibited_secondary_uses": [
+            "model-training",
+            "unrelated-profiling"
+          ],
+          "chain_of_thought_excluded": true,
+          "deletion_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:004/privacy"
+        },
+        "relationships": [],
+        "integrity": {
+          "method": "sha-256-digest-demo",
+          "digest": "sha256:6e7af8093c51583246270e5d66a22dfbd6e901dbe7d7ae6b7a0ded13a96701a4",
+          "canonicalization_profile": "ei-canonical-json-no-floats-v0.1",
+          "verification_status": "unverified"
+        }
+      },
+      "human": "AI TRUST RECEIPT\n================\nReceipt: urn:trust-receipt:request:preference-update:004:6f5e2cd3b071dd4bab31d1d9e6ef280a9196e5dcfe0d1fd0ebcd70a5314171c8\nEvent time: 2026-07-15T14:30:00Z\nCreated: 2026-07-19T00:00:00Z\n\nACTION\nStatus: denied\nType: account.profile.update\nVerb: update\nTarget: account:subject-001\nPersistent change: true\nException: HUMAN_REVIEW_REQUIRED\n\nACCOUNTABILITY AND AUTHORITY\nAgent: agent:profile-maintainer\nOperator: operator:example-service\nAccountable organization: Example Service Organization\nGrant: grant:profile-maintenance:001 (valid)\nConfirmation: confirmed\n\nCONSEQUENCE AND REVIEW\nClass: C2\nAffected party: true\nNotice required: true\nProtected third-party information: false\nHuman review: none\nEvidence viewed:\n  - None recorded\n\nMATERIAL EVIDENCE\n  - evidence:confirmation:001: available / current (required)\n  - evidence:review:001: available / current (required)\n\nDELEGATION\n  - agent:preference-writer at depth 1: Write the confirmed weekly-summary preference.\n\nRELATED RECEIPTS\n  - None\n\nREMEDY\nAvailable: true\nReversible: true\nContestable: true\nReview owner: Example Service Organization\nStatus: https://trust-receipt.example/trust-receipts/request:preference-update:004/remedy\n\nINTEGRITY\nMethod: sha-256-digest-demo\nProfile: ei-canonical-json-no-floats-v0.1\nDigest: sha256:6e7af8093c51583246270e5d66a22dfbd6e901dbe7d7ae6b7a0ded13a96701a4\nRecorded verification status: unverified\n\nThis receipt is an event record, not a claim that the action was fair, lawful, or correct.\n"
+    },
+    {
+      "id": "stale-evidence",
+      "label": "Stale evidence",
+      "summary": "A required material-evidence item is no longer current. The gate denies execution until evidence is refreshed.",
+      "gate": {
+        "decision": "deny",
+        "failures": [
+          {
+            "code": "REQUIRED_EVIDENCE_NOT_CURRENT",
+            "message": "Required material evidence is not current.",
+            "field": "evidence.items[0].freshness"
+          }
+        ]
+      },
+      "receipt": {
+        "receipt_version": "0.1.1",
+        "receipt_id": "urn:trust-receipt:request:preference-update:005:ad8c013b36705d08df347a7eb0afaa2ac9f59e22ac2192a7fe82a29a9a30c32c",
+        "event_time": "2026-07-15T14:30:00Z",
+        "created_at": "2026-07-19T00:00:00Z",
+        "schema_id": "https://emotionalinfrastructure.org/schemas/trust-receipt/trust-receipt.v0.1.1.schema.json",
+        "issuer": {
+          "organization_id": "org:reference-implementation",
+          "display_name": "AI Trust Receipt Reference Implementation",
+          "verification_uri": "https://trust-receipt.example/verify"
+        },
+        "agent": {
+          "agent_id": "agent:profile-maintainer",
+          "operator_id": "operator:example-service",
+          "deployment_id": "deployment:prod-us-01",
+          "version": "2026.07.1",
+          "accountable_organization": "Example Service Organization"
+        },
+        "action": {
+          "type": "account.profile.update",
+          "verb": "update",
+          "target": "account:subject-001",
+          "status": "denied",
+          "persistent_change": true,
+          "before_state": {
+            "weekly_summary": false
+          },
+          "after_state": {
+            "weekly_summary": false
+          },
+          "exception_code": "REQUIRED_EVIDENCE_NOT_CURRENT"
+        },
+        "authority": {
+          "grant_id": "grant:profile-maintenance:001",
+          "granting_party_id": "party:subject-001",
+          "scope": "{\"allowed_actions\":[\"account.profile.update\"],\"allowed_targets\":[\"account:subject-001\"],\"excluded_actions\":[\"account.access.disable\",\"account.payment.update\"],\"max_consequence_class\":\"C2\"}",
+          "granted_at": "2026-07-01T00:00:00Z",
+          "expires_at": "2027-07-01T00:00:00Z",
+          "confirmation_status": "confirmed",
+          "validation_status": "valid"
+        },
+        "objective": {
+          "description": "Maintain the account holder's notification preference when explicitly requested.",
+          "version": "objective-1",
+          "hard_constraints": [
+            "Do not change identity, payment, eligibility, or access-control fields.",
+            "Create a receipt for every attempted persistent change."
+          ]
+        },
+        "material_inputs": [
+          {
+            "evidence_id": "evidence:confirmation:001",
+            "category": "user-confirmation",
+            "provenance": "Account confirmation service event confirmation:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "stale"
+          },
+          {
+            "evidence_id": "evidence:review:001",
+            "category": "human-review",
+            "provenance": "Independent account-change review event review:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          }
+        ],
+        "delegation": [
+          {
+            "recipient_id": "agent:preference-writer",
+            "task": "Write the confirmed weekly-summary preference.",
+            "authority_passed": "account.profile.update for account:subject-001 only",
+            "depth": 1,
+            "evidence_returned": false
+          }
+        ],
+        "human_review": {
+          "status": "approved",
+          "authority_to_intervene": true,
+          "reviewer_role": "account-change-reviewer",
+          "reviewed_at": "2026-07-15T14:29:00Z",
+          "evidence_viewed": [
+            "evidence:confirmation:001",
+            "evidence:review:001"
+          ],
+          "disposition": "approved"
+        },
+        "consequence": {
+          "class": "C2",
+          "affected_party": true,
+          "notice_required": true,
+          "persistent_change": true,
+          "protected_third_party_information": false
+        },
+        "remedy": {
+          "available": true,
+          "reversible": true,
+          "contestable": true,
+          "restoration_steps": "Restore the recorded before_state after accountable review.",
+          "review_owner": "Example Service Organization",
+          "status_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:005/remedy",
+          "time_limit": "Submit within 30 calendar days of notice."
+        },
+        "privacy": {
+          "retention_basis": "Retain the minimum event evidence required for verification, review, and remedy.",
+          "routine_access_expires": "2027-07-01T00:00:00Z",
+          "access_roles": [
+            "accountable-reviewer",
+            "affected-party-support"
+          ],
+          "prohibited_secondary_uses": [
+            "model-training",
+            "unrelated-profiling"
+          ],
+          "chain_of_thought_excluded": true,
+          "deletion_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:005/privacy"
+        },
+        "relationships": [],
+        "integrity": {
+          "method": "sha-256-digest-demo",
+          "digest": "sha256:7adb99641f3c55869158bf5d1c8d919109c3a913ff5f77b693320fa2e9b33016",
+          "canonicalization_profile": "ei-canonical-json-no-floats-v0.1",
+          "verification_status": "unverified"
+        }
+      },
+      "human": "AI TRUST RECEIPT\n================\nReceipt: urn:trust-receipt:request:preference-update:005:ad8c013b36705d08df347a7eb0afaa2ac9f59e22ac2192a7fe82a29a9a30c32c\nEvent time: 2026-07-15T14:30:00Z\nCreated: 2026-07-19T00:00:00Z\n\nACTION\nStatus: denied\nType: account.profile.update\nVerb: update\nTarget: account:subject-001\nPersistent change: true\nException: REQUIRED_EVIDENCE_NOT_CURRENT\n\nACCOUNTABILITY AND AUTHORITY\nAgent: agent:profile-maintainer\nOperator: operator:example-service\nAccountable organization: Example Service Organization\nGrant: grant:profile-maintenance:001 (valid)\nConfirmation: confirmed\n\nCONSEQUENCE AND REVIEW\nClass: C2\nAffected party: true\nNotice required: true\nProtected third-party information: false\nHuman review: approved\nEvidence viewed:\n  - evidence:confirmation:001\n  - evidence:review:001\n\nMATERIAL EVIDENCE\n  - evidence:confirmation:001: available / stale (required)\n  - evidence:review:001: available / current (required)\n\nDELEGATION\n  - agent:preference-writer at depth 1: Write the confirmed weekly-summary preference.\n\nRELATED RECEIPTS\n  - None\n\nREMEDY\nAvailable: true\nReversible: true\nContestable: true\nReview owner: Example Service Organization\nStatus: https://trust-receipt.example/trust-receipts/request:preference-update:005/remedy\n\nINTEGRITY\nMethod: sha-256-digest-demo\nProfile: ei-canonical-json-no-floats-v0.1\nDigest: sha256:7adb99641f3c55869158bf5d1c8d919109c3a913ff5f77b693320fa2e9b33016\nRecorded verification status: unverified\n\nThis receipt is an event record, not a claim that the action was fair, lawful, or correct.\n"
+    },
+    {
+      "id": "unavailable-remedy",
+      "label": "Unavailable remedy",
+      "summary": "The remedy pathway required for C2/C3 consequences is not operational. The gate denies execution.",
+      "gate": {
+        "decision": "deny",
+        "failures": [
+          {
+            "code": "REMEDY_SERVICE_UNAVAILABLE",
+            "message": "Required remedy capability is unavailable.",
+            "field": "evidence.remedy_service_available"
+          }
+        ]
+      },
+      "receipt": {
+        "receipt_version": "0.1.1",
+        "receipt_id": "urn:trust-receipt:request:preference-update:006:270ce392ad46b7e483274a52b0e2f031a21ac359ce9d85480d5c74f4834ed711",
+        "event_time": "2026-07-15T14:30:00Z",
+        "created_at": "2026-07-19T00:00:00Z",
+        "schema_id": "https://emotionalinfrastructure.org/schemas/trust-receipt/trust-receipt.v0.1.1.schema.json",
+        "issuer": {
+          "organization_id": "org:reference-implementation",
+          "display_name": "AI Trust Receipt Reference Implementation",
+          "verification_uri": "https://trust-receipt.example/verify"
+        },
+        "agent": {
+          "agent_id": "agent:profile-maintainer",
+          "operator_id": "operator:example-service",
+          "deployment_id": "deployment:prod-us-01",
+          "version": "2026.07.1",
+          "accountable_organization": "Example Service Organization"
+        },
+        "action": {
+          "type": "account.profile.update",
+          "verb": "update",
+          "target": "account:subject-001",
+          "status": "denied",
+          "persistent_change": true,
+          "before_state": {
+            "weekly_summary": false
+          },
+          "after_state": {
+            "weekly_summary": false
+          },
+          "exception_code": "REMEDY_SERVICE_UNAVAILABLE"
+        },
+        "authority": {
+          "grant_id": "grant:profile-maintenance:001",
+          "granting_party_id": "party:subject-001",
+          "scope": "{\"allowed_actions\":[\"account.profile.update\"],\"allowed_targets\":[\"account:subject-001\"],\"excluded_actions\":[\"account.access.disable\",\"account.payment.update\"],\"max_consequence_class\":\"C2\"}",
+          "granted_at": "2026-07-01T00:00:00Z",
+          "expires_at": "2027-07-01T00:00:00Z",
+          "confirmation_status": "confirmed",
+          "validation_status": "valid"
+        },
+        "objective": {
+          "description": "Maintain the account holder's notification preference when explicitly requested.",
+          "version": "objective-1",
+          "hard_constraints": [
+            "Do not change identity, payment, eligibility, or access-control fields.",
+            "Create a receipt for every attempted persistent change."
+          ]
+        },
+        "material_inputs": [
+          {
+            "evidence_id": "evidence:confirmation:001",
+            "category": "user-confirmation",
+            "provenance": "Account confirmation service event confirmation:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          },
+          {
+            "evidence_id": "evidence:review:001",
+            "category": "human-review",
+            "provenance": "Independent account-change review event review:001",
+            "materiality": "required",
+            "status": "available",
+            "freshness": "current"
+          }
+        ],
+        "delegation": [
+          {
+            "recipient_id": "agent:preference-writer",
+            "task": "Write the confirmed weekly-summary preference.",
+            "authority_passed": "account.profile.update for account:subject-001 only",
+            "depth": 1,
+            "evidence_returned": true
+          }
+        ],
+        "human_review": {
+          "status": "approved",
+          "authority_to_intervene": true,
+          "reviewer_role": "account-change-reviewer",
+          "reviewed_at": "2026-07-15T14:29:00Z",
+          "evidence_viewed": [
+            "evidence:confirmation:001",
+            "evidence:review:001"
+          ],
+          "disposition": "approved"
+        },
+        "consequence": {
+          "class": "C2",
+          "affected_party": true,
+          "notice_required": true,
+          "persistent_change": true,
+          "protected_third_party_information": false
+        },
+        "remedy": {
+          "available": false,
+          "reversible": true,
+          "contestable": true,
+          "restoration_steps": "Restore the recorded before_state after accountable review.",
+          "review_owner": "Example Service Organization",
+          "status_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:006/remedy",
+          "time_limit": "Submit within 30 calendar days of notice."
+        },
+        "privacy": {
+          "retention_basis": "Retain the minimum event evidence required for verification, review, and remedy.",
+          "routine_access_expires": "2027-07-01T00:00:00Z",
+          "access_roles": [
+            "accountable-reviewer",
+            "affected-party-support"
+          ],
+          "prohibited_secondary_uses": [
+            "model-training",
+            "unrelated-profiling"
+          ],
+          "chain_of_thought_excluded": true,
+          "deletion_uri": "https://trust-receipt.example/trust-receipts/request:preference-update:006/privacy"
+        },
+        "relationships": [],
+        "integrity": {
+          "method": "sha-256-digest-demo",
+          "digest": "sha256:e5be717513170e02bf57168713c9c38727a6f61a47124909f4186a5ebf8dbac9",
+          "canonicalization_profile": "ei-canonical-json-no-floats-v0.1",
+          "verification_status": "unverified"
+        }
+      },
+      "human": "AI TRUST RECEIPT\n================\nReceipt: urn:trust-receipt:request:preference-update:006:270ce392ad46b7e483274a52b0e2f031a21ac359ce9d85480d5c74f4834ed711\nEvent time: 2026-07-15T14:30:00Z\nCreated: 2026-07-19T00:00:00Z\n\nACTION\nStatus: denied\nType: account.profile.update\nVerb: update\nTarget: account:subject-001\nPersistent change: true\nException: REMEDY_SERVICE_UNAVAILABLE\n\nACCOUNTABILITY AND AUTHORITY\nAgent: agent:profile-maintainer\nOperator: operator:example-service\nAccountable organization: Example Service Organization\nGrant: grant:profile-maintenance:001 (valid)\nConfirmation: confirmed\n\nCONSEQUENCE AND REVIEW\nClass: C2\nAffected party: true\nNotice required: true\nProtected third-party information: false\nHuman review: approved\nEvidence viewed:\n  - evidence:confirmation:001\n  - evidence:review:001\n\nMATERIAL EVIDENCE\n  - evidence:confirmation:001: available / current (required)\n  - evidence:review:001: available / current (required)\n\nDELEGATION\n  - agent:preference-writer at depth 1: Write the confirmed weekly-summary preference.\n\nRELATED RECEIPTS\n  - None\n\nREMEDY\nAvailable: false\nReversible: true\nContestable: true\nReview owner: Example Service Organization\nStatus: https://trust-receipt.example/trust-receipts/request:preference-update:006/remedy\n\nINTEGRITY\nMethod: sha-256-digest-demo\nProfile: ei-canonical-json-no-floats-v0.1\nDigest: sha256:e5be717513170e02bf57168713c9c38727a6f61a47124909f4186a5ebf8dbac9\nRecorded verification status: unverified\n\nThis receipt is an event record, not a claim that the action was fair, lawful, or correct.\n"
+    }
+  ]
+}
