@@ -2,33 +2,49 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const repoUrl = "https://github.com/emotionalinfrastructure/Trust-Receipts";
-const releaseUrl = `${repoUrl}/releases/tag/v0.1.1`;
-const reviewIssueUrl = `${repoUrl}/issues/4`;
-const specUrl = `${repoUrl}/blob/main/docs/Trust_Receipt_Technical_Specification_v0.1.1.md`;
 
 export const metadata: Metadata = {
-  title: "AI Trust Receipts | Emotional Infrastructure",
+  title: "AI Trust Receipts™ | Emotional Infrastructure™",
   description:
-    "The authoritative home of the AI Trust Receipt: a candidate governance specification and reference implementation for machine-verifiable receipts of consequential AI actions. Current version: v0.1.1 Candidate."
+    "AI Trust Receipts™ is a candidate governance specification and reference implementation for producing verifiable records of AI actions, authority, accountability, and audit evidence."
 };
+
+const questions = [
+  ["What happened?", "The action performed by the AI system."],
+  ["Why?", "The governance rationale supporting the action."],
+  ["Authority", "The policy or authorization permitting the action."],
+  ["Consequence", "The evaluated consequence classification associated with the event."],
+  ["Evidence", "The information supporting the governance decision."],
+  ["Verification", "How reviewers can independently validate the recorded event."]
+];
+
+const implemented = [
+  "Authority evaluation",
+  "Governance decision routing",
+  "Consequence classification",
+  "Receipt generation",
+  "Digest verification",
+  "Tamper-evidence demonstration",
+  "Reference implementation",
+  "Automated validation tests"
+];
 
 export default function TrustReceiptsPage() {
   return (
     <main id="main">
       <section className="page-title">
         <div className="container">
-          <div className="kicker">Project home · Current version: v0.1.1 Candidate · July 19, 2026</div>
-          <h1 style={{ fontSize: "clamp(38px,5.4vw,68px)" }}>AI Trust Receipts</h1>
+          <div className="kicker">Candidate Specification · Version 0.1.1</div>
+          <h1 style={{ fontSize: "clamp(38px,5.4vw,68px)" }}>AI Trust Receipts™</h1>
           <p className="lead">
-            A candidate governance specification and reference implementation for machine-verifiable receipts of
-            consequential AI actions. Twelve noncompensatory requirements, JSON Schema contracts, executable
-            conformance vectors.
+            A proposed governance specification and open reference implementation for producing verifiable,
+            human-readable records of significant AI actions. Trust Receipts improve transparency, accountability,
+            and auditability by documenting what occurred, why it occurred, under whose authority it occurred, and
+            how the event can later be verified.
           </p>
           <div className="actions">
-            <Link className="btn primary" href="/trust-receipt">Open the live demo →</Link>
-            <a className="btn secondary" href={repoUrl}>GitHub repository</a>
-            <a className="btn secondary" href={releaseUrl}>Release v0.1.1</a>
-            <a className="btn secondary" href={reviewIssueUrl}>Request for review</a>
+            <Link className="btn primary" href="/demo">Launch Interactive Demo</Link>
+            <a className="btn secondary" href={repoUrl}>View GitHub Repository</a>
           </div>
         </div>
       </section>
@@ -36,106 +52,109 @@ export default function TrustReceiptsPage() {
       <section className="section">
         <div className="container two">
           <div>
-            <div className="kicker">What they are</div>
-            <h2>A receipt for what an AI system did — before it does it.</h2>
+            <div className="kicker">Why AI Trust Receipts?</div>
+            <h2>Evidence, not just principles.</h2>
           </div>
           <div className="copy">
             <p>
-              An AI Trust Receipt is a durable, user-legible, machine-verifiable record of a consequential AI
-              action: what occurred, under whose authority, using which evidence, with what result, and through
-              what remedy pathway. A pre-execution gate requires valid authority, material evidence, receipt
-              capability, and an operational remedy pathway to exist before the action executes — and a denial
-              produces a receipt too, so refusal is a governed, recorded outcome rather than a silent failure.
+              Artificial intelligence increasingly participates in decisions that affect communication,
+              recommendations, moderation, automation, and trust. While organizations often publish high-level
+              governance principles, users rarely receive evidence describing how those principles were applied
+              during a specific interaction.
             </p>
             <p>
-              Conformance is noncompensatory: twelve requirements (R1–R12) are evaluated individually, and one
-              failed requirement cannot be averaged away by the other eleven.
+              AI Trust Receipts introduce a proposed accountability layer that records significant AI actions in a
+              standardized format that is understandable to people while remaining suitable for technical
+              verification and auditing.
             </p>
           </div>
         </div>
       </section>
 
       <section className="section alt">
-        <div className="container two">
-          <div>
-            <div className="kicker">Why they matter</div>
-            <h2>The accountability gap is structural, not incidental.</h2>
-          </div>
-          <div className="copy">
-            <p>
-              AI agents increasingly change access, modify data, communicate externally, delegate authority, or
-              affect third parties on people&apos;s behalf. Existing records are operational, fragmented, or
-              inaccessible to the person affected — insufficient to reconstruct what happened or contest it.
-              Financial systems normalized the transaction receipt; AI-mediated actions that materially affect a
-              person&apos;s status, eligibility, access, or resources still lack a broadly adopted equivalent.
-            </p>
-            <p>
-              The Trust Receipt proposes that equivalent as an interoperable, testable specification: one canonical
-              event record from which the machine receipt, the human-readable disclosure, and the integrity
-              verification are all derived, so the explanation shown to a person cannot silently contradict the
-              machine record.
-            </p>
+        <div className="container">
+          <div className="kicker">The record</div>
+          <h2 style={{ maxWidth: 920, marginBottom: 30 }}>Every Trust Receipt answers six questions</h2>
+          <div className="grid-3">
+            {questions.map(([title, body]) => (
+              <article className="tile" key={title}>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <div className="kicker" style={{ marginBottom: 24 }}>Current release</div>
-          <div className="grid-4" style={{ marginBottom: 30 }}>
-            <div className="stat">
-              <strong className="blue">v0.1.1</strong>
-              <span>Candidate specification and reference implementation. Not an adopted standard or certification program.</span>
-            </div>
-            <div className="stat">
-              <strong className="green">23/23</strong>
-              <span>Automated Python tests passing in the published verification baseline.</span>
-            </div>
-            <div className="stat">
-              <strong className="green">9/9</strong>
-              <span>Conformance vectors matching expected decisions.</span>
-            </div>
-            <div className="stat">
-              <strong className="green">2/2</strong>
-              <span>Fixed browser/Python digest parity vectors passing.</span>
+        <div className="container two">
+          <div>
+            <div className="kicker">Current Implementation</div>
+            <h2>Candidate v0.1.1, with its boundaries stated.</h2>
+          </div>
+          <div className="copy">
+            <p>
+              Version 0.1.1 is released as a candidate specification accompanied by a working reference
+              implementation. The current implementation demonstrates core governance behavior while clearly
+              distinguishing implemented capabilities from future work.
+            </p>
+            <div className="tags">
+              {implemented.map((item) => (
+                <span className="tag" key={item}>{item}</span>
+              ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="container">
+          <div className="kicker" style={{ marginBottom: 24 }}>Explore the Project</div>
           <div className="downloads">
             <div className="download">
-              <a href={repoUrl}>GitHub repository</a>
-              <small>Source code, schemas, fixtures, conformance profiles, governance and security policy.</small>
+              <Link href="/demo">Interactive Demo →</Link>
+              <small>Experience the browser-based reference implementation and explore receipt verification.</small>
             </div>
             <div className="download">
-              <Link href="/trust-receipt">Live demo</Link>
-              <small>Six gate presets with in-browser SHA-256 digest verification and tamper-evidence.</small>
+              <a href={repoUrl}>GitHub Repository →</a>
+              <small>Browse the complete source code, documentation, specification, and implementation.</small>
             </div>
             <div className="download">
-              <a href={releaseUrl}>GitHub Release v0.1.1</a>
-              <small>Complete ZIP archive, release manifest, SHA-256 digest ledgers, specification PDF, and wheel.</small>
+              <a href={`${repoUrl}/releases`}>Latest Release →</a>
+              <small>Download the current candidate release, verification manifests, and supporting artifacts.</small>
             </div>
             <div className="download">
-              <a href={reviewIssueUrl}>Review issue</a>
-              <small>The standing invitation for adversarial review, negative testing, and independent implementation.</small>
+              <a href={`${repoUrl}/issues`}>Technical Review →</a>
+              <small>Review the specification, report defects, and contribute technical feedback.</small>
             </div>
           </div>
-          <p className="note" style={{ marginTop: 24 }}>
-            The normative candidate document is the{" "}
-            <a href={specUrl} style={{ color: "var(--cyan)", fontWeight: 700 }}>
-              technical specification v0.1.1
-            </a>
-            . Issuer authentication, key management, and signature profiles are reserved for v0.2 or a dedicated
-            production profile; receipts in v0.1.1 are self-attested.
-          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="boundary-note">
+            <strong>Claim Boundary:</strong> AI Trust Receipts™ Version 0.1.1 is published as a candidate
+            specification together with a reference implementation. It is intended to support technical evaluation,
+            discussion, experimentation, and independent review. It is not presented as an adopted industry
+            standard, certification program, or regulatory requirement.
+          </div>
         </div>
       </section>
 
       <section className="section alt">
-        <div className="container">
-          <div className="boundary-note">
-            <strong>Claim boundary:</strong> This is a candidate governance and implementation package. It is not
-            an adopted standard, certification program, external audit, legal-compliance determination, or
-            regulatory approval. Receipt conformance does not establish that a recorded action was truthful, fair,
-            lawful, safe, or correct.
+        <div className="container two">
+          <div>
+            <div className="kicker">About Emotional Infrastructure™</div>
+            <h2>Governance for AI-mediated environments.</h2>
+          </div>
+          <div className="copy">
+            <p>
+              Emotional Infrastructure™ is a research and governance initiative focused on improving transparency,
+              accountability, consent, and human agency within AI-mediated environments. Its work develops
+              practical governance mechanisms that make AI systems more understandable, auditable, and accountable
+              while preserving meaningful human oversight.
+            </p>
           </div>
         </div>
       </section>
