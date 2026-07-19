@@ -50,9 +50,22 @@ https://emotionalinfrastructure.github.io/site
 
 Because the site lives under the `/site` path, the static export sets
 `basePath`/`assetPrefix` to `/site` (see `next.config.mjs`) so assets and links
-resolve correctly. To move to a custom domain later, add it in
-**Settings → Pages**, write a `CNAME` file in the deploy workflow, and remove
-the `basePath`/`assetPrefix` so the site serves from the root.
+resolve correctly.
+
+### Custom domain cutover
+
+When DNS for `emotionalinfrastructure.org` points at GitHub Pages:
+
+1. Add the domain in **Settings → Pages → Custom domain**.
+2. Create a repository variable **Settings → Secrets and variables → Actions →
+   Variables**: `PAGES_CUSTOM_DOMAIN` = `emotionalinfrastructure.org`.
+3. Re-run the Deploy to GitHub Pages workflow (or push to `main`).
+
+The workflow then writes the `CNAME` file and builds without
+`basePath`/`assetPrefix`, so the site serves from the domain root. All internal
+links use `next/link` and adjust automatically. External references that still
+point at the `github.io` URL (for example the Trust-Receipts overview page)
+should be swapped to the domain at the same time.
 
 ## Current pages
 

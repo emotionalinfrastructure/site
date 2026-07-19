@@ -3,7 +3,7 @@ import Link from "next/link";
 const nav = [
   ["Home", "/"],
   ["Research", "/research"],
-  ["Trust Receipt", "/trust-receipt"],
+  ["Trust Receipts", "/trust-receipts"],
   ["Implementation", "/implementation"],
   ["Artifacts", "/artifacts"],
   ["Review", "/review"]

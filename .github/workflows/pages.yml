@@ -35,9 +35,15 @@ jobs:
 
       - name: Build static site
         run: GITHUB_PAGES=true npm run build
+        env:
+          PAGES_CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN }}
 
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
+
+      - name: Write CNAME for custom domain
+        if: vars.PAGES_CUSTOM_DOMAIN != ''
+        run: echo "${{ vars.PAGES_CUSTOM_DOMAIN }}" > out/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
