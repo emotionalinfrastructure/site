@@ -1,18 +1,44 @@
 # Emotional Infrastructure Site
 
-Production website for Emotional Infrastructure, built with Next.js and Tailwind CSS.
+Production website for Emotional Infrastructure™, built with Next.js, React, TypeScript, and Tailwind CSS.
 
-## Repository
+## Canonical deployment
 
-GitHub repo: `emotionalinfrastructure/site`
+The branded production site is intended to run at:
 
-## Stack
+```text
+https://emotionalinfrastructure.org
+```
 
-- Next.js 14
-- React 18
-- Tailwind CSS 3
-- TypeScript
-- GitHub Pages deployment target (static export)
+The canonical AI Trust Receipts routes are:
+
+```text
+https://emotionalinfrastructure.org/trust-receipts
+https://emotionalinfrastructure.org/trust-receipt
+```
+
+`/trust-receipts` is the authoritative project home. `/trust-receipt` is the interactive browser demonstration.
+
+## Cloudflare Pages configuration
+
+Use the **Next.js (Static HTML Export)** deployment model:
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Root directory | `/` |
+
+`next.config.mjs` always produces a static export so Cloudflare receives a complete `out/` directory on every production build.
+
+Every push to `main` should trigger a new Cloudflare Pages deployment when the project is connected to this repository.
+
+## GitHub Pages fallback
+
+The repository retains `.github/workflows/pages.yml` as a supporting deployment path. In GitHub Pages project-path mode, the site is built under `/site`. When a GitHub Pages custom domain variable is explicitly configured, it can build from the domain root.
+
+GitHub Pages is not the canonical branded production host unless the hosting architecture is deliberately changed.
 
 ## Local development
 
@@ -26,62 +52,40 @@ Open `http://localhost:3000`.
 ## Production build
 
 ```bash
-npm install
+npm ci
 npm run build
 ```
 
-## Deployment
-
-Deployment is automatic. Every push to `main` triggers the
-`.github/workflows/pages.yml` workflow, which builds a static export
-(`GITHUB_PAGES=true npm run build`) and publishes `out/` to GitHub Pages.
-No manual build, upload, or third-party dashboard is needed.
-
-The `.github/workflows/build.yml` workflow runs a build check on every pull
-request and push to `main`.
-
-## URL
-
-The site is served at the default GitHub Pages URL:
+The static output is written to:
 
 ```text
-https://emotionalinfrastructure.github.io/site
+out/
 ```
 
-Because the site lives under the `/site` path, the static export sets
-`basePath`/`assetPrefix` to `/site` (see `next.config.mjs`) so assets and links
-resolve correctly.
-
-### Custom domain cutover
-
-When DNS for `emotionalinfrastructure.org` points at GitHub Pages:
-
-1. Add the domain in **Settings → Pages → Custom domain**.
-2. Create a repository variable **Settings → Secrets and variables → Actions →
-   Variables**: `PAGES_CUSTOM_DOMAIN` = `emotionalinfrastructure.org`.
-3. Re-run the Deploy to GitHub Pages workflow (or push to `main`).
-
-The workflow then writes the `CNAME` file and builds without
-`basePath`/`assetPrefix`, so the site serves from the domain root. All internal
-links use `next/link` and adjust automatically. External references that still
-point at the `github.io` URL (for example the Trust-Receipts overview page)
-should be swapped to the domain at the same time.
-
-## Current pages
+## Current routes
 
 - `/`
+- `/trust-receipts`
+- `/trust-receipt`
 - `/research`
+- `/implementation`
+- `/artifacts`
+- `/review`
+- `/contact`
 - `/creator-kit`
 - `/audit`
 - `/articles`
 - `/media-kit`
 - `/proof`
-- `/contact`
 
-## Remaining launch items
+## Release consistency requirements
 
-- Add checkout links for Creator Kit and Creator AI Trust Audit
-- Add contact form or email routing
-- Add founder photo, product mockups, and article images
-- Add newsletter signup integration
-- Add proof/documentation links
+The public AI Trust Receipt pages must consistently state:
+
+- Candidate version `v0.1.1`
+- Six interactive demo presets
+- Nine separate conformance vectors
+- Restricted source-equivalent browser/Python digest behavior
+- No issuer-authentication, universal parity, certification, audit, or legal-compliance claim
+
+The phrase `byte-identical port` must not be used for the browser implementation.
