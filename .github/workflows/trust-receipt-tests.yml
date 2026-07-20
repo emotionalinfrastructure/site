@@ -1,0 +1,47 @@
+name: Trust Receipt Demo Tests
+
+on:
+  pull_request:
+    paths:
+      - "components/TrustReceiptDemo.tsx"
+      - "lib/trust-receipt-integrity.mjs"
+      - "lib/trust-receipt-presets.json"
+      - "tools/verify-demo-integrity.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/trust-receipt-tests.yml"
+  push:
+    branches: [main]
+    paths:
+      - "components/TrustReceiptDemo.tsx"
+      - "lib/trust-receipt-integrity.mjs"
+      - "lib/trust-receipt-presets.json"
+      - "tools/verify-demo-integrity.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/trust-receipt-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify Trust Receipt demo integrity
+        run: npm run test:trust-receipt
+
+      - name: Build static site
+        run: npm run build
