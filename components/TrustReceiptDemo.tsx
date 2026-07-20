@@ -2,23 +2,23 @@
 
 import { useCallback, useMemo, useRef, useState } from "react";
 import presetData from "@/lib/trust-receipt-presets.json";
+import { renderHumanReceipt } from "@/lib/trust-receipt-human.mjs";
 // Verbatim copy of browser/integrity.mjs from Trust-Receipts candidate v0.1.1.
 import { computeDigest, verifyDigest } from "@/lib/trust-receipt-integrity.mjs";
 
-type JsonRecord = Record<string, unknown>;
-type GateFailure = { code: string; message: string; field: string };
-type Receipt = JsonRecord & {
+type Receipt = Record<string, unknown> & {
   receipt_id: string;
   action: { status: string; [key: string]: unknown };
   integrity: { digest: string; [key: string]: unknown };
 };
+
+type GateFailure = { code: string; message: string; field: string };
 type Preset = {
   id: string;
   label: string;
   summary: string;
   gate: { decision: string; failures: GateFailure[] };
   receipt: Receipt;
-  human: string;
 };
 
 const presets = presetData.presets as unknown as Preset[];
@@ -31,126 +31,6 @@ type VerifyState =
 
 function clone<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
-}
-
-function asRecord(value: unknown): JsonRecord {
-  return value !== null && typeof value === "object" && !Array.isArray(value)
-    ? (value as JsonRecord)
-    : {};
-}
-
-function asArray(value: unknown): unknown[] {
-  return Array.isArray(value) ? value : [];
-}
-
-function display(value: unknown): string {
-  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
-    return String(value);
-  }
-  if (value === null) return "null";
-  if (value === undefined) return "not recorded";
-  return JSON.stringify(value);
-}
-
-function renderHumanReceipt(receipt: Receipt): string {
-  const action = asRecord(receipt.action);
-  const authority = asRecord(receipt.authority);
-  const agent = asRecord(receipt.agent);
-  const consequence = asRecord(receipt.consequence);
-  const review = asRecord(receipt.human_review);
-  const remedy = asRecord(receipt.remedy);
-  const integrity = asRecord(receipt.integrity);
-  const evidence = asArray(receipt.material_inputs);
-  const delegation = asArray(receipt.delegation);
-  const relationships = asArray(receipt.relationships);
-  const evidenceViewed = asArray(review.evidence_viewed);
-
-  const lines = [
-    "AI TRUST RECEIPT",
-    "================",
-    `Receipt: ${display(receipt.receipt_id)}`,
-    `Event time: ${display(receipt.event_time)}`,
-    `Created: ${display(receipt.created_at)}`,
-    "",
-    "ACTION",
-    `Status: ${display(action.status)}`,
-    `Type: ${display(action.type)}`,
-    `Verb: ${display(action.verb)}`,
-    `Target: ${display(action.target)}`,
-    `Persistent change: ${display(action.persistent_change)}`,
-    "",
-    "ACCOUNTABILITY AND AUTHORITY",
-    `Agent: ${display(agent.agent_id)}`,
-    `Operator: ${display(agent.operator_id)}`,
-    `Accountable organization: ${display(agent.accountable_organization)}`,
-    `Grant: ${display(authority.grant_id)} (${display(authority.validation_status)})`,
-    `Confirmation: ${display(authority.confirmation_status)}`,
-    "",
-    "CONSEQUENCE AND REVIEW",
-    `Class: ${display(consequence.class)}`,
-    `Affected party: ${display(consequence.affected_party)}`,
-    `Notice required: ${display(consequence.notice_required)}`,
-    `Protected third-party information: ${display(consequence.protected_third_party_information)}`,
-    `Human review: ${display(review.status)}`,
-    "Evidence viewed:"
-  ];
-
-  if (evidenceViewed.length === 0) {
-    lines.push("  - None");
-  } else {
-    evidenceViewed.forEach((item) => lines.push(`  - ${display(item)}`));
-  }
-
-  lines.push("", "MATERIAL EVIDENCE");
-  if (evidence.length === 0) {
-    lines.push("  - None");
-  } else {
-    evidence.forEach((item) => {
-      const record = asRecord(item);
-      lines.push(
-        `  - ${display(record.evidence_id)}: ${display(record.status)} / ${display(record.freshness)} (${display(record.materiality)})`
-      );
-    });
-  }
-
-  lines.push("", "DELEGATION");
-  if (delegation.length === 0) {
-    lines.push("  - None");
-  } else {
-    delegation.forEach((item) => {
-      const record = asRecord(item);
-      lines.push(
-        `  - ${display(record.recipient_id)} at depth ${display(record.depth)}: ${display(record.task)}`
-      );
-    });
-  }
-
-  lines.push("", "RELATED RECEIPTS");
-  if (relationships.length === 0) {
-    lines.push("  - None");
-  } else {
-    relationships.forEach((item) => lines.push(`  - ${display(item)}`));
-  }
-
-  lines.push(
-    "",
-    "REMEDY",
-    `Available: ${display(remedy.available)}`,
-    `Reversible: ${display(remedy.reversible)}`,
-    `Contestable: ${display(remedy.contestable)}`,
-    `Review owner: ${display(remedy.review_owner)}`,
-    `Status: ${display(remedy.status_uri)}`,
-    "",
-    "INTEGRITY",
-    `Method: ${display(integrity.method)}`,
-    `Profile: ${display(integrity.canonicalization_profile)}`,
-    `Digest: ${display(integrity.digest)}`,
-    `Recorded verification status: ${display(integrity.verification_status)}`,
-    "",
-    "This receipt is an event record, not a claim that the action was fair, lawful, or correct."
-  );
-
-  return `${lines.join("\n")}\n`;
 }
 
 export default function TrustReceiptDemo() {
@@ -218,12 +98,13 @@ export default function TrustReceiptDemo() {
   const working = verify.kind === "working";
 
   return (
-    <div className="card">
+    <div className="card" data-demo-revision="race-safe-v1">
       <div className="card-inner" aria-busy={working}>
         <div className="label">Gate presets</div>
         <div className="filterbar" aria-label="Demo gate presets">
           {presets.map((item) => (
             <button
+              type="button"
               key={item.id}
               className={item.id === presetId ? "active" : undefined}
               onClick={() => selectPreset(item)}
@@ -263,20 +144,20 @@ export default function TrustReceiptDemo() {
         </div>
 
         <div className="actions" style={{ marginTop: 0 }}>
-          <button className="btn primary" onClick={runVerify} disabled={working}>
+          <button type="button" className="btn primary" onClick={runVerify} disabled={working}>
             {working ? "Recomputing digest…" : "Verify receipt"}
           </button>
-          <button className="btn secondary" onClick={tamper} disabled={working}>
+          <button type="button" className="btn secondary" onClick={tamper} disabled={working}>
             Tamper with a field
           </button>
           {(tampered || verify.kind === "done" || verify.kind === "stale") && (
-            <button className="btn dark" onClick={reset} disabled={working}>
+            <button type="button" className="btn dark" onClick={reset} disabled={working}>
               Reset preset
             </button>
           )}
         </div>
 
-        <div role="status" aria-live="polite" style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", border: 0 }}>
+        <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">
           {announcement}
         </div>
 
@@ -298,6 +179,7 @@ export default function TrustReceiptDemo() {
           <div
             role={verify.matches ? "status" : "alert"}
             aria-live={verify.matches ? "polite" : "assertive"}
+            aria-atomic="true"
             className="boundary-note"
             style={
               verify.matches
@@ -319,6 +201,7 @@ export default function TrustReceiptDemo() {
 
         <div className="filterbar" style={{ margin: "24px 0 12px" }} aria-label="Receipt view">
           <button
+            type="button"
             className={view === "machine" ? "active" : undefined}
             onClick={() => setView("machine")}
             aria-pressed={view === "machine"}
@@ -326,6 +209,7 @@ export default function TrustReceiptDemo() {
             Machine receipt (JSON)
           </button>
           <button
+            type="button"
             className={view === "human" ? "active" : undefined}
             onClick={() => setView("human")}
             aria-pressed={view === "human"}
@@ -335,6 +219,7 @@ export default function TrustReceiptDemo() {
         </div>
         <pre
           aria-label={view === "machine" ? "Machine-readable receipt" : "Human-readable disclosure"}
+          tabIndex={0}
           style={{
             margin: 0,
             border: "1px solid var(--line)",
