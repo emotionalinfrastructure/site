@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import presetData from "@/lib/trust-receipt-presets.json";
 // Verbatim copy of browser/integrity.mjs from Trust-Receipts candidate v0.1.1.
 import { computeDigest, verifyDigest } from "@/lib/trust-receipt-integrity.mjs";
@@ -159,7 +159,7 @@ export default function TrustReceiptDemo() {
     () => presets.find((item) => item.id === presetId) ?? presets[0],
     [presetId]
   );
-  const [receipt, setReceipt] = useState<Receipt>(() => clone(preset.receipt));
+  const [receipt, setReceipt] = useState<Receipt>(() => clone(presets[0].receipt));
   const [tampered, setTampered] = useState(false);
   const [verify, setVerify] = useState<VerifyState>({ kind: "idle" });
   const [view, setView] = useState<"machine" | "human">("machine");
@@ -174,9 +174,10 @@ export default function TrustReceiptDemo() {
     setAnnouncement(message);
   }, []);
 
-  useEffect(() => {
-    updateReceipt(clone(preset.receipt), false, `${preset.label} preset loaded.`);
-  }, [preset, updateReceipt]);
+  const selectPreset = useCallback((nextPreset: Preset) => {
+    setPresetId(nextPreset.id);
+    updateReceipt(clone(nextPreset.receipt), false, `${nextPreset.label} preset loaded.`);
+  }, [updateReceipt]);
 
   const runVerify = useCallback(async () => {
     const snapshot = clone(receipt);
@@ -225,7 +226,7 @@ export default function TrustReceiptDemo() {
             <button
               key={item.id}
               className={item.id === presetId ? "active" : undefined}
-              onClick={() => setPresetId(item.id)}
+              onClick={() => selectPreset(item)}
               aria-pressed={item.id === presetId}
               disabled={working}
             >
@@ -238,7 +239,7 @@ export default function TrustReceiptDemo() {
 
         <div className="pathway" style={{ marginBottom: 20 }}>
           <div className="row">
-            <strong>Gate decision</strong>
+            <strong>Original gate decision</strong>
             <span className={denial ? "rose" : "green"} style={{ fontWeight: 800 }}>
               {denial ? "DENY — the action did not execute" : "ALLOW — the action executed"}
             </span>
