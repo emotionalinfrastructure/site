@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 const repoUrl = "https://github.com/emotionalinfrastructure/Trust-Receipts";
+const demoUrl = "https://demo.emotionalinfrastructure.org";
 
 export const metadata: Metadata = {
   title: "AI Trust Receipts™ | Emotional Infrastructure™",
@@ -43,7 +43,14 @@ export default function TrustReceiptsPage() {
             how the event can later be verified.
           </p>
           <div className="actions">
-            <Link className="btn primary" href="/demo">Launch Interactive Demo</Link>
+            <a
+              className="btn primary"
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Launch Interactive Demo
+            </a>
             <a className="btn secondary" href={repoUrl}>View GitHub Repository</a>
           </div>
         </div>
@@ -112,7 +119,7 @@ export default function TrustReceiptsPage() {
           <div className="kicker" style={{ marginBottom: 24 }}>Explore the Project</div>
           <div className="downloads">
             <div className="download">
-              <Link href="/demo">Interactive Demo →</Link>
+              <a href={demoUrl} target="_blank" rel="noopener noreferrer">Interactive Demo →</a>
               <small>Experience the browser-based reference implementation and explore receipt verification.</small>
             </div>
             <div className="download">
