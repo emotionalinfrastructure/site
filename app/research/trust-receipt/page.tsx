@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const repoUrl = "https://github.com/emotionalinfrastructure/Trust-Receipts";
-const demoUrl = "https://demo.emotionalinfrastructure.org";
+import { siteConfig } from "@/lib/site";
+
+const demoUrl = siteConfig.demoUrl;
 
 export const metadata: Metadata = {
   title: "AI Trust Receipts — Research Overview | Emotional Infrastructure",

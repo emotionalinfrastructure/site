@@ -1,6 +1,8 @@
 export const siteConfig = {
   name: "Emotional Infrastructure™",
   domain: "https://emotionalinfrastructure.org",
+  // Live hosted demo. Swap to https://demo.emotionalinfrastructure.org once that DNS is provisioned.
+  demoUrl: "https://ei-trust-receipt.brittanywright.workers.dev",
   founder: "Brittany Wright",
   email: "brittanywright@emotionalinfrastructure.org",
   creatorKitCheckoutUrl: "#checkout-creator-kit",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Research | Emotional Infrastructure",
@@ -213,7 +214,7 @@ export default function ResearchPage() {
           <p className="note" style={{ marginTop: 22 }}>
             The AI Trust Receipt program currently carries this chain end to end:{" "}
             <Link href="/research/trust-receipt" style={{ color: "var(--cyan)" }}>inspect each link of the chain</Link>{" "}
-            or <a href="https://demo.emotionalinfrastructure.org" style={{ color: "var(--cyan)" }}>run the live demo</a>.
+            or <a href={siteConfig.demoUrl} style={{ color: "var(--cyan)" }}>run the live demo</a>.
           </p>
         </div>
       </section>
