@@ -67,7 +67,7 @@ export default function ReviewPage() {
             <tbody>
               {isIsNot.map(([is, isnot]) => (
                 <tr key={is}>
-                  <td><strong style={{ color: "#fff" }}>{is}</strong></td>
+                  <td><strong style={{ color: "var(--navy)" }}>{is}</strong></td>
                   <td>{isnot}</td>
                 </tr>
               ))}

@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 const nav = [
   ["Home", "/"],
   ["Research", "/research"],
-  ["Trust Receipts", "/trust-receipts"],
+  ["Standards & Tools", "/standards"],
   ["Implementation", "/implementation"],
   ["Downloads", "/downloads"],
-  ["Review", "/review"]
+  ["Register", "/governance-register"]
 ];
 
 export default function Header() {

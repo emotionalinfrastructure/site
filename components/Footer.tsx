@@ -10,10 +10,13 @@ const products = [
 const portfolio = [
   ["Status", "/status"],
   ["Framework", "/framework"],
-  ["Standards", "/standards"],
+  ["Standards & Tools", "/standards"],
+  ["Governance Register", "/governance-register"],
   ["Policy", "/policy"],
   ["Revenue", "/revenue"],
-  ["Downloads", "/downloads"]
+  ["Downloads", "/downloads"],
+  ["Trust Receipts", "/trust-receipts"],
+  ["Review", "/review"]
 ];
 
 export default function Footer() {
@@ -40,11 +43,12 @@ export default function Footer() {
       </div>
       <div className="container footer-grid">
         <div>
-          <strong style={{ color: "#fff" }}>Brittany Wright</strong>
+          <strong>Brittany Wright</strong>
           <br />
-          Founder, Emotional Infrastructure · AI Governance Research · Cybersecurity Student · CEITR-aligned research pathway
+          Founder of Emotional Infrastructure™ · Undergraduate cybersecurity researcher developing governance
+          tools for AI-mediated trust environments
           <br />
-          <span>Unauthorized Inference · Human-impact AI governance · Interaction-layer accountability</span>
+          <span>Disclosure · Consent · Auditability · Human review · Contestability · Longitudinal accountability</span>
         </div>
         <div>
           © {new Date().getFullYear()} Brittany Wright. Materials are presented for review, critique, collaboration,

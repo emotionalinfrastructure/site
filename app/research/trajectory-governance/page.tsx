@@ -122,7 +122,7 @@ export default function TrajectoryGovernanceResearchPage() {
             <tbody>
               {constructs.map(([name, def]) => (
                 <tr key={name}>
-                  <td><strong style={{ color: "#fff" }}>{name}</strong></td>
+                  <td><strong style={{ color: "var(--navy)" }}>{name}</strong></td>
                   <td>{def}</td>
                 </tr>
               ))}

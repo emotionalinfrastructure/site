@@ -15,6 +15,12 @@ const programs = [
     href: "/research/trajectory-governance"
   },
   {
+    status: "Working paper",
+    title: "Recursive Epistemic Reinforcement",
+    desc: "How conversational systems can reinforce uncertain interpretations across extended histories, and what correction controls are needed.",
+    href: "/research/recursive-epistemic-reinforcement"
+  },
+  {
     status: "Candidate specification",
     title: "AI Trust Receipts and Agentic Accountability",
     desc: "Pre-execution authority, evidence, consequence, human-review, receipt, and remedy gates for consequential AI actions.",
@@ -35,6 +41,13 @@ const programs = [
 ];
 
 const library = [
+  {
+    title: "Recursive Epistemic Reinforcement in Conversational AI",
+    kind: "Working paper · v1.0 · External validation pending",
+    date: "2026",
+    href: "/research/recursive-epistemic-reinforcement",
+    desc: "A longitudinal archival case study of how unsupported interpretations can be repeated, elaborated, and normalized across 1,714 conversations and 57,307 message nodes."
+  },
   {
     title: "AI Trust Receipts™ — Candidate Specification v0.1.1",
     kind: "Candidate specification · Reference implementation · Operational API alpha",
@@ -75,7 +88,7 @@ const modules = [
   ["Trajectory Governance", "Safety treated as a longitudinal property: cumulative influence, authority formation, contestability, attenuation, and proportionality over time.", "Framework"],
   ["LIL", "Instrumentation for tracking how influence accumulates across sessions, where a relationship is moving, and when attenuation is warranted.", "Method"],
   ["TAR", "A structured account of adaptive behavior that lets a reviewer reconstruct the decision basis behind timing, framing, and sequencing.", "Method"],
-  ["PDEV", "Runtime decision logic evaluating Purpose, Dignity, Evidence, and Veto before behavioral signals reach adaptive inference.", "Architecture"]
+  ["PDEV", "The Protected Decision Exchange Vector: runtime logic applying ordered purpose, dignity, evidence, and veto checks before behavioral signals reach adaptive inference.", "Architecture"]
 ];
 
 const chain = [
@@ -110,7 +123,7 @@ export default function ResearchPage() {
       <section className="section">
         <div className="container">
           <div className="kicker">Research programs</div>
-          <h2 style={{ maxWidth: 880, marginBottom: 26 }}>Four primary programs.</h2>
+          <h2 style={{ maxWidth: 880, marginBottom: 26 }}>Primary programs.</h2>
           <div className="grid-2">
             {programs.map((p) => (
               <article className="tile" key={p.title}>
@@ -167,7 +180,7 @@ export default function ResearchPage() {
             <tbody>
               {hierarchy.map(([layer, constructs]) => (
                 <tr key={layer}>
-                  <td><strong style={{ color: "#fff" }}>{layer}</strong></td>
+                  <td><strong style={{ color: "var(--navy)" }}>{layer}</strong></td>
                   <td>{constructs}</td>
                 </tr>
               ))}
@@ -222,7 +235,7 @@ export default function ResearchPage() {
             <tbody>
               {modules.map(([name, focus, cls]) => (
                 <tr key={name}>
-                  <td><strong style={{ color: "#fff" }}>{name}</strong></td>
+                  <td><strong style={{ color: "var(--navy)" }}>{name}</strong></td>
                   <td>{focus}</td>
                   <td>{cls}</td>
                 </tr>

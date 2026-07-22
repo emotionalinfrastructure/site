@@ -78,7 +78,7 @@ export default function StatusPage() {
               {maturity.map((m) => (
                 <tr key={m.area}>
                   <td>
-                    <strong style={{ color: "#fff" }}>{m.area}</strong>
+                    <strong style={{ color: "var(--navy)" }}>{m.area}</strong>
                   </td>
                   <td>{m.position}</td>
                   <td>{m.boundary}</td>

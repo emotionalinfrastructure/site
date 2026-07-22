@@ -85,8 +85,8 @@ export default function PdevRuntimeGovernancePage() {
           <div className="copy">
             <p>
               PDEV Middleware is proposed as the runtime enforcement layer of the Emotional Infrastructure stack: a
-              deterministic short-circuit gateway that evaluates four ordered conditions—Purpose, Dignity, Evidence,
-              and Veto—before behavioral signals reach downstream inference. Rather than a general ethical promise,
+              deterministic short-circuit gateway that applies four ordered checks—purpose, dignity, evidence,
+              and veto—before behavioral signals reach downstream inference. Rather than a general ethical promise,
               the architecture defines ordered decision logic: what is authorized for the current context, what
               crosses a dignity boundary, what evidence is stable enough to support stronger inference, and whether
               the user has vetoed the operation. Each decision transitions the runtime into an enforceable operating
@@ -100,17 +100,19 @@ export default function PdevRuntimeGovernancePage() {
       <section className="section">
         <div className="container">
           <div className="kicker">Canonical definition</div>
-          <h2 style={{ maxWidth: 920, marginBottom: 12 }}>PDEV: Purpose, Dignity, Evidence, Veto.</h2>
+          <h2 style={{ maxWidth: 920, marginBottom: 12 }}>PDEV — Protected Decision Exchange Vector.</h2>
           <p className="copy" style={{ maxWidth: 860, marginBottom: 24 }}>
-            As of Dispatch Issue 47 (June 2026), the canonical expansion of PDEV is <strong>Purpose, Dignity,
-            Evidence, Veto</strong>, defined by the decision table below. Expansions used in earlier framework
-            drafts are deprecated; where earlier documents use PDEV in another sense, this definition supersedes
-            them.
+            PDEV means <strong>Protected Decision Exchange Vector</strong>. The gateway applies four ordered
+            checks—purpose, dignity, evidence, and veto—defined by the decision table below. Dispatch Issue 47
+            predates the canonical terminology register and presents these four terms as the acronym&rsquo;s
+            expansion; that usage is deprecated. The{" "}
+            <Link href="/governance-register" style={{ color: "var(--cyan)" }}>Governance Register</Link> records
+            the authoritative definition.
           </p>
           <table className="table">
             <thead>
               <tr>
-                <th>Pillar</th>
+                <th>Ordered check</th>
                 <th>Failure condition</th>
                 <th>Action</th>
                 <th>Purpose</th>
@@ -119,7 +121,7 @@ export default function PdevRuntimeGovernancePage() {
             <tbody>
               {pillars.map(([pillar, failure, action, purpose]) => (
                 <tr key={pillar}>
-                  <td><strong style={{ color: "#fff" }}>{pillar}</strong></td>
+                  <td><strong style={{ color: "var(--navy)" }}>{pillar}</strong></td>
                   <td>{failure}</td>
                   <td><strong style={{ color: "var(--cyan)" }}>{action}</strong></td>
                   <td>{purpose}</td>

@@ -72,7 +72,7 @@ export default function RevenuePage() {
               {positioning.map((p) => (
                 <tr key={p.offer}>
                   <td>
-                    <strong style={{ color: "#fff" }}>{p.offer}</strong>
+                    <strong style={{ color: "var(--navy)" }}>{p.offer}</strong>
                   </td>
                   <td>{p.use}</td>
                   <td>{p.boundary}</td>
