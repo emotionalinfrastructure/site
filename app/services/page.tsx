@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import styles from "./services.module.css";
 
 const email = "brittanywright@emotionalinfrastructure.org";
 
@@ -112,7 +113,7 @@ export default function ServicesPage() {
 
   return (
     <main id="main">
-      <section className="page-title services-hero">
+      <section className={`page-title ${styles.servicesHero}`}>
         <div className="container hero-grid">
           <div>
             <div className="eyebrow">Founder-led governance engagements · Versioned delivery instruments</div>
@@ -132,7 +133,7 @@ export default function ServicesPage() {
               regulatory certification, security testing, or representations of compliance.
             </p>
           </div>
-          <aside className="card service-principles">
+          <aside className={`card ${styles.servicePrinciples}`}>
             <div className="card-inner">
               <div className="card-title">
                 <div>
@@ -166,7 +167,7 @@ export default function ServicesPage() {
 
       <section className="section" id="services">
         <div className="container">
-          <div className="service-section-heading">
+          <div className={styles.sectionHeading}>
             <div>
               <div className="kicker">Professional services</div>
               <h2>Five engagement lines, one accountable delivery sequence.</h2>
@@ -178,32 +179,32 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="service-stack">
+          <div className={styles.stack}>
             {services.map((service) => (
-              <article className="service-card" key={service.title}>
-                <div className="service-card-top">
-                  <div className="service-index">{service.number}</div>
-                  <div className="service-title-block">
+              <article className={styles.serviceCard} key={service.title}>
+                <div className={styles.cardTop}>
+                  <div className={styles.index}>{service.number}</div>
+                  <div className={styles.titleBlock}>
                     <span className="status-pill">{service.status}</span>
                     <h3>{service.title}</h3>
                   </div>
-                  <div className="service-price">{service.price}</div>
+                  <div className={styles.price}>{service.price}</div>
                 </div>
-                <div className="service-card-grid">
+                <div className={styles.cardGrid}>
                   <div>
                     <div className="label">Engagement purpose</div>
-                    <p className="service-summary">{service.summary}</p>
-                    <div className="label service-label-spaced">Best fit</div>
-                    <p className="service-fit">{service.bestFor}</p>
+                    <p className={styles.summary}>{service.summary}</p>
+                    <div className={`label ${styles.labelSpaced}`}>Best fit</div>
+                    <p className={styles.fit}>{service.bestFor}</p>
                   </div>
                   <div>
                     <div className="label">Client-held outputs</div>
-                    <ul className="service-output-list">
+                    <ul className={styles.outputList}>
                       {service.outputs.map((output) => <li key={output}>{output}</li>)}
                     </ul>
                   </div>
                 </div>
-                <div className="service-card-footer">
+                <div className={styles.cardFooter}>
                   <a href={`${inquiryHref}&body=${encodeURIComponent(`I am interested in the ${service.title}. Please send the qualification and scoping questions.`)}`}>
                     Request scoping questions →
                   </a>
@@ -237,7 +238,7 @@ export default function ServicesPage() {
 
       <section className="section">
         <div className="container">
-          <div className="service-section-heading">
+          <div className={styles.sectionHeading}>
             <div>
               <div className="kicker">Evidence discipline</div>
               <h2>Findings carry a visible basis.</h2>
@@ -250,7 +251,7 @@ export default function ServicesPage() {
           </div>
           <div className="grid-4">
             {evidenceRules.map(([label, description]) => (
-              <article className="stat evidence-card" key={label}>
+              <article className={`stat ${styles.evidenceCard}`} key={label}>
                 <strong>{label}</strong>
                 <span>{description}</span>
               </article>
@@ -284,7 +285,7 @@ export default function ServicesPage() {
 
       <section className="section">
         <div className="container">
-          <div className="boundary-note services-boundary">
+          <div className={`boundary-note ${styles.boundary}`}>
             <strong>Engagement boundary:</strong> Emotional Infrastructure™ services support governance analysis,
             control design, evidence architecture, implementation planning, and organizational capability. Crosswalks
             record preliminary implementation mappings and questions for counsel; they do not declare legal
@@ -294,9 +295,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section services-cta-section">
+      <section className={`section ${styles.ctaSection}`}>
         <div className="container">
-          <div className="services-cta card">
+          <div className={`card ${styles.cta}`}>
             <div className="card-inner">
               <div>
                 <div className="kicker">Start with the decision</div>
