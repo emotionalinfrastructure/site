@@ -16,7 +16,7 @@ const config: Config = {
         paper: "#F7F4EF",
         bone: "#EEE7DC",
         graphite: "#2C2C2C",
-        muted: "#6B665F",
+        muted: "#9FB0C7",
         line: "#D9D1C4"
       },
       boxShadow: {

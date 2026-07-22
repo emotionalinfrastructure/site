@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+const products = [
+  ["Free Disclosure Checklist", "/ai-disclosure-checklist"],
+  ["Disclosure & Trust Guide", "/ai-disclosure-guide"],
+  ["Trust Audit", "/audit"],
+  ["Creator Kit", "/creator-kit"]
+];
+
 const portfolio = [
   ["Status", "/status"],
   ["Framework", "/framework"],
@@ -15,6 +22,16 @@ export default function Footer() {
       <div className="container" style={{ marginBottom: 26 }}>
         <nav aria-label="Portfolio pages" style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
           {portfolio.map(([label, href]) => (
+            <Link key={href} href={href}>
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <nav
+          aria-label="Products and services"
+          style={{ display: "flex", flexWrap: "wrap", gap: 18, marginTop: 12 }}
+        >
+          {products.map(([label, href]) => (
             <Link key={href} href={href}>
               {label}
             </Link>

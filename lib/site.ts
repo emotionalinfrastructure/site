@@ -4,6 +4,7 @@ export const siteConfig = {
   founder: "Brittany Wright",
   email: "brittanywright@emotionalinfrastructure.org",
   creatorKitCheckoutUrl: "#checkout-creator-kit",
+  guideCheckoutUrl: "#checkout-disclosure-guide",
   auditCheckoutUrl: "#checkout-audit",
   newsletterUrl: "#newsletter",
   contactFormUrl: "mailto:brittanywright@emotionalinfrastructure.org?subject=Emotional%20Infrastructure%20Inquiry"
