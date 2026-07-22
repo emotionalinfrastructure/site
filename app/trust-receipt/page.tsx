@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "AI Trust Receipt — Interactive Demo",
   description:
     "Live interactive demonstration of AI Trust Receipt v0.1.1: Six gate presets, live SHA-256 digest verification in the browser, tamper-evidence testing, and receipt validation.",
-  metadataBase: new URL("https://demo.emotionalinfrastructure.org"),
+  metadataBase: new URL("https://emotionalinfrastructure.org"),
   openGraph: {
     title: "AI Trust Receipt — Interactive Demo",
     description:
       "Explore how AI Trust Receipts produce verifiable records of consequential AI actions. Test gate presets, verify digests, and understand the governance framework.",
-    url: "https://demo.emotionalinfrastructure.org",
+    url: "https://emotionalinfrastructure.org/trust-receipt/",
     type: "website",
     locale: "en_US"
   },

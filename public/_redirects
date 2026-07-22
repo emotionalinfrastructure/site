@@ -7,8 +7,8 @@
 /projects                                   /research/                  301
 
 # Old EI paths that have been reorganized
-/artifacts                                  /artifacts/                 301
-/artifacts/                                 /artifacts/                 301
+/artifacts                                  /research/                  301
+/artifacts/                                 /research/                  301
 /implementation                             /implementation/            301
 /implementation/                            /implementation/            301
 /affective-information-safeguarding         /research/                  301

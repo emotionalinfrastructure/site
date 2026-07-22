@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 const repoUrl = "https://github.com/emotionalinfrastructure/Trust-Receipts";
-const demoUrl = "https://demo.emotionalinfrastructure.org";
+import { siteConfig } from "@/lib/site";
+
+const demoUrl = siteConfig.demoUrl;
 const serviceUrl = `${repoUrl}/tree/main/service`;
 const openApiUrl = `${repoUrl}/blob/main/service/openapi.json`;
 const readinessUrl = `${repoUrl}/blob/main/service/PRODUCTION_READINESS.md`;

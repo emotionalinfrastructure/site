@@ -1,0 +1,13 @@
+artifact_title,filename,category,public_status,site_section,release_note
+Executive Overview,emotional_infrastructure_full_report.pdf,Executive report,Public-ready after branding pass,Downloads,"Use as the fastest overview for portfolio visitors, reviewers, and collaborators."
+Protocol-Level Research Manuscript,EIT_Paper2_Updated_APA7_Manuscript.pdf,Submission manuscript,Submission-ready review file,Research,"Use as the strongest current academic and protocol-level artifact."
+Foundation Academic Manuscript,EIT_Paper1_APA7_Manuscript.pdf,Submission manuscript,Submission-ready review file,Research,"Use as the foundation manuscript for EIT positioning and CEITR routing."
+Trajectory Governance Manuscript,Wright_Trajectory_Governance_Manuscript.pdf,Academic manuscript,Public with academic review,Research,"Use as a flagship manuscript connected to educational and governance applications."
+Standards Seed Document,EI_Spec_v1_Governing_Edition.pdf,Technical standard/specification,Public after standards polish,Standards,"Use as standards seed material with candidate status clearly marked."
+Authorization Boundary Framework,Authorization Boundary Framework - Complete Reference.pdf,Governance framework,Public with legal disclaimers,Policy,"Use as a policy-layer companion for consent and access-control boundaries."
+Paper 2 Submission Package,EIT_Paper2_Updated_Submission_Package.zip,Submission package,Ready for controlled submission,Research,"Use for complete submission package management and appendix review."
+Paper 1 Submission Package,EIT_Paper1_APA7_Submission_Package.zip,Submission package,Ready for controlled submission,Research,"Use for complete submission package management and CEITR/journal routing."
+SaaS Prototype,ai-consent-audit-saas(1).zip,SaaS prototype,Developer-private until security review,Implementation,"Do not release publicly until security, dependency, license, and README reviews are complete."
+SDK Bundle,eis-bundle.zip,SDK/reference implementation,Developer-public after code review,Implementation,"Hold for developer release until installation verification and license selection are complete."
+Contract Rider,The%20Behavioral%20Sovereignty%20Contract%20Rider.pdf.pdf,Contract/legal template,Attorney-review required before use,Revenue,"Do not sell or present as legal advice without attorney review."
+Raw Log,Okay .txt,Raw forensic log,Private; do not publish without redaction,Private Archive,"Keep private unless redacted, minimized, and chain-of-custody labeled."

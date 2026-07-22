@@ -8,24 +8,19 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <div className="eyebrow">Review-ready governance architecture · Public staging package</div>
-            <h1>Infrastructure for the human-impact layer of AI.</h1>
+            <div className="eyebrow">Research and governance library · Review-ready public staging</div>
+            <h1>Governance for AI-mediated trust environments.</h1>
             <p className="lead">
-              Brittany Wright builds governance frameworks, technical specifications, audit models, and
-              implementation-ready artifacts for AI systems that infer, adapt to, or shape human decision conditions
-              across time.
+              Emotional Infrastructure™ is a research and implementation framework for disclosure, consent,
+              auditability, human review, contestability, and longitudinal accountability in AI systems.
             </p>
             <div className="actions">
-              <Link className="btn primary" href="/trust-receipts">Explore AI Trust Receipts →</Link>
-              <Link className="btn secondary" href="/trust-receipt">Try the live demo</Link>
-              <Link className="btn secondary" href="/artifacts">Open artifact library</Link>
-              <Link className="btn secondary" href="/implementation">Review technical stack</Link>
-              <a className="btn secondary" href={`mailto:${email}`}>Email Brittany</a>
+              <Link className="btn primary" href="/research">Explore the Research</Link>
+              <Link className="btn secondary" href="/standards">View Standards &amp; Tools</Link>
             </div>
             <p className="note">
-              This master site consolidates Emotional Infrastructure, the Authorization Boundary Framework, EI-Spec,
-              Trajectory Governance, LIL, TAR, PDEV, EIS SDK materials, EIT v1.2 full-stack implementation, outreach
-              controls, and public release artifacts.
+              This site consolidates the research programs, candidate standards, technical specifications, and
+              working implementations of Emotional Infrastructure, with each artifact labeled by status.
             </p>
           </div>
           <aside className="card">
@@ -72,6 +67,98 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section alt" id="featured-paper">
+        <div className="container">
+          <div className="kicker">Featured working paper</div>
+          <div className="card">
+            <div className="card-inner">
+              <div className="card-title">
+                <div>
+                  <div className="small">Retrospective single-participant working paper · v1.0 · 2026</div>
+                  <h3>Recursive Epistemic Reinforcement in Conversational AI</h3>
+                </div>
+                <span className="pill">External validation pending</span>
+              </div>
+              <p className="copy" style={{ marginBottom: 14 }}>
+                A longitudinal archival case study examining how unsupported interpretations can be repeated,
+                elaborated, and normalized across extended AI conversations.
+              </p>
+              <p className="note" style={{ marginTop: 0 }}>
+                Corpus: 1,714 conversations and 57,307 message nodes, August 2024–August 2025.
+              </p>
+              <div className="actions" style={{ marginTop: 18 }}>
+                <Link className="btn primary" href="/research/recursive-epistemic-reinforcement">Read Abstract</Link>
+                <Link className="btn secondary" href="/research/recursive-epistemic-reinforcement#methods">Methods &amp; Limitations</Link>
+                <Link className="btn secondary" href="/research/recursive-epistemic-reinforcement#cite">Cite This Work</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="selected-research">
+        <div className="container">
+          <div className="kicker">Selected research</div>
+          <h2 style={{ maxWidth: 920 }}>Research into AI-mediated trust environments.</h2>
+          <p className="lead" style={{ marginBottom: 30 }}>
+            Emotional Infrastructure™ examines how adaptive and agentic AI systems shape trust, reliance, consent,
+            interpretation, and human agency across repeated interactions—and develops governance mechanisms for
+            making that influence visible, bounded, reviewable, and contestable.
+          </p>
+          <div className="grid-2">
+            <article className="tile">
+              <span className="status-pill">Active research</span>
+              <h3 style={{ marginTop: 14 }}>Trajectory Governance</h3>
+              <p>
+                How AI behavior and trust effects should be evaluated across time rather than one response at a
+                time.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/research/trajectory-governance">Read the research overview →</Link>
+              </p>
+            </article>
+            <article className="tile">
+              <span className="status-pill">Working paper</span>
+              <h3 style={{ marginTop: 14 }}>Recursive Epistemic Reinforcement</h3>
+              <p>
+                How conversational systems can reinforce uncertain interpretations and what correction controls are
+                needed.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/research/recursive-epistemic-reinforcement">Read the research overview →</Link>
+              </p>
+            </article>
+            <article className="tile">
+              <span className="status-pill">Candidate specification</span>
+              <h3 style={{ marginTop: 14 }}>AI Trust Receipts</h3>
+              <p>
+                A candidate accountability instrument documenting action, authority, evidence, oversight, and
+                remedy.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/research/trust-receipt">Read the research overview →</Link>
+              </p>
+            </article>
+            <article className="tile">
+              <span className="status-pill">Candidate standards</span>
+              <h3 style={{ marginTop: 14 }}>Emotional Infrastructure Standards</h3>
+              <p>
+                Governance architecture for disclosure, consent, human review, auditability, and longitudinal
+                accountability.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/standards">View standards &amp; tools →</Link>
+              </p>
+            </article>
+          </div>
+          <p className="note" style={{ marginTop: 26 }}>
+            Each artifact is labeled by status so readers can distinguish established outputs, candidate standards,
+            active studies, and exploratory proposals. Progression:&nbsp; research question → conceptual model →
+            normative specification → reference implementation → conformance evidence → live demonstration.
+          </p>
+        </div>
+      </section>
+
       <section className="section alt">
         <div className="container two">
           <div>
@@ -80,9 +167,9 @@ export default function Home() {
           </div>
           <div className="copy">
             <p>
-              Brittany Wright is a cybersecurity student, AI governance researcher, and founder of Emotional
-              Infrastructure. Her work sits between trustworthy AI, cybersecurity-informed audit design, educational
-              technology governance, interaction-layer accountability, and human-system architecture.
+              Brittany Wright is the founder of Emotional Infrastructure™ and an undergraduate cybersecurity
+              researcher developing governance tools for AI-mediated trust environments. Her work focuses on
+              disclosure, consent, auditability, human review, contestability, and longitudinal accountability.
             </p>
             <p>
               The public posture is disciplined: the work is review-ready and public-staging ready, not externally

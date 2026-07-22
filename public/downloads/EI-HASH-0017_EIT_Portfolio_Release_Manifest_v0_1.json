@@ -1,0 +1,296 @@
+{
+  "title": "Emotional Infrastructure Governance Deployment System Public Artifact Index",
+  "version": "0.1",
+  "generated_utc": "2026-04-30T14:17:45Z",
+  "owner": "Brittany Wright",
+  "records": [
+    {
+      "filename": "ai-consent-audit-saas(1).zip",
+      "category": "SaaS prototype",
+      "size": "32.6 KB",
+      "bytes": 33383,
+      "sha256": "45109d39caa439f5c71bf0786b775f5dddaaffc60e14f52547edd12ce0b9d5ea",
+      "description": "AI consent audit SaaS prototype with API, web app, auth, events, reports, billing, and hash-chain components.",
+      "release_status": "Developer-private until security review",
+      "portfolio_value": "Potential commercial seed asset because it expresses the revenue layer as software, but it must be security-reviewed before deployment.",
+      "zip_file_count": 47,
+      "zip_top_entries": [
+        "ai-consent-audit-saas/README.md",
+        "ai-consent-audit-saas/package.json",
+        "ai-consent-audit-saas/apps/",
+        "ai-consent-audit-saas/apps/api/",
+        "ai-consent-audit-saas/apps/web/",
+        "ai-consent-audit-saas/apps/api/package.json",
+        "ai-consent-audit-saas/apps/api/.env.example",
+        "ai-consent-audit-saas/apps/api/prisma/"
+      ]
+    },
+    {
+      "filename": "Authorization Boundary Framework - Complete Reference.pdf",
+      "category": "Governance framework",
+      "size": "78.5 KB",
+      "bytes": 80429,
+      "sha256": "2276f8d0b0d8fc755ef23f4c9307dfcdb01c6efda4fdb3923255e527fcccc5ef",
+      "description": "Complete reference for authorization boundaries and permitted system action limits.",
+      "release_status": "Public with legal disclaimers",
+      "portfolio_value": "Useful as a policy-layer companion for consent, access control, and enforcement architecture."
+    },
+    {
+      "filename": "Brittany_Wright_Emotional_Infrastructure_Full_Expansion.pdf",
+      "category": "Framework expansion",
+      "size": "165.6 KB",
+      "bytes": 169579,
+      "sha256": "f2a1051ed51c18aac56b4f4d84dd932dafd90e4c1dea7f1e2499ddd5df5fe05b",
+      "description": "Full expansion of Emotional Infrastructure concepts and governance framing.",
+      "release_status": "Public as foundation paper or white paper",
+      "portfolio_value": "Useful as the conceptual foundation, but it should be edited into an executive white paper before broad circulation."
+    },
+    {
+      "filename": "Complete package_json 2.pdf",
+      "category": "Technical artifact",
+      "size": "37.3 KB",
+      "bytes": 38177,
+      "sha256": "0580ab4708b421db5788254507c73820b494ffc38387170b7f8dc1601cafd5ee",
+      "description": "PDF representation of package or JSON material connected to implementation packaging.",
+      "release_status": "Internal unless clarified",
+      "portfolio_value": "May support implementation evidence, but needs labeling and integration into a developer package."
+    },
+    {
+      "filename": "EI_Spec_v1_Governing_Edition.pdf",
+      "category": "Technical standard/specification",
+      "size": "4.2 KB",
+      "bytes": 4314,
+      "sha256": "0df193c7c8bc189ed4299c2652caba276687c5711f983587e6f7e4a53aec9bb8",
+      "description": "Governing edition of the Emotional Infrastructure specification.",
+      "release_status": "Public after standards polish",
+      "portfolio_value": "Valuable as standards seed material, but it requires normative formatting and testable conformance mapping before formal standards circulation."
+    },
+    {
+      "filename": "eis-bundle.zip",
+      "category": "SDK/reference implementation",
+      "size": "14.7 KB",
+      "bytes": 15075,
+      "sha256": "b32f41a0605b6134098742f02a791e530c0c90c619135b7446f9de01303c7da1",
+      "description": "TypeScript SDK and test suite bundle with consent utilities, tests, examples, and CI scaffolding.",
+      "release_status": "Developer-public after code review",
+      "portfolio_value": "Technically valuable because it demonstrates running-code direction; requires installation verification, README expansion, and license selection.",
+      "zip_file_count": 27,
+      "zip_top_entries": [
+        "sdk/",
+        "test-suite/",
+        "sdk/package.json",
+        "sdk/tsup.config.ts",
+        "sdk/tsconfig.json",
+        "sdk/jest.config.js",
+        "sdk/.eslintrc.json",
+        "sdk/README.md"
+      ]
+    },
+    {
+      "filename": "EIT_All_Papers_Figures_Appendices_Database/05_database/EIT_Research_Portfolio_Database.xlsx",
+      "category": "Portfolio database",
+      "size": "16.5 KB",
+      "bytes": 16926,
+      "sha256": "75c9825bc4e26749362efda5007eb038184b6f500c31149f95ec932a128f0668",
+      "description": "Research portfolio database for tracking papers, figures, appendices, and project assets.",
+      "release_status": "Internal working database",
+      "portfolio_value": "Valuable as a control system for managing the research portfolio, but it should be expanded before public use."
+    },
+    {
+      "filename": "EIT_Paper1_APA7_Manuscript.docx",
+      "category": "Submission manuscript",
+      "size": "44.5 KB",
+      "bytes": 45568,
+      "sha256": "ac16458858cae9b7514fa1eae1775b577b14642eef01af311540e863ddbda7fa",
+      "description": "APA 7 Word manuscript for Paper 1 in the EIT research series.",
+      "release_status": "Submission-ready working file",
+      "portfolio_value": "Primary editable source for journal submission and CEITR routing."
+    },
+    {
+      "filename": "EIT_Paper1_APA7_Manuscript.pdf",
+      "category": "Submission manuscript",
+      "size": "23.5 KB",
+      "bytes": 24072,
+      "sha256": "c8d2a8c3d3b20061b0963a06b2bc97464307ee8cf39e5a2bacd7d8f308a9c757",
+      "description": "PDF version of Paper 1 for review, sharing, and controlled distribution.",
+      "release_status": "Submission-ready review file",
+      "portfolio_value": "Portfolio-ready proof of completed academic writing."
+    },
+    {
+      "filename": "EIT_Paper1_APA7_Submission_Package.zip",
+      "category": "Submission package",
+      "size": "133.7 KB",
+      "bytes": 136863,
+      "sha256": "73f257e3135854e64293ac0726a2a82c8fc4df55dbc3fe103708cf62f4e52dc6",
+      "description": "Complete Paper 1 package containing manuscript, cover letter, journal strategy, and README.",
+      "release_status": "Ready for controlled submission",
+      "portfolio_value": "High-value package because it contains the operational components required to move beyond drafting.",
+      "zip_file_count": 7,
+      "zip_top_entries": [
+        "EIT_Paper1_APA7_Manuscript.docx",
+        "EIT_Paper1_APA7_Manuscript.pdf",
+        "EIT_Paper1_Cover_Letter.docx",
+        "EIT_Paper1_Cover_Letter.pdf",
+        "EIT_Paper1_Journal_Strategy.docx",
+        "EIT_Paper1_Journal_Strategy.pdf",
+        "README_EIT_Paper1_Package.txt"
+      ]
+    },
+    {
+      "filename": "EIT_Paper1_Journal_Strategy.pdf",
+      "category": "Journal strategy",
+      "size": "4.5 KB",
+      "bytes": 4648,
+      "sha256": "6dcad61f2881e63e5af0ecf2980e3086af9da48eb8d4d5482ce56878a48b0b1f",
+      "description": "Journal targeting and submission strategy for Paper 1.",
+      "release_status": "Internal/public selectively",
+      "portfolio_value": "Useful for sequencing submissions and avoiding random journal placement."
+    },
+    {
+      "filename": "EIT_Paper2_Updated_Submission_Package.zip",
+      "category": "Submission package",
+      "size": "478.0 KB",
+      "bytes": 489494,
+      "sha256": "8c06dc560d217765e6b250a9bb01c917ef88bf3b8234536a065eef38e3b29e27",
+      "description": "Updated Paper 2 package with manuscript, cover letter, revision memo, figure, schemas, manifest, and appendices.",
+      "release_status": "Ready for controlled submission",
+      "portfolio_value": "One of the most valuable completed artifacts because it connects theory, protocol logic, schemas, and review documentation.",
+      "zip_file_count": 13,
+      "zip_top_entries": [
+        "EIT_Paper2_Updated_Submission_Package/README.md",
+        "EIT_Paper2_Updated_Submission_Package/manifest.csv",
+        "EIT_Paper2_Updated_Submission_Package/figures/figure_1_eit_pipeline.png",
+        "EIT_Paper2_Updated_Submission_Package/schemas/lil-event-v1.json",
+        "EIT_Paper2_Updated_Submission_Package/schemas/tar-signal-v1.json",
+        "EIT_Paper2_Updated_Submission_Package/schemas/pdev-response-v1.json",
+        "EIT_Paper2_Updated_Submission_Package/schemas/audit-record-v1.json",
+        "EIT_Paper2_Updated_Submission_Package/docs/EIT_Paper2_Updated_APA7_Manuscript.docx"
+      ]
+    },
+    {
+      "filename": "EIT_Paper2_Updated_Submission_Package/docs/EIT_Paper2_Cover_Letter.pdf",
+      "category": "Submission support",
+      "size": "22.9 KB",
+      "bytes": 23417,
+      "sha256": "28e758f03eaa049f0ee74634f2b227a28afcc8a5f00fd3ec81c498a6db890a1b",
+      "description": "Cover letter for Paper 2 submission.",
+      "release_status": "Submission-ready",
+      "portfolio_value": "Operationalizes journal submission instead of leaving the paper as an isolated draft."
+    },
+    {
+      "filename": "EIT_Paper2_Updated_Submission_Package/docs/EIT_Paper2_Revision_Memo.pdf",
+      "category": "Submission support",
+      "size": "32.3 KB",
+      "bytes": 33080,
+      "sha256": "6828216646b0e6daa828aeb31fd1e6e663c3acb9de4572267295bb4de2d9042b",
+      "description": "Revision memo documenting improvements to Paper 2.",
+      "release_status": "Submission-ready",
+      "portfolio_value": "Supports reviewer-facing clarity and shows serious revision discipline."
+    },
+    {
+      "filename": "EIT_Paper2_Updated_Submission_Package/docs/EIT_Paper2_Updated_APA7_Manuscript.docx",
+      "category": "Submission manuscript",
+      "size": "123.8 KB",
+      "bytes": 126773,
+      "sha256": "cd7fd6883059c15f9f948774215e4eca477ce975bb162c0d3d09866177bb7db9",
+      "description": "Editable APA 7 Paper 2 manuscript on EIT as a policy translation layer for longitudinal AI interaction systems.",
+      "release_status": "Submission-ready working file",
+      "portfolio_value": "Strong portfolio anchor for AI governance, policy engineering, and standards-oriented roles."
+    },
+    {
+      "filename": "EIT_Paper2_Updated_Submission_Package/docs/EIT_Paper2_Updated_APA7_Manuscript.pdf",
+      "category": "Submission manuscript",
+      "size": "327.2 KB",
+      "bytes": 335079,
+      "sha256": "2996c6a626068e232bc1de5c29bf5d619a0851c5ecc5da82d95973037a2bc990",
+      "description": "PDF version of Paper 2 with deterministic logic, schemas, audit traceability, figure, and expanded literature integration.",
+      "release_status": "Submission-ready review file",
+      "portfolio_value": "Highest-value current research artifact for external credibility because it is complete, bounded, and defensible."
+    },
+    {
+      "filename": "emotional_infrastructure_full_report.pdf",
+      "category": "Executive report",
+      "size": "3.2 KB",
+      "bytes": 3242,
+      "sha256": "3b87b8627d152c80ed00533b5f9404079fe83879b9fa56db6f636e71be24ed3e",
+      "description": "Short systems-level report defining Emotional Infrastructure, LIL, TAR, PDEV, and strategic contribution.",
+      "release_status": "Public-ready after branding pass",
+      "portfolio_value": "Useful as a short overview for portfolio visitors, funders, employers, or collaborators."
+    },
+    {
+      "filename": "Okay .txt",
+      "category": "Raw forensic log",
+      "size": "596.0 KB",
+      "bytes": 610293,
+      "sha256": "ff3b27571a167829fe7f590fb3f11df10eca9782e2923959541176a91045955f",
+      "description": "Large iOS/securityd diagnostic text log containing system telemetry and application references.",
+      "release_status": "Private; do not publish without redaction",
+      "portfolio_value": "Valuable as personal forensic evidence only after minimization, redaction, and chain-of-custody labeling."
+    },
+    {
+      "filename": "PDEV_Middleware_Academic_Paper(1).pdf",
+      "category": "Academic paper",
+      "size": "4.1 KB",
+      "bytes": 4162,
+      "sha256": "6191c8e3b1326f42859c84342edcb7321d30089f77bf2d55225c1df3c9ba0d42",
+      "description": "Paper presenting PDEV middleware as a consent and behavioral signal sovereignty standard.",
+      "release_status": "Revise before submission",
+      "portfolio_value": "Strong concept asset, but it needs formatting, stronger citations, and removed overclaims before external submission."
+    },
+    {
+      "filename": "The%20Behavioral%20Sovereignty%20Contract%20Rider.pdf.pdf",
+      "category": "Contract/legal template",
+      "size": "60.2 KB",
+      "bytes": 61613,
+      "sha256": "88297ab655a8a795d0e6c0b86be8f569be3e56edad8898a38214febff7a9588b",
+      "description": "Contract rider for behavioral sovereignty terms in employment, service, or academic contexts.",
+      "release_status": "Attorney-review required before use",
+      "portfolio_value": "Potentially monetizable as a template asset, but must be legally reviewed before sale or deployment."
+    },
+    {
+      "filename": "Trajectory Governance 2(4).docx",
+      "category": "Working manuscript",
+      "size": "25.0 KB",
+      "bytes": 25569,
+      "sha256": "26231982c90a900ea1f2b37f02fa67750722a468fa140b33bf4c7058fd3ba582",
+      "description": "Word document related to trajectory governance manuscript development.",
+      "release_status": "Internal/editable source",
+      "portfolio_value": "Useful as source material, but current canonical status must be reconciled against PDF manuscript versions."
+    },
+    {
+      "filename": "Wright_Expansion1_Methodology.pdf",
+      "category": "Academic expansion",
+      "size": "135.2 KB",
+      "bytes": 138401,
+      "sha256": "daa59ea9d464b96a3750a0e17a45ed69f9d34650f931b4bedad1035112bde03c",
+      "description": "Methodology expansion for the trajectory governance manuscript, providing research design and construct development detail.",
+      "release_status": "Public with manuscript package",
+      "portfolio_value": "Strengthens review credibility by showing reproducible design logic and academic method scaffolding."
+    },
+    {
+      "filename": "Wright_Trajectory_Governance_Manuscript.pdf",
+      "category": "Academic manuscript",
+      "size": "200.4 KB",
+      "bytes": 205228,
+      "sha256": "b81428b19c2c9dd0b2f1f75661e557aa0213e53b0c5565e4a79dd011b81c56dd",
+      "description": "Core research paper on governing emotional trajectories in AI-mediated education, aligned to Computers and Education: Artificial Intelligence positioning.",
+      "release_status": "Public with academic review",
+      "portfolio_value": "High-value flagship research artifact; use for CEITR review, journal submission, and portfolio lead."
+    }
+  ],
+  "release_notes": {
+    "public_first_tier": [
+      "emotional_infrastructure_full_report.pdf",
+      "EIT_Paper2_Updated_Submission_Package/docs/EIT_Paper2_Updated_APA7_Manuscript.pdf",
+      "EIT_Paper1_APA7_Manuscript.pdf",
+      "Wright_Trajectory_Governance_Manuscript.pdf",
+      "EI_Spec_v1_Governing_Edition.pdf"
+    ],
+    "private_or_review_required": [
+      "Okay .txt",
+      "The%20Behavioral%20Sovereignty%20Contract%20Rider.pdf.pdf",
+      "ai-consent-audit-saas(1).zip",
+      "eis-bundle.zip"
+    ]
+  }
+}
