@@ -1,0 +1,88 @@
+name: Deploy Trust Receipt Worker
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: trust-receipt-worker-production
+  cancel-in-progress: false
+
+env:
+  WRANGLER_VERSION: "4.113.0"
+  TRUST_RECEIPT_URL: "https://ei-trust-receipt.brittanywright.workers.dev"
+
+jobs:
+  deploy:
+    name: Validate, deploy, and smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify Trust Receipt demo integrity
+        run: npm run test:trust-receipt
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Require Cloudflare deployment credentials
+        shell: bash
+        run: |
+          missing=()
+          [ -n "${CLOUDFLARE_ACCOUNT_ID}" ] || missing+=("secret CLOUDFLARE_ACCOUNT_ID")
+          [ -n "${CLOUDFLARE_API_TOKEN}" ] || missing+=("secret CLOUDFLARE_API_TOKEN")
+          if [ "${#missing[@]}" -ne 0 ]; then
+            echo "::error::Deployment blocked: configure the following in repository or organization Actions secrets:"
+            printf '::error::  - %s\n' "${missing[@]}"
+            exit 1
+          fi
+
+      - name: Deploy Worker
+        run: npx --yes wrangler@${WRANGLER_VERSION} deploy
+
+      - name: Verify public deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          cache_bust="deployment-${GITHUB_SHA}"
+          root_headers="$(mktemp)"
+          schema_headers="$(mktemp)"
+          root_body="$(mktemp)"
+          schema_body="$(mktemp)"
+
+          curl --fail --silent --show-error --retry 5 --retry-delay 5 \
+            --dump-header "${root_headers}" \
+            --output "${root_body}" \
+            "${TRUST_RECEIPT_URL}/?build=${cache_bust}"
+          curl --fail --silent --show-error --retry 5 --retry-delay 5 \
+            --dump-header "${schema_headers}" \
+            --output "${schema_body}" \
+            "${TRUST_RECEIPT_URL}/schemas/trust-receipt/trust-receipt.v0.1.1.schema.json?build=${cache_bust}"
+
+          grep -Fq 'AI Trust Receipt — Interactive Demo' "${root_body}"
+          grep -Fq '"$id"' "${schema_body}"
+          grep -Eiq '^content-security-policy:' "${root_headers}"
+          grep -Eiq '^strict-transport-security:' "${root_headers}"
+          grep -Eiq '^access-control-allow-origin: \*' "${schema_headers}"
+
+          method_status="$(curl --silent --output /dev/null --write-out '%{http_code}' \
+            --request POST "${TRUST_RECEIPT_URL}/?build=${cache_bust}")"
+          test "${method_status}" = "405"
