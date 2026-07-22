@@ -1,0 +1,22 @@
+# Legacy B12 paths - permanent redirects to new structure
+/index                                      /                           301
+/about                                      /                           301
+/services                                   /                           301
+/blog                                       /                           301
+/contact                                    /contact/                   301
+/projects                                   /research/                  301
+
+# Old EI paths that have been reorganized
+/artifacts                                  /artifacts/                 301
+/artifacts/                                 /artifacts/                 301
+/implementation                             /implementation/            301
+/implementation/                            /implementation/            301
+/affective-information-safeguarding         /research/                  301
+/ethical-emotional-intelligence-framework   /research/                  301
+/ethical-emotional-intelligence-frameworks  /research/                  301
+
+# www canonicalization - handled by Cloudflare Rules (not here)
+# This file handles path-based redirects only
+
+# Catch-all for missing pages
+/404.html                                   /404.html                   404

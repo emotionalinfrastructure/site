@@ -23,6 +23,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Emotional Infrastructure",
+            "url": siteOrigin,
+            "founder": {
+              "@type": "Person",
+              "name": "Brittany Wright"
+            },
+            "description": "Governance and trust infrastructure for AI-mediated emotional conditions and behavioral systems"
+          })}
+        </script>
+      </head>
       <body>
         <Header />
         {children}

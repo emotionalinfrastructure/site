@@ -7,9 +7,22 @@ const openApiUrl = `${repoUrl}/blob/main/service/openapi.json`;
 const readinessUrl = `${repoUrl}/blob/main/service/PRODUCTION_READINESS.md`;
 
 export const metadata: Metadata = {
-  title: "AI Trust Receipts™ | Emotional Infrastructure™",
+  title: "AI Trust Receipts™ | Emotional Infrastructure",
   description:
-    "AI Trust Receipts™ is a candidate governance specification, reference implementation, and operational API alpha for producing verifiable records of consequential AI actions."
+    "AI Trust Receipts™ is a candidate governance specification, reference implementation, and operational API alpha for producing verifiable records of consequential AI actions.",
+  metadataBase: new URL("https://emotionalinfrastructure.org"),
+  openGraph: {
+    title: "AI Trust Receipts™ — Specification & Implementation",
+    description:
+      "Governance specification and operational system for durable, user-legible, machine-verifiable records of consequential AI actions.",
+    url: "https://emotionalinfrastructure.org/trust-receipts/",
+    type: "website",
+    locale: "en_US"
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
 };
 
 const questions = [

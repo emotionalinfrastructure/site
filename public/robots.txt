@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Disallow old paths that have been removed
+Disallow: /index
+Disallow: /projects
+Disallow: /about
+Disallow: /services
+Disallow: /blog
+Disallow: /affective-information-safeguarding
+Disallow: /ethical-emotional-intelligence-framework*
+
+# Sitemap
+Sitemap: https://emotionalinfrastructure.org/sitemap.xml

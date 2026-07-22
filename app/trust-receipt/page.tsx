@@ -9,9 +9,22 @@ const specUrl = `${repoUrl}/blob/main/docs/Trust_Receipt_Technical_Specification
 const claimsUrl = `${repoUrl}/blob/main/docs/PUBLIC_CLAIMS.md`;
 
 export const metadata: Metadata = {
-  title: "AI Trust Receipt — Live Demo | Emotional Infrastructure",
+  title: "AI Trust Receipt — Interactive Demo",
   description:
-    "Interactive demo of the AI Trust Receipt candidate v0.1.1: six gate presets, live SHA-256 digest verification in the browser, and tamper-evidence demonstration."
+    "Live interactive demonstration of AI Trust Receipt v0.1.1: Six gate presets, live SHA-256 digest verification in the browser, tamper-evidence testing, and receipt validation.",
+  metadataBase: new URL("https://demo.emotionalinfrastructure.org"),
+  openGraph: {
+    title: "AI Trust Receipt — Interactive Demo",
+    description:
+      "Explore how AI Trust Receipts produce verifiable records of consequential AI actions. Test gate presets, verify digests, and understand the governance framework.",
+    url: "https://demo.emotionalinfrastructure.org",
+    type: "website",
+    locale: "en_US"
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
 };
 
 export default function TrustReceiptPage() {
