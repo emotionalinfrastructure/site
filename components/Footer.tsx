@@ -1,6 +1,26 @@
+import Link from "next/link";
+
+const portfolio = [
+  ["Status", "/status"],
+  ["Framework", "/framework"],
+  ["Standards", "/standards"],
+  ["Policy", "/policy"],
+  ["Revenue", "/revenue"],
+  ["Downloads", "/downloads"]
+];
+
 export default function Footer() {
   return (
     <footer className="footer">
+      <div className="container" style={{ marginBottom: 26 }}>
+        <nav aria-label="Portfolio pages" style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
+          {portfolio.map(([label, href]) => (
+            <Link key={href} href={href}>
+              {label}
+            </Link>
+          ))}
+        </nav>
+      </div>
       <div className="container footer-grid">
         <div>
           <strong style={{ color: "#fff" }}>Brittany Wright</strong>

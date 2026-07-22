@@ -6,6 +6,7 @@ const nav = [
   ["Trust Receipts", "/trust-receipts"],
   ["Implementation", "/implementation"],
   ["Artifacts", "/artifacts"],
+  ["Downloads", "/downloads"],
   ["Review", "/review"]
 ];
 
