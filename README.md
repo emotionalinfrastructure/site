@@ -34,6 +34,23 @@ Use the **Next.js (Static HTML Export)** deployment model:
 
 Every push to `main` should trigger a new Cloudflare Pages deployment when the project is connected to this repository.
 
+## Trust Receipt Workers demo
+
+The dedicated live demo is deployed to:
+
+`https://ei-trust-receipt.brittanywright.workers.dev`
+
+The Worker configuration in `wrangler.jsonc` deploys the static export in `out/`, serves `/trust-receipt/` at the Worker root without changing the public URL, and adds response security headers. Build and validate before deployment:
+
+```bash
+npm ci
+npm run test:trust-receipt
+npm run build
+npx wrangler@latest deploy --dry-run
+```
+
+After reviewing the dry run, an authenticated maintainer can deploy with `npx wrangler@latest deploy`. The Worker name must remain `ei-trust-receipt` to preserve the live URL.
+
 ## GitHub Pages fallback
 
 The repository retains `.github/workflows/pages.yml` as a supporting deployment path. In GitHub Pages project-path mode, the site is built under `/site`. When a GitHub Pages custom domain variable is explicitly configured, it can build from the domain root.
