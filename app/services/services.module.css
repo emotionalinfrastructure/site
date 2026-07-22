@@ -1,0 +1,220 @@
+.servicesHero {
+  padding: 72px 0 74px;
+  background:
+    radial-gradient(circle at 88% 14%, rgba(196, 106, 58, 0.10), transparent 30%),
+    #f1ead9;
+}
+
+.servicePrinciples {
+  border-top: 4px solid #c46a3a;
+}
+
+.sectionHeading {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 52px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.stack {
+  display: grid;
+  gap: 20px;
+}
+
+.serviceCard {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.cardTop {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(16, 28, 44, 0.035), rgba(196, 106, 58, 0.045));
+}
+
+.index {
+  font-family: var(--serif);
+  font-size: 25px;
+  color: #c46a3a;
+  letter-spacing: 0.04em;
+}
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.price {
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 46px;
+  padding: 28px;
+}
+
+.summary,
+.fit {
+  margin: 8px 0 0;
+  color: var(--soft);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.fit {
+  color: var(--muted);
+}
+
+.labelSpaced {
+  margin-top: 22px;
+}
+
+.outputList {
+  display: grid;
+  gap: 12px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outputList li {
+  position: relative;
+  padding: 13px 14px 13px 42px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel2);
+  color: var(--soft);
+  line-height: 1.55;
+}
+
+.outputList li::before {
+  content: "✓";
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(23, 107, 115, 0.11);
+  color: #176b73;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 28px;
+  border-top: 1px solid var(--line);
+  background: rgba(16, 28, 44, 0.025);
+}
+
+.cardFooter a {
+  color: #176b73;
+  font-weight: 800;
+}
+
+.cardFooter a:hover {
+  color: #c46a3a;
+}
+
+.evidenceCard {
+  border-top: 3px solid #176b73;
+}
+
+.evidenceCard strong {
+  color: var(--navy);
+}
+
+.boundary {
+  border-left: 4px solid #c46a3a;
+}
+
+.ctaSection {
+  padding-top: 20px;
+}
+
+.cta {
+  border-top: 4px solid #176b73;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(23, 107, 115, 0.10), transparent 34%),
+    var(--panel);
+}
+
+.cta :global(.card-inner) {
+  padding: 38px;
+}
+
+.cta :global(.lead) {
+  max-width: 900px;
+}
+
+@media (max-width: 940px) {
+  .sectionHeading,
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cardTop {
+    grid-template-columns: 42px minmax(0, 1fr);
+    padding: 22px;
+  }
+
+  .titleBlock {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .price {
+    grid-column: 2;
+    white-space: normal;
+  }
+
+  .cardGrid {
+    padding: 22px;
+  }
+
+  .cardFooter {
+    justify-content: flex-start;
+    padding: 15px 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .servicesHero {
+    padding: 54px 0 56px;
+  }
+
+  .cardTop {
+    grid-template-columns: 1fr;
+  }
+
+  .index,
+  .price {
+    grid-column: 1;
+  }
+
+  .cta :global(.card-inner) {
+    padding: 24px;
+  }
+}
