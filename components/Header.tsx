@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const nav = [
-  ["Home", "/"],
   ["Research", "/research"],
-  ["Standards & Tools", "/standards"],
+  ["Standards", "/standards"],
+  ["Services", "/services"],
   ["Implementation", "/implementation"],
   ["Downloads", "/downloads"],
   ["Register", "/governance-register"]
