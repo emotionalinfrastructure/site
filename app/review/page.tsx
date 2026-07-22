@@ -85,7 +85,7 @@ export default function ReviewPage() {
           </div>
           <div className="actions">
             <Link className="btn primary" href="/contact">Request review access →</Link>
-            <Link className="btn secondary" href="/artifacts">Browse artifacts</Link>
+            <Link className="btn secondary" href="/research">Browse research</Link>
           </div>
         </div>
       </section>

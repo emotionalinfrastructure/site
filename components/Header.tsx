@@ -1,16 +1,26 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const nav = [
   ["Home", "/"],
   ["Research", "/research"],
   ["Trust Receipts", "/trust-receipts"],
   ["Implementation", "/implementation"],
-  ["Artifacts", "/artifacts"],
   ["Downloads", "/downloads"],
   ["Review", "/review"]
 ];
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
     <header className="site-header">
       <div className="container nav">
@@ -27,7 +37,25 @@ export default function Header() {
           ))}
           <Link href="/contact" className="nav-cta">Contact</Link>
         </nav>
+        <button
+          type="button"
+          className="menu-btn"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Close ✕" : "Menu ☰"}
+        </button>
       </div>
+      {open && (
+        <nav className="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+          {nav.map(([label, href]) => (
+            <Link key={href} href={href}>{label}</Link>
+          ))}
+          <Link href="/contact">Contact</Link>
+        </nav>
+      )}
     </header>
   );
 }

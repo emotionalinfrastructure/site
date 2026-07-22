@@ -18,7 +18,7 @@ export default function Home() {
             <div className="actions">
               <Link className="btn primary" href="/trust-receipts">Explore AI Trust Receipts →</Link>
               <Link className="btn secondary" href="/trust-receipt">Try the live demo</Link>
-              <Link className="btn secondary" href="/artifacts">Open artifact library</Link>
+              <Link className="btn secondary" href="/research">Open research library</Link>
               <Link className="btn secondary" href="/implementation">Review technical stack</Link>
               <a className="btn secondary" href={`mailto:${email}`}>Email Brittany</a>
             </div>
@@ -69,6 +69,69 @@ export default function Home() {
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="section" id="selected-research">
+        <div className="container">
+          <div className="kicker">Selected research</div>
+          <h2 style={{ maxWidth: 920 }}>Research into AI-mediated trust environments.</h2>
+          <p className="lead" style={{ marginBottom: 30 }}>
+            Emotional Infrastructure™ examines how adaptive and agentic AI systems shape trust, reliance, consent,
+            interpretation, and human agency across repeated interactions—and develops governance mechanisms for
+            making that influence visible, bounded, reviewable, and contestable.
+          </p>
+          <div className="grid-2">
+            <article className="tile">
+              <span className="status-pill">Active research</span>
+              <h3 style={{ marginTop: 14 }}>Trajectory Governance</h3>
+              <p>
+                Longitudinal accountability for accumulated AI influence, reliance formation, interpretive
+                narrowing, and changes in user agency.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/research/trajectory-governance">Read the research overview →</Link>
+              </p>
+            </article>
+            <article className="tile">
+              <span className="status-pill">Candidate specification</span>
+              <h3 style={{ marginTop: 14 }}>AI Trust Receipts and Agentic Accountability</h3>
+              <p>
+                Pre-execution authority, evidence, consequence, human-review, receipt, and remedy gates for
+                consequential AI actions.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/research/trust-receipt">Read the research overview →</Link>
+              </p>
+            </article>
+            <article className="tile">
+              <span className="status-pill">Candidate architecture</span>
+              <h3 style={{ marginTop: 14 }}>Behavioral Signal Governance</h3>
+              <p>
+                Consent, purpose limitation, minimization, and accountability for inferred behavioral, affective,
+                and trust-related signals.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/research/pdev-runtime-governance">Read the research overview →</Link>
+              </p>
+            </article>
+            <article className="tile">
+              <span className="status-pill">Exploratory study</span>
+              <h3 style={{ marginTop: 14 }}>Education and Adaptive-AI Governance</h3>
+              <p>
+                Research concerning disclosure, reliance, human oversight, and behavioral inference in AI-supported
+                learning environments.
+              </p>
+              <p style={{ marginTop: 12 }}>
+                <Link href="/research">Browse the research catalog →</Link>
+              </p>
+            </article>
+          </div>
+          <p className="note" style={{ marginTop: 26 }}>
+            Each artifact is labeled by status so readers can distinguish established outputs, candidate standards,
+            active studies, and exploratory proposals. Progression:&nbsp; research question → conceptual model →
+            normative specification → reference implementation → conformance evidence → live demonstration.
+          </p>
         </div>
       </section>
 
