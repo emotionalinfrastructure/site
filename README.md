@@ -65,6 +65,7 @@ out/
 ## Current routes
 
 - `/`
+- `/services`
 - `/trust-receipts`
 - `/trust-receipt`
 - `/research`
