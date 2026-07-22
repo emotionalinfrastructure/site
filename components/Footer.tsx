@@ -8,6 +8,10 @@ const products = [
 ];
 
 const portfolio = [
+  ["Home", "/"],
+  ["Implementation", "/implementation"],
+  ["Publications", "/publications"],
+  ["About", "/about"],
   ["Status", "/status"],
   ["Framework", "/framework"],
   ["Standards & Tools", "/standards"],

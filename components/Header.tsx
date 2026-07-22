@@ -5,12 +5,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const nav = [
-  ["Home", "/"],
   ["Research", "/research"],
   ["Standards & Tools", "/standards"],
-  ["Implementation", "/implementation"],
-  ["Downloads", "/downloads"],
-  ["Register", "/governance-register"]
+  ["Publications", "/publications"],
+  ["About", "/about"]
 ];
 
 export default function Header() {
@@ -23,12 +21,17 @@ export default function Header() {
 
   return (
     <header className="site-header">
+      <div className="container">
+        <div className="masthead-kicker">Independent Research Program</div>
+      </div>
       <div className="container nav">
         <Link className="brand" href="/" aria-label="Emotional Infrastructure home">
           <div className="mark" aria-hidden="true">EI</div>
           <div>
-            <div className="brand-title">Emotional Infrastructure</div>
-            <div className="brand-sub">Brittany Wright · AI Governance · Cybersecurity</div>
+            <div className="brand-title">
+              Emotional Infrastructure<sup>™</sup>
+            </div>
+            <div className="brand-sub">Research · Governance · Implementation</div>
           </div>
         </Link>
         <nav className="navlinks" aria-label="Primary navigation">
@@ -45,7 +48,7 @@ export default function Header() {
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? "Close ✕" : "Menu ☰"}
+          {open ? "Close" : "Menu"}
         </button>
       </div>
       {open && (

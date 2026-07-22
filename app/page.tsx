@@ -8,8 +8,8 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div>
-            <div className="eyebrow">Research and governance library · Review-ready public staging</div>
-            <h1>Governance for AI-mediated trust environments.</h1>
+            <div className="kicker">Research program</div>
+            <h1>Governance for the conditions under which trust is formed.</h1>
             <p className="lead">
               Emotional Infrastructure™ is a research and implementation framework for disclosure, consent,
               auditability, human review, contestability, and longitudinal accountability in AI systems.
