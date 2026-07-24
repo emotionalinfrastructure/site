@@ -8,6 +8,7 @@ on:
       - "lib/trust-receipt-*"
       - "worker/**"
       - "wrangler.jsonc"
+      - "wrangler.local.jsonc"
       - "tools/**"
       - "e2e/**"
       - "next.config.mjs"
@@ -57,7 +58,12 @@ jobs:
 
       - name: Start the Worker locally
         run: |
-          npx --yes wrangler@4 dev --local --ip 127.0.0.1 --port 8787 > wrangler-dev.log 2>&1 &
+          npx --yes wrangler@4 dev \
+            --config wrangler.local.jsonc \
+            --ip 127.0.0.1 \
+            --port 8787 \
+            --show-interactive-dev-session=false \
+            > wrangler-dev.log 2>&1 &
           echo $! > wrangler-dev.pid
 
           for attempt in $(seq 1 45); do
