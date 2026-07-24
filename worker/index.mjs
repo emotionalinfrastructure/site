@@ -27,9 +27,20 @@ function secureResponse(response, pathname) {
     headers.set(name, value);
   }
 
+  const contentType = headers.get("Content-Type") || "";
+  if (
+    contentType.toLowerCase().startsWith("text/html") &&
+    !contentType.toLowerCase().includes("charset=")
+  ) {
+    headers.set("Content-Type", "text/html; charset=utf-8");
+  }
+
   if (pathname.startsWith("/schemas/")) {
     headers.set("Access-Control-Allow-Origin", "*");
     headers.set("Cache-Control", "public, max-age=3600, s-maxage=86400");
+    headers.set("Cross-Origin-Resource-Policy", "cross-origin");
+  } else {
+    headers.set("Cross-Origin-Resource-Policy", "same-origin");
   }
 
   return new Response(response.body, {
@@ -39,9 +50,26 @@ function secureResponse(response, pathname) {
   });
 }
 
+function redirectToHttps(request) {
+  const secureUrl = new URL(request.url);
+  secureUrl.protocol = "https:";
+
+  return secureResponse(
+    new Response(null, {
+      status: 308,
+      headers: { Location: secureUrl.toString() },
+    }),
+    secureUrl.pathname,
+  );
+}
+
 export default {
   async fetch(request, env) {
     const incomingUrl = new URL(request.url);
+
+    if (incomingUrl.protocol === "http:") {
+      return redirectToHttps(request);
+    }
 
     if (!new Set(["GET", "HEAD"]).has(request.method)) {
       return secureResponse(
