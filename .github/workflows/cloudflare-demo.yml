@@ -66,6 +66,12 @@ jobs:
             > wrangler-dev.log 2>&1 &
           echo $! > wrangler-dev.pid
 
+          sleep 3
+          if ! kill -0 "$(cat wrangler-dev.pid)" 2>/dev/null; then
+            cat wrangler-dev.log
+            exit 1
+          fi
+
           for attempt in $(seq 1 45); do
             if curl --fail --silent --show-error http://127.0.0.1:8787/ > /dev/null; then
               exit 0
@@ -84,6 +90,15 @@ jobs:
       - name: Show Worker log on failure
         if: failure()
         run: cat wrangler-dev.log || true
+
+      - name: Upload Worker diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wrangler-local-diagnostics
+          path: wrangler-dev.log
+          if-no-files-found: warn
+          retention-days: 7
 
       - name: Stop local Worker
         if: always()
