@@ -49,7 +49,9 @@ jobs:
         run: npm run build
 
       - name: Validate Cloudflare Worker bundle
-        run: npx --yes wrangler@4.114.0 deploy --dry-run
+        run: |
+          set -o pipefail
+          npx --yes wrangler@4.114.0 deploy --dry-run 2>&1 | tee wrangler-dry-run.log
 
       - name: Install browser test runtime
         run: |
@@ -89,14 +91,18 @@ jobs:
 
       - name: Show Worker log on failure
         if: failure()
-        run: cat wrangler-dev.log || true
+        run: |
+          cat wrangler-dry-run.log 2>/dev/null || true
+          cat wrangler-dev.log 2>/dev/null || true
 
       - name: Upload Worker diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: wrangler-local-diagnostics
-          path: wrangler-dev.log
+          name: wrangler-diagnostics
+          path: |
+            wrangler-dry-run.log
+            wrangler-dev.log
           if-no-files-found: warn
           retention-days: 7
 
