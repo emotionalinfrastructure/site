@@ -15,8 +15,5 @@
 /ethical-emotional-intelligence-framework   /research/                  301
 /ethical-emotional-intelligence-frameworks  /research/                  301
 
-# www canonicalization - handled by Cloudflare Rules (not here)
-# This file handles path-based redirects only
-
-# Catch-all for missing pages
-/404.html                                   /404.html                   404
+# www canonicalization is handled by Cloudflare Rules.
+# Missing-page handling is configured by wrangler assets.not_found_handling.
