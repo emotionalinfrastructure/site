@@ -16,6 +16,24 @@ on:
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/cloudflare-demo.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "app/trust-receipt/**"
+      - "components/TrustReceiptDemo.tsx"
+      - "lib/trust-receipt-*"
+      - "worker/**"
+      - "wrangler.jsonc"
+      - "wrangler.local.jsonc"
+      - "tools/**"
+      - "e2e/**"
+      - "playwright.config.mjs"
+      - "next.config.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - "public/_redirects"
+      - ".github/workflows/cloudflare-demo.yml"
   workflow_dispatch:
 
 permissions:
@@ -115,7 +133,7 @@ jobs:
 
   deploy-production:
     name: Deploy and verify branded production endpoint
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     needs: validate
     runs-on: ubuntu-latest
     environment: production
