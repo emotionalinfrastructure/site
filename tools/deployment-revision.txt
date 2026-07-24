@@ -1,0 +1,4 @@
+demo.emotionalinfrastructure.org
+Deployment hardening revision: 2026-07-24
+Candidate specification version: v0.1.1
+Purpose: trigger the validated Cloudflare Worker deployment and post-deployment verification workflow.
