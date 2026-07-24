@@ -27,7 +27,7 @@ test("the interactive demo loads and the digest flow works", async ({ page }) =>
   await expect(page).toHaveTitle(/AI Trust Receipt — Interactive Demo/);
   await expect(page.getByRole("heading", { level: 1, name: "AI Trust Receipt" })).toBeVisible();
 
-  const presets = page.getByRole("group", { name: "Demo gate presets" }).getByRole("button");
+  const presets = page.locator('[aria-label="Demo gate presets"] button');
   await expect(presets).toHaveCount(6);
 
   await page.getByRole("button", { name: "Verify receipt" }).click();
