@@ -49,7 +49,7 @@ jobs:
         run: npm run build
 
       - name: Validate Cloudflare Worker bundle
-        run: npx --yes wrangler@4 deploy --dry-run
+        run: npx --yes wrangler@4.114.0 deploy --dry-run
 
       - name: Install browser test runtime
         run: |
@@ -58,7 +58,7 @@ jobs:
 
       - name: Start the Worker locally
         run: |
-          npx --yes wrangler@4 dev \
+          npx --yes wrangler@4.114.0 dev \
             --config wrangler.local.jsonc \
             --ip 127.0.0.1 \
             --port 8787 \
@@ -145,7 +145,7 @@ jobs:
         run: npm run build
 
       - name: Deploy Worker and custom domain
-        run: npx --yes wrangler@4 deploy
+        run: npx --yes wrangler@4.114.0 deploy
 
       - name: Verify public endpoint three times
         run: node tools/postdeploy-smoke.mjs
