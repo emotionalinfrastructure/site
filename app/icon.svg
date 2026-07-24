@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Emotional Infrastructure">
+  <rect width="64" height="64" rx="14" fill="#101C2C"/>
+  <path d="M17 18h30v8H25v8h18v8H25v-4h-8V18Z" fill="#F5F1E8"/>
+  <path d="M17 38h8v8h22v8H17V38Z" fill="#176B73"/>
+  <circle cx="47" cy="22" r="5" fill="#C46A3A"/>
+</svg>
