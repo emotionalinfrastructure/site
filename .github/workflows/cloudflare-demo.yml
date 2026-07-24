@@ -22,7 +22,7 @@ permissions:
 
 concurrency:
   group: cloudflare-demo-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   validate:
@@ -56,7 +56,7 @@ jobs:
       - name: Install browser test runtime
         run: |
           npm install --no-save --no-package-lock @playwright/test@1.55.0
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
 
       - name: Start the Worker locally
         run: |
@@ -159,7 +159,7 @@ jobs:
       - name: Install browser test runtime
         run: |
           npm install --no-save --no-package-lock @playwright/test@1.55.0
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
 
       - name: Verify production in Chromium
         env:
