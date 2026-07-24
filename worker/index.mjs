@@ -1,4 +1,5 @@
 const DEMO_PATH = "/trust-receipt/";
+const PRODUCTION_HOST = "demo.emotionalinfrastructure.org";
 
 const SECURITY_HEADERS = Object.freeze({
   "Content-Security-Policy": [
@@ -67,7 +68,7 @@ export default {
   async fetch(request, env) {
     const incomingUrl = new URL(request.url);
 
-    if (incomingUrl.protocol === "http:") {
+    if (incomingUrl.hostname === PRODUCTION_HOST && incomingUrl.protocol === "http:") {
       return redirectToHttps(request);
     }
 
