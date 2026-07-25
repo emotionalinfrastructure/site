@@ -167,13 +167,19 @@ export default function Home() {
           </div>
           <div className="copy">
             <p>
-              Brittany Wright is the founder of Emotional Infrastructure™ and an undergraduate cybersecurity
-              researcher developing governance tools for AI-mediated trust environments. Her work focuses on
-              disclosure, consent, auditability, human review, contestability, and longitudinal accountability.
+              Brittany Wright is the founder of Emotional Infrastructure™ and a University of Phoenix undergraduate
+              cybersecurity student developing governance tools for AI-mediated trust environments. Her work focuses
+              on disclosure, consent, auditability, human review, contestability, and longitudinal accountability.
+            </p>
+            <p>
+              Institutional boundary: no research-center appointment, fellowship, principal-investigator designation,
+              institutional sponsorship, vendor-collaboration role, adoption, or approval is asserted on this site unless a
+              separate institutional record expressly establishes it.
             </p>
             <p>
               The public posture is disciplined: the work is review-ready and public-staging ready, not externally
-              certified or formally adopted.
+              certified, regulator-approved, standards-body adopted, legally validated, peer-reviewed accepted, or formally
+              adopted by an institution.
             </p>
           </div>
         </div>
@@ -254,7 +260,7 @@ export default function Home() {
             </div>
             <div className="stat">
               <strong>Review-ready</strong>
-              <span>review ready and public staging ready not externally certified</span>
+              <span>Review-ready and public-staging ready; not externally certified, institutionally adopted, or deployment-validated.</span>
             </div>
           </div>
         </div>
@@ -276,8 +282,9 @@ export default function Home() {
           <div className="boundary-note">
             <strong>Status boundary:</strong> Emotional Infrastructure is presented as a review-ready governance
             architecture and implementation-planning package. It is not positioned as externally certified,
-            standards-body adopted, legally validated, regulator-approved, peer-reviewed accepted, production-proven, or
-            revenue-guaranteed. This claim boundary is part of the credibility architecture.
+            standards-body adopted, legally validated, regulator-approved, peer-reviewed accepted, production-proven,
+            institutionally adopted, institutionally sponsored, or connected to any vendor collaboration unless a separate
+            institutional record expressly establishes that status. This claim boundary is part of the credibility architecture.
           </div>
         </div>
       </section>
