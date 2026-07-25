@@ -67,10 +67,10 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Validate Cloudflare Worker bundle
+      - name: Validate local Cloudflare Worker bundle
         run: |
           set -o pipefail
-          npx --yes wrangler@4.114.0 deploy --dry-run 2>&1 | tee wrangler-dry-run.log
+          npx --yes wrangler@4.114.0 deploy --dry-run --config wrangler.local.jsonc 2>&1 | tee wrangler-dry-run.log
 
       - name: Install browser test runtime
         run: npm install --no-save --no-package-lock @playwright/test@1.55.0
@@ -133,7 +133,7 @@ jobs:
 
   deploy-production:
     name: Deploy and verify branded production endpoint
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.head_ref == 'deploy/cloudflare-demo-20260724')
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     needs: validate
     runs-on: ubuntu-latest
     environment: production
@@ -169,7 +169,7 @@ jobs:
         run: npm run build
 
       - name: Deploy Worker and custom domain
-        run: npx --yes wrangler@4.114.0 deploy
+        run: npx --yes wrangler@4.114.0 deploy --config wrangler.jsonc
 
       - name: Verify public endpoint three times
         run: node tools/postdeploy-smoke.mjs
