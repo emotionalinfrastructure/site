@@ -8,12 +8,12 @@ const siteOrigin = "https://emotionalinfrastructure.org";
 export const metadata: Metadata = {
   title: "Brittany Wright | Emotional Infrastructure",
   description:
-    "Governance architecture, technical specifications, audit models, and implementation tools for AI-mediated trust environments.",
+    "Governance framework, research materials, technical specifications, audit models, and implementation tools for AI-mediated trust environments.",
   metadataBase: new URL(siteOrigin),
   openGraph: {
     title: "Brittany Wright | Emotional Infrastructure",
     description:
-      "Governance infrastructure for AI-mediated trust: disclosure, consent, auditability, human review, and longitudinal accountability.",
+      "Governance tools for AI-mediated trust: disclosure, consent, auditability, human review, and longitudinal accountability.",
     url: siteOrigin,
     siteName: "Emotional Infrastructure",
     type: "website"
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "Person",
               "name": "Brittany Wright"
             },
-            "description": "Governance and trust infrastructure for AI-mediated emotional conditions and behavioral systems"
+            "description": "Governance framework for AI-mediated trust environments, including disclosure, consent, human review, auditability, contestability, and longitudinal accountability. Public materials are presented for review and development; no institutional appointment, sponsorship, endorsement, or adoption is asserted."
           })}
         </script>
       </head>
