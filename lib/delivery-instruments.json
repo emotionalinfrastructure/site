@@ -1,0 +1,2265 @@
+{
+  "registerVersion": "v1.0",
+  "recordedOn": "2026-07-25",
+  "assetCount": 220,
+  "formats": [
+    {
+      "format": "XLSX",
+      "count": 128
+    },
+    {
+      "format": "DOCX",
+      "count": 80
+    },
+    {
+      "format": "PPTX",
+      "count": 6
+    },
+    {
+      "format": "HTML",
+      "count": 2
+    },
+    {
+      "format": "PDF",
+      "count": 2
+    },
+    {
+      "format": "JSON",
+      "count": 2
+    }
+  ],
+  "phases": [
+    {
+      "phase": "Delivery-ready",
+      "count": 92
+    },
+    {
+      "phase": "Pilot-ready",
+      "count": 80
+    },
+    {
+      "phase": "Sellable",
+      "count": 25
+    },
+    {
+      "phase": "Scale-ready",
+      "count": 23
+    }
+  ],
+  "workstreams": [
+    {
+      "slug": "governance-assessment",
+      "number": "01",
+      "name": "Governance Assessment",
+      "service": "AI Governance Assessment",
+      "assetCount": 33,
+      "categories": [
+        {
+          "name": "Intake",
+          "assets": [
+            {
+              "id": "EI-INV-049",
+              "name": "Assessment scoping questionnaire",
+              "type": "Questionnaire",
+              "format": "XLSX",
+              "purpose": "Define systems, use cases, users, decisions, jurisdictions, interaction duration, and business goals.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-050",
+              "name": "AI system profile",
+              "type": "Form",
+              "format": "XLSX",
+              "purpose": "Capture model, vendor, deployment, integrations, autonomy, users, outputs, and operational context.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-051",
+              "name": "Use-case register",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Enumerate AI-supported activities and identify consequential or trust-sensitive use cases.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-052",
+              "name": "System boundary template",
+              "type": "Diagram template",
+              "format": "XLSX",
+              "purpose": "Define included components, actors, data flows, interfaces, vendors, and excluded boundaries.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-053",
+              "name": "Stakeholder and authority map",
+              "type": "Map",
+              "format": "XLSX",
+              "purpose": "Identify owners, approvers, reviewers, affected users, and escalation authority.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Evidence",
+          "assets": [
+            {
+              "id": "EI-INV-054",
+              "name": "Evidence request list",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Request policies, disclosures, UI flows, logs, tickets, tests, incidents, approvals, and training records.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-055",
+              "name": "Evidence index",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Track evidence ID, source, owner, date, confidentiality, relevance, and sufficiency.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-056",
+              "name": "Evidence sufficiency rubric",
+              "type": "Rubric",
+              "format": "XLSX",
+              "purpose": "Rate evidence as direct, indirect, incomplete, stale, contradictory, or unavailable.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-057",
+              "name": "Document review worksheet",
+              "type": "Worksheet",
+              "format": "XLSX",
+              "purpose": "Record control statements, actual practice, evidence, gaps, and follow-up.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Discovery",
+          "assets": [
+            {
+              "id": "EI-INV-058",
+              "name": "Executive interview guide",
+              "type": "Interview guide",
+              "format": "DOCX",
+              "purpose": "Assess objectives, risk appetite, authority, accountability, and governance commitments.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-059",
+              "name": "Product and engineering interview guide",
+              "type": "Interview guide",
+              "format": "DOCX",
+              "purpose": "Assess architecture, model behavior, logging, releases, overrides, and control implementation.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-060",
+              "name": "Legal, compliance, and risk interview guide",
+              "type": "Interview guide",
+              "format": "DOCX",
+              "purpose": "Assess obligations, controls, ownership, escalation, and evidence expectations.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-061",
+              "name": "User support and remedy interview guide",
+              "type": "Interview guide",
+              "format": "DOCX",
+              "purpose": "Assess complaints, appeal, correction, human escalation, and user communication.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Analysis",
+          "assets": [
+            {
+              "id": "EI-INV-062",
+              "name": "Disclosure assessment checklist",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate timing, materiality, specificity, persistence, accessibility, and change disclosure.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-063",
+              "name": "Consent-boundary assessment",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate consent basis, granularity, revocation, consequences of refusal, and reuse of behavioral data.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-064",
+              "name": "Human-review assessment",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate trigger conditions, reviewer authority, competence, independence, timing, and override.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-065",
+              "name": "Accountability assessment",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate named ownership, decision rights, approvals, escalation, and executive responsibility.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-066",
+              "name": "User-remedy and contestability assessment",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate notice, correction, appeal, explanation, escalation, timeframes, and closure.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-067",
+              "name": "Longitudinal interaction governance assessment",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate memory, accumulated inference, trajectory effects, repeated reliance, retention, and monitoring.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-068",
+              "name": "Behavioral and interaction data assessment",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate collection, inference, purpose, minimization, access, retention, and downstream use.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-069",
+              "name": "Vendor and third-party governance assessment",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Evaluate contracts, subprocessor visibility, model changes, incident notice, evidence, and exit.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-070",
+              "name": "Governance maturity rubric",
+              "type": "Rubric",
+              "format": "XLSX",
+              "purpose": "Score control domains from ad hoc through defined, implemented, measured, and improving.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-071",
+              "name": "Control-effectiveness scoring model",
+              "type": "Scoring model",
+              "format": "XLSX",
+              "purpose": "Separate design adequacy, implementation, operating evidence, coverage, and residual risk.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-072",
+              "name": "Severity and priority model",
+              "type": "Scoring model",
+              "format": "XLSX",
+              "purpose": "Prioritize gaps by consequence, exposure, scale, reversibility, detectability, and control weakness.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Outputs",
+          "assets": [
+            {
+              "id": "EI-INV-073",
+              "name": "Governance gap matrix",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Present each requirement, current state, evidence, gap, risk, and recommended control.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-074",
+              "name": "Priority risk register",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Rank material governance risks with owners, rationale, dependencies, and treatment options.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-075",
+              "name": "Executive findings report",
+              "type": "Core deliverable",
+              "format": "DOCX",
+              "purpose": "Explain scope, method, material findings, limitations, and decisions required.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-076",
+              "name": "Implementation roadmap",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Sequence immediate, 30-day, 90-day, and longer-term control work.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-077",
+              "name": "Remediation backlog",
+              "type": "Backlog",
+              "format": "XLSX",
+              "purpose": "Translate recommendations into implementation-ready epics, tasks, owners, and acceptance criteria.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-078",
+              "name": "Executive readout deck",
+              "type": "Presentation",
+              "format": "PPTX",
+              "purpose": "Support leadership decision-making and formal acceptance of priorities.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-079",
+              "name": "Evidence appendix",
+              "type": "Appendix",
+              "format": "DOCX",
+              "purpose": "Provide traceable support for findings without overloading the executive report.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-080",
+              "name": "Management response tracker",
+              "type": "Tracker",
+              "format": "XLSX",
+              "purpose": "Capture management agreement, disagreement, owner, due date, and accepted risk.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-081",
+              "name": "Assessment closeout memorandum",
+              "type": "Memo",
+              "format": "DOCX",
+              "purpose": "Record final scope, limitations, accepted findings, open evidence gaps, and follow-on decisions.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "trust-receipt-workshop",
+      "number": "02",
+      "name": "Trust Receipt Workshop",
+      "service": "AI Trust Receipt™ Implementation Workshop",
+      "assetCount": 34,
+      "categories": [
+        {
+          "name": "Intake",
+          "assets": [
+            {
+              "id": "EI-INV-082",
+              "name": "Workshop pre-work questionnaire",
+              "type": "Questionnaire",
+              "format": "XLSX",
+              "purpose": "Identify the target action, system workflow, decision authority, users, and existing accountability artifacts.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-083",
+              "name": "Participant role and authority matrix",
+              "type": "RACI",
+              "format": "XLSX",
+              "purpose": "Ensure the workshop includes people authorized to decide product, policy, legal, UX, and operational questions.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-084",
+              "name": "Use-case selection rubric",
+              "type": "Rubric",
+              "format": "XLSX",
+              "purpose": "Choose a consequential, bounded, implementable pilot use case.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Facilitation",
+          "assets": [
+            {
+              "id": "EI-INV-085",
+              "name": "Workshop agenda and timing plan",
+              "type": "Agenda",
+              "format": "DOCX",
+              "purpose": "Structure discovery, design, decisions, prototyping, backlog creation, and closeout.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-086",
+              "name": "Facilitator guide",
+              "type": "Guide",
+              "format": "DOCX",
+              "purpose": "Provide prompts, decision rules, exercises, timing, and escalation for unresolved issues.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-087",
+              "name": "Workshop participant workbook",
+              "type": "Workbook",
+              "format": "XLSX",
+              "purpose": "Capture decisions, fields, triggers, remedy paths, examples, and action owners.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Design",
+          "assets": [
+            {
+              "id": "EI-INV-088",
+              "name": "Consequential action map",
+              "type": "Map",
+              "format": "XLSX",
+              "purpose": "Define the AI action, initiating actor, affected user, decision point, downstream consequence, and reversibility.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-089",
+              "name": "Authority control map",
+              "type": "Map",
+              "format": "XLSX",
+              "purpose": "Specify who may initiate, approve, review, override, suspend, and remediate each action.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-090",
+              "name": "Consequence class taxonomy",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Classify actions by materiality, reversibility, duration, scale, and rights impact.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-091",
+              "name": "Receipt issuance trigger matrix",
+              "type": "Matrix",
+              "format": "XLSX",
+              "purpose": "Define when a Trust Receipt is mandatory, optional, suppressed, regenerated, or escalated.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-092",
+              "name": "Human-review trigger matrix",
+              "type": "Matrix",
+              "format": "XLSX",
+              "purpose": "Define pre-action, post-action, sampled, exception, and user-requested review triggers.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-093",
+              "name": "Remedy pathway map",
+              "type": "Map",
+              "format": "XLSX",
+              "purpose": "Define correction, appeal, explanation, escalation, suspension, reversal, and closure routes.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Schema",
+          "assets": [
+            {
+              "id": "EI-INV-094",
+              "name": "Trust Receipt core schema",
+              "type": "Specification",
+              "format": "DOCX",
+              "purpose": "Define the minimum human-legible and machine-readable accountability record.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-095",
+              "name": "Field dictionary",
+              "type": "Data dictionary",
+              "format": "XLSX",
+              "purpose": "Define each field, data type, source, required status, owner, sensitivity, and validation rule.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-096",
+              "name": "Required/conditional/optional field matrix",
+              "type": "Matrix",
+              "format": "XLSX",
+              "purpose": "Specify field requirements by consequence class and workflow state.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-097",
+              "name": "Receipt status and lifecycle model",
+              "type": "State model",
+              "format": "XLSX",
+              "purpose": "Define draft, issued, acknowledged, contested, corrected, superseded, closed, and retained states.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-098",
+              "name": "Machine-readable JSON Schema",
+              "type": "JSON Schema",
+              "format": "JSON",
+              "purpose": "Enable implementation validation and interoperability.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-099",
+              "name": "Human-readable receipt template",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Present action, authority, reason, evidence, review, remedy, and contact information clearly.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-100",
+              "name": "Sample JSON receipt",
+              "type": "Example",
+              "format": "JSON",
+              "purpose": "Demonstrate a conforming machine-readable instance.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-101",
+              "name": "Sample receipts by consequence class",
+              "type": "Example set",
+              "format": "XLSX",
+              "purpose": "Demonstrate how content changes as action severity and review requirements increase.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Implementation",
+          "assets": [
+            {
+              "id": "EI-INV-102",
+              "name": "Receipt generation workflow",
+              "type": "Process map",
+              "format": "XLSX",
+              "purpose": "Map source events, field population, validation, approval, issuance, storage, and user delivery.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-103",
+              "name": "API and integration requirements",
+              "type": "Technical requirements",
+              "format": "DOCX",
+              "purpose": "Define endpoints, events, authentication, source systems, failure handling, and audit logs.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-104",
+              "name": "Validation rules",
+              "type": "Ruleset",
+              "format": "XLSX",
+              "purpose": "Define completeness, consistency, authority, timing, version, and consequence-class checks.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-105",
+              "name": "Exception and failure handling",
+              "type": "Procedure",
+              "format": "DOCX",
+              "purpose": "Define behavior when receipt creation, delivery, storage, review, or remedy fails.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-106",
+              "name": "Integrity and tamper-evidence requirements",
+              "type": "Technical requirements",
+              "format": "DOCX",
+              "purpose": "Define identifiers, timestamps, versioning, signatures/hashes where appropriate, and correction history.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-107",
+              "name": "Retention and access policy",
+              "type": "Policy",
+              "format": "DOCX",
+              "purpose": "Define retention class, user access, staff access, export, deletion, and litigation or regulatory holds.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-108",
+              "name": "Consent and disclosure language set",
+              "type": "Copy set",
+              "format": "DOCX",
+              "purpose": "Provide plain-language notices tied to receipt generation, access, review, and remedy.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-109",
+              "name": "Receipt interface wireframe",
+              "type": "Wireframe",
+              "format": "HTML",
+              "purpose": "Show placement, hierarchy, status, review action, remedy action, and accessibility.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Testing",
+          "assets": [
+            {
+              "id": "EI-INV-110",
+              "name": "Conformance test suite",
+              "type": "Test suite",
+              "format": "XLSX",
+              "purpose": "Test required fields, triggers, authority, states, exceptions, user access, correction, and auditability.",
+              "phase": "Scale-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-111",
+              "name": "Pilot acceptance criteria",
+              "type": "Acceptance criteria",
+              "format": "XLSX",
+              "purpose": "Define measurable conditions for pilot readiness and completion.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Outputs",
+          "assets": [
+            {
+              "id": "EI-INV-112",
+              "name": "Implementation backlog",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Convert design decisions into prioritized product, engineering, policy, UX, and evidence work.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-113",
+              "name": "Workshop decision log",
+              "type": "Core deliverable",
+              "format": "DOCX",
+              "purpose": "Record decided, deferred, disputed, and counsel-review items with owners.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-114",
+              "name": "Workshop summary report",
+              "type": "Core deliverable",
+              "format": "DOCX",
+              "purpose": "Summarize scope, design, unresolved issues, risks, and next-phase recommendation.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-115",
+              "name": "Pilot plan",
+              "type": "Plan",
+              "format": "DOCX",
+              "purpose": "Define pilot scope, users, environments, evidence, testing, timeline assumptions, and governance.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "regulatory-crosswalk",
+      "number": "03",
+      "name": "Regulatory Crosswalk",
+      "service": "Custom Regulatory Crosswalk",
+      "assetCount": 29,
+      "categories": [
+        {
+          "name": "Scoping",
+          "assets": [
+            {
+              "id": "EI-INV-116",
+              "name": "Jurisdiction and applicability questionnaire",
+              "type": "Questionnaire",
+              "format": "XLSX",
+              "purpose": "Capture markets, users, sectors, deployment dates, risk classifications, and organizational roles.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-117",
+              "name": "Crosswalk scope memorandum",
+              "type": "Memo",
+              "format": "DOCX",
+              "purpose": "Define included frameworks, systems, controls, evidence, assumptions, and exclusions.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-118",
+              "name": "Legal-counsel coordination protocol",
+              "type": "Protocol",
+              "format": "DOCX",
+              "purpose": "Route legal interpretation questions to qualified counsel and preserve governance/legal boundaries.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Source Management",
+          "assets": [
+            {
+              "id": "EI-INV-119",
+              "name": "Authoritative source register",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Track official source, version, effective date, jurisdiction, status, and citation.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-120",
+              "name": "Framework version and effective-date tracker",
+              "type": "Tracker",
+              "format": "XLSX",
+              "purpose": "Prevent use of stale, draft, superseded, or not-yet-effective requirements.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-121",
+              "name": "Requirement extraction worksheet",
+              "type": "Worksheet",
+              "format": "XLSX",
+              "purpose": "Capture obligation text, actor, action, condition, evidence, exception, and source reference.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-122",
+              "name": "Interpretation and ambiguity log",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Record ambiguous terms, competing readings, counsel flags, and chosen implementation assumption.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Mapping",
+          "assets": [
+            {
+              "id": "EI-INV-123",
+              "name": "System and control inventory",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Establish the actual controls being mapped rather than relying on policy statements alone.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-124",
+              "name": "Obligations matrix",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Organize applicable requirements by actor, system, risk, lifecycle, and evidence.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-125",
+              "name": "Control-to-requirement crosswalk",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Map each requirement to existing, partial, missing, or not-applicable controls.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-126",
+              "name": "Evidence-to-requirement map",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Identify what evidence demonstrates design, implementation, operation, review, and remediation.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-127",
+              "name": "Requirement overlap and conflict matrix",
+              "type": "Matrix",
+              "format": "XLSX",
+              "purpose": "Identify duplicative, reinforcing, conflicting, or jurisdiction-specific requirements.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-128",
+              "name": "Responsibility assignment matrix",
+              "type": "RACI",
+              "format": "XLSX",
+              "purpose": "Assign legal interpretation, control ownership, evidence production, approval, and monitoring.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Analysis",
+          "assets": [
+            {
+              "id": "EI-INV-129",
+              "name": "Gap and readiness register",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Document missing controls, weak evidence, applicability uncertainty, and implementation dependencies.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-130",
+              "name": "Readiness heatmap",
+              "type": "Visualization",
+              "format": "XLSX",
+              "purpose": "Provide executive visibility into requirement coverage and evidence strength.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-131",
+              "name": "Remediation priority model",
+              "type": "Scoring model",
+              "format": "XLSX",
+              "purpose": "Prioritize by effective date, consequence, exposure, implementation lead time, and dependency.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-132",
+              "name": "Legal-review flag register",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Separate governance implementation guidance from issues requiring legal opinion.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Framework Modules",
+          "assets": [
+            {
+              "id": "EI-INV-133",
+              "name": "EU AI Act requirement library",
+              "type": "Control library",
+              "format": "XLSX",
+              "purpose": "Maintain structured obligations, dates, actor roles, evidence, and implementation notes.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-134",
+              "name": "NIST AI RMF function and category library",
+              "type": "Control library",
+              "format": "XLSX",
+              "purpose": "Maintain GOVERN, MAP, MEASURE, and MANAGE mappings and evidence expectations.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-135",
+              "name": "ISO/IEC 42001 clause and control library",
+              "type": "Control library",
+              "format": "XLSX",
+              "purpose": "Maintain management-system clauses, controls, evidence, and implementation notes.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-136",
+              "name": "IEEE 7014.1 requirements library",
+              "type": "Control library",
+              "format": "XLSX",
+              "purpose": "Maintain applicable governance requirements and traceability fields.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            },
+            {
+              "id": "EI-INV-137",
+              "name": "C2PA provenance control library",
+              "type": "Control library",
+              "format": "XLSX",
+              "purpose": "Maintain provenance, credential, manifest, signing, and verification mappings relevant to client systems.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            },
+            {
+              "id": "EI-INV-138",
+              "name": "State companion-chatbot law tracker",
+              "type": "Regulatory library",
+              "format": "XLSX",
+              "purpose": "Track enacted and proposed disclosure, safety, reporting, and user-remedy requirements.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-139",
+              "name": "Internal policy crosswalk adapter",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Map organizational policies into the same obligation-control-evidence structure.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Outputs",
+          "assets": [
+            {
+              "id": "EI-INV-140",
+              "name": "Implementation guidance report",
+              "type": "Core deliverable",
+              "format": "DOCX",
+              "purpose": "Explain applicability assumptions, material gaps, control options, sequencing, and limitations.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-141",
+              "name": "Executive crosswalk summary",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Present decisions, deadlines, highest-risk gaps, and resources required.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-142",
+              "name": "Evidence binder index",
+              "type": "Core deliverable",
+              "format": "XLSX",
+              "purpose": "Organize evidence artifacts for internal audit, legal review, customer assurance, or future assessment.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-143",
+              "name": "Crosswalk maintenance log",
+              "type": "Tracker",
+              "format": "XLSX",
+              "purpose": "Record source changes, interpretation changes, control updates, and client decisions.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-144",
+              "name": "Crosswalk limitations and disclaimer page",
+              "type": "Disclosure",
+              "format": "DOCX",
+              "purpose": "State source date, assumptions, exclusions, non-legal-advice boundary, and no-certification status.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "staff-training",
+      "number": "04",
+      "name": "Staff Training",
+      "service": "Staff Capability Development",
+      "assetCount": 34,
+      "categories": [
+        {
+          "name": "Program Design",
+          "assets": [
+            {
+              "id": "EI-INV-145",
+              "name": "Training needs assessment",
+              "type": "Questionnaire",
+              "format": "XLSX",
+              "purpose": "Identify roles, baseline knowledge, operating context, use cases, and competency goals.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-146",
+              "name": "Role-to-learning-path matrix",
+              "type": "Matrix",
+              "format": "XLSX",
+              "purpose": "Assign Foundation, Practitioner, Governance Lead, or custom modules by responsibility.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-147",
+              "name": "Learning objectives and competency map",
+              "type": "Framework",
+              "format": "DOCX",
+              "purpose": "Define observable knowledge and application outcomes for every module.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-148",
+              "name": "Delivery format standard",
+              "type": "Standard",
+              "format": "DOCX",
+              "purpose": "Define live virtual, onsite, hybrid, cohort, self-paced, and recording conditions.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-149",
+              "name": "Accessibility and accommodation checklist",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Collect and implement accessibility, captioning, document, and participation needs.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Foundation",
+          "assets": [
+            {
+              "id": "EI-INV-150",
+              "name": "Foundation curriculum",
+              "type": "Curriculum",
+              "format": "DOCX",
+              "purpose": "Teach AI-mediated trust, disclosure, consent, accountability, human review, remedy, and longitudinal governance.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-151",
+              "name": "Foundation slide deck",
+              "type": "Presentation",
+              "format": "PPTX",
+              "purpose": "Deliver the Foundation pathway consistently and professionally.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-152",
+              "name": "Foundation facilitator guide",
+              "type": "Guide",
+              "format": "DOCX",
+              "purpose": "Provide timing, examples, prompts, exercises, and required cautions.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-153",
+              "name": "Foundation participant workbook",
+              "type": "Workbook",
+              "format": "XLSX",
+              "purpose": "Support note-taking, exercises, reflection, and application planning.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Practitioner",
+          "assets": [
+            {
+              "id": "EI-INV-154",
+              "name": "Practitioner curriculum",
+              "type": "Curriculum",
+              "format": "DOCX",
+              "purpose": "Teach operational control design, evidence, review triggers, disclosures, consent boundaries, and Trust Receipts.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-155",
+              "name": "Practitioner slide deck",
+              "type": "Presentation",
+              "format": "PPTX",
+              "purpose": "Deliver the Practitioner pathway with role-specific examples and labs.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-156",
+              "name": "Practitioner facilitator guide",
+              "type": "Guide",
+              "format": "DOCX",
+              "purpose": "Provide lab instructions, model answers, decision rules, and debrief prompts.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-157",
+              "name": "Practitioner participant workbook",
+              "type": "Workbook",
+              "format": "XLSX",
+              "purpose": "Capture control designs, evidence maps, and implementation decisions.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Governance Lead",
+          "assets": [
+            {
+              "id": "EI-INV-158",
+              "name": "Governance Lead curriculum",
+              "type": "Curriculum",
+              "format": "DOCX",
+              "purpose": "Teach authority, operating model, escalation, evidence, executive decisions, and maturity management.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-159",
+              "name": "Governance Lead slide deck",
+              "type": "Presentation",
+              "format": "PPTX",
+              "purpose": "Deliver the lead pathway with executive and governance-program exercises.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-160",
+              "name": "Governance Lead facilitator guide",
+              "type": "Guide",
+              "format": "DOCX",
+              "purpose": "Provide advanced scenarios, decision criteria, and governance cautions.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-161",
+              "name": "Governance Lead participant workbook",
+              "type": "Workbook",
+              "format": "XLSX",
+              "purpose": "Develop a governance operating model and 90-day leadership plan.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Applied Learning",
+          "assets": [
+            {
+              "id": "EI-INV-162",
+              "name": "Role-based case study library",
+              "type": "Case library",
+              "format": "XLSX",
+              "purpose": "Use realistic scenarios for product, engineering, education, compliance, safety, and leadership.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-163",
+              "name": "Disclosure design exercise",
+              "type": "Exercise",
+              "format": "DOCX",
+              "purpose": "Practice material, timely, specific, and user-legible AI disclosure.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-164",
+              "name": "Consent-boundary exercise",
+              "type": "Exercise",
+              "format": "DOCX",
+              "purpose": "Practice distinguishing notice, consent, opt-out, revocation, and non-negotiable processing.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-165",
+              "name": "Human-review trigger exercise",
+              "type": "Exercise",
+              "format": "DOCX",
+              "purpose": "Practice defining when review is required and what authority the reviewer must possess.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-166",
+              "name": "Trust Receipt lab",
+              "type": "Lab",
+              "format": "DOCX",
+              "purpose": "Create and critique a Trust Receipt for a consequential AI action.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Assessment",
+          "assets": [
+            {
+              "id": "EI-INV-167",
+              "name": "Pre-training baseline survey",
+              "type": "Survey",
+              "format": "XLSX",
+              "purpose": "Measure prior knowledge, confidence, and role context.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-168",
+              "name": "Knowledge checks and answer keys",
+              "type": "Assessment",
+              "format": "XLSX",
+              "purpose": "Verify comprehension without implying professional certification.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-169",
+              "name": "Applied competency rubric",
+              "type": "Rubric",
+              "format": "XLSX",
+              "purpose": "Score whether participants can identify and design appropriate governance controls.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-170",
+              "name": "Post-training evaluation",
+              "type": "Survey",
+              "format": "XLSX",
+              "purpose": "Measure learning, relevance, facilitation quality, and intended application.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-171",
+              "name": "Training outcome report",
+              "type": "Report",
+              "format": "DOCX",
+              "purpose": "Summarize attendance, completion, learning evidence, feedback, and recommended follow-up.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Administration",
+          "assets": [
+            {
+              "id": "EI-INV-172",
+              "name": "Registration and attendance roster",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Track enrolled participants, attendance, pathway, accommodations, and completion.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-173",
+              "name": "Completion certificate template",
+              "type": "Certificate",
+              "format": "DOCX",
+              "purpose": "Document participation or completion without representing independent certification.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-174",
+              "name": "Recording and participant-consent form",
+              "type": "Consent form",
+              "format": "DOCX",
+              "purpose": "Control recording, internal reuse, participant visibility, and confidentiality.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-175",
+              "name": "Train-the-trainer kit",
+              "type": "Toolkit",
+              "format": "DOCX",
+              "purpose": "Enable approved internal facilitators to deliver defined modules under controlled terms.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            },
+            {
+              "id": "EI-INV-176",
+              "name": "LMS packaging specification",
+              "type": "Technical specification",
+              "format": "DOCX",
+              "purpose": "Define file formats, module structure, completion rules, quizzes, and accessibility for LMS deployment.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "Application",
+          "assets": [
+            {
+              "id": "EI-INV-177",
+              "name": "30/60/90-day application plan",
+              "type": "Plan",
+              "format": "DOCX",
+              "purpose": "Translate learning into role-specific governance actions and evidence.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-178",
+              "name": "Manager reinforcement guide",
+              "type": "Guide",
+              "format": "DOCX",
+              "purpose": "Help managers reinforce concepts through meetings, reviews, and work products.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "governance-advisory",
+      "number": "05",
+      "name": "Governance Advisory",
+      "service": "Monthly Governance Advisory",
+      "assetCount": 25,
+      "categories": [
+        {
+          "name": "Setup",
+          "assets": [
+            {
+              "id": "EI-INV-179",
+              "name": "Advisory charter",
+              "type": "Charter",
+              "format": "DOCX",
+              "purpose": "Define scope, decision rights, cadence, intake, response expectations, exclusions, and minimum term.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-180",
+              "name": "Three-month governance roadmap",
+              "type": "Roadmap",
+              "format": "DOCX",
+              "purpose": "Establish priority outcomes, workstreams, owners, milestones, and dependencies.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-181",
+              "name": "Executive sponsor and governance-owner map",
+              "type": "RACI",
+              "format": "XLSX",
+              "purpose": "Confirm who can decide, approve, implement, accept risk, and escalate.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Operations",
+          "assets": [
+            {
+              "id": "EI-INV-182",
+              "name": "Monthly advisory agenda",
+              "type": "Agenda",
+              "format": "DOCX",
+              "purpose": "Review scorecard, decisions, risks, product/policy items, regulatory changes, and actions.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-183",
+              "name": "Advisory meeting notes",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Capture guidance, decisions, assumptions, action owners, and limitations.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-184",
+              "name": "Governance decision log",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Maintain traceable decisions, evidence, owners, rationale, and review dates.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-185",
+              "name": "Risk and issue register",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Track governance risks, severity, treatment, owner, due date, and accepted risk.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-186",
+              "name": "Action and dependency tracker",
+              "type": "Tracker",
+              "format": "XLSX",
+              "purpose": "Track implementation work, blockers, decisions, evidence, and escalation.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-187",
+              "name": "Product review intake form",
+              "type": "Form",
+              "format": "XLSX",
+              "purpose": "Collect use case, system change, users, data, consequences, disclosures, review, and remedy.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-188",
+              "name": "Policy review intake form",
+              "type": "Form",
+              "format": "XLSX",
+              "purpose": "Collect policy purpose, authority, affected systems, control changes, and approval needs.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-189",
+              "name": "Architecture review template",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Review data flows, inference, autonomy, logging, review, receipts, failures, and evidence.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-190",
+              "name": "Trust Receipt implementation tracker",
+              "type": "Tracker",
+              "format": "XLSX",
+              "purpose": "Track schema, integration, UI, review, remedy, testing, and rollout tasks.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-191",
+              "name": "Vendor governance review checklist",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Assess vendor disclosures, data use, changes, incidents, evidence, controls, and exit.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Monitoring",
+          "assets": [
+            {
+              "id": "EI-INV-192",
+              "name": "Monthly governance scorecard",
+              "type": "Dashboard",
+              "format": "XLSX",
+              "purpose": "Report disclosure, consent, review, remedy, evidence, incidents, backlog, and maturity indicators.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-193",
+              "name": "Governance KPI dictionary",
+              "type": "Data dictionary",
+              "format": "XLSX",
+              "purpose": "Define each metric, source, owner, calculation, threshold, and interpretation limit.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-194",
+              "name": "Regulatory and standards watch log",
+              "type": "Tracker",
+              "format": "XLSX",
+              "purpose": "Record relevant changes, source, effective date, impact, owner, and action.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-195",
+              "name": "Control change log",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Track policy, product, model, vendor, data, and workflow changes affecting governance.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-196",
+              "name": "Evidence health review",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Check whether evidence remains current, complete, accessible, and aligned to controls.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Review",
+          "assets": [
+            {
+              "id": "EI-INV-197",
+              "name": "Quarterly governance maturity review",
+              "type": "Assessment",
+              "format": "XLSX",
+              "purpose": "Measure progress, persistent gaps, accepted risk, and roadmap changes.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-198",
+              "name": "Executive decision memorandum",
+              "type": "Memo",
+              "format": "DOCX",
+              "purpose": "Frame material choices, options, risks, recommendation, and required authority.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-199",
+              "name": "Board or leadership update deck",
+              "type": "Presentation",
+              "format": "PPTX",
+              "purpose": "Provide concise oversight of risk, progress, decisions, and resource needs.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-200",
+              "name": "Governance event/post-incident review",
+              "type": "Review template",
+              "format": "DOCX",
+              "purpose": "Examine control performance, user impact, evidence, decisions, remedy, and corrective action.",
+              "phase": "Pilot-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-201",
+              "name": "Accepted-risk register",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Record who accepted which residual risk, why, for how long, and under what monitoring.",
+              "phase": "Pilot-ready",
+              "priority": "Critical"
+            }
+          ]
+        },
+        {
+          "name": "Closeout",
+          "assets": [
+            {
+              "id": "EI-INV-202",
+              "name": "Renewal and scope review",
+              "type": "Review template",
+              "format": "DOCX",
+              "purpose": "Assess value, remaining needs, scope changes, cadence, and renewal terms.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-203",
+              "name": "Advisory transition packet",
+              "type": "Closeout packet",
+              "format": "DOCX",
+              "purpose": "Transfer current roadmap, decisions, risks, evidence, open actions, and governance calendar.",
+              "phase": "Scale-ready",
+              "priority": "High"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "shared-foundation",
+      "number": "00",
+      "name": "Shared Foundation",
+      "service": "Shared Foundation",
+      "assetCount": 65,
+      "categories": [
+        {
+          "name": "Brand & Sales",
+          "assets": [
+            {
+              "id": "EI-INV-001",
+              "name": "Master services webpage",
+              "type": "Web copy",
+              "format": "HTML",
+              "purpose": "Publish the complete service portfolio, pricing bands, boundaries, sequence, and inquiry path.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-002",
+              "name": "Service catalog one-sheet",
+              "type": "PDF/one-sheet",
+              "format": "PDF",
+              "purpose": "Provide a procurement-friendly summary of all five service families.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-003",
+              "name": "Capabilities statement",
+              "type": "Document",
+              "format": "DOCX",
+              "purpose": "Establish qualifications, problem domain, methods, differentiators, and buyer outcomes.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-004",
+              "name": "Engagement overview deck",
+              "type": "Presentation",
+              "format": "PPTX",
+              "purpose": "Support executive, partner, and procurement conversations with a concise visual narrative.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-005",
+              "name": "Ideal client profile",
+              "type": "Internal standard",
+              "format": "DOCX",
+              "purpose": "Define target sectors, organization maturity, buyer roles, budget fit, and disqualifiers.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-006",
+              "name": "Buyer qualification form",
+              "type": "Form",
+              "format": "XLSX",
+              "purpose": "Collect scope, system type, jurisdiction, urgency, stakeholders, evidence access, and budget readiness.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-007",
+              "name": "Inquiry routing rules",
+              "type": "Workflow",
+              "format": "XLSX",
+              "purpose": "Route prospects to assessment, workshop, crosswalk, training, advisory, or decline/referral.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-008",
+              "name": "Discovery call agenda",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Run consistent discovery covering goals, system boundaries, decision authority, constraints, and next step.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-009",
+              "name": "Discovery notes template",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Capture facts, assumptions, risks, buyer needs, commitments, and unresolved questions.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-010",
+              "name": "Client-fit scoring rubric",
+              "type": "Rubric",
+              "format": "XLSX",
+              "purpose": "Score strategic fit, evidence access, authority, budget, urgency, and delivery risk.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-011",
+              "name": "Sample deliverables packet",
+              "type": "Portfolio packet",
+              "format": "PDF",
+              "purpose": "Demonstrate output quality without exposing confidential client material.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-012",
+              "name": "Case study template",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Document context, governance gap, intervention, evidence, and outcome with approved claims.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            },
+            {
+              "id": "EI-INV-013",
+              "name": "Testimonial and quotation release",
+              "type": "Permission form",
+              "format": "DOCX",
+              "purpose": "Obtain explicit permission for public client statements.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "Commercial",
+          "assets": [
+            {
+              "id": "EI-INV-014",
+              "name": "Proposal template",
+              "type": "Document",
+              "format": "DOCX",
+              "purpose": "Convert qualified opportunities into a controlled offer with scope, deliverables, schedule assumptions, fees, and exclusions.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-015",
+              "name": "Pricing calculator",
+              "type": "Spreadsheet",
+              "format": "XLSX",
+              "purpose": "Calculate fees from systems, use cases, jurisdictions, participants, workshop days, and advisory intensity.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-016",
+              "name": "Statement of Work template",
+              "type": "Contract exhibit",
+              "format": "DOCX",
+              "purpose": "Define scope, deliverables, acceptance, responsibilities, assumptions, fees, and change control.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-017",
+              "name": "Master Services Agreement template",
+              "type": "Contract",
+              "format": "DOCX",
+              "purpose": "Set baseline commercial, confidentiality, liability, IP, payment, dispute, and termination terms.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-018",
+              "name": "Mutual NDA template",
+              "type": "Contract",
+              "format": "DOCX",
+              "purpose": "Protect confidential information during evaluation and delivery.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-019",
+              "name": "Data-processing and security addendum",
+              "type": "Contract exhibit",
+              "format": "DOCX",
+              "purpose": "Define treatment of client data, access, retention, deletion, security, and subprocessors.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-020",
+              "name": "AI-assistance disclosure",
+              "type": "Disclosure",
+              "format": "DOCX",
+              "purpose": "State where AI may support drafting or analysis and how human review and confidentiality are handled.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-021",
+              "name": "Professional-services disclaimer",
+              "type": "Disclosure",
+              "format": "DOCX",
+              "purpose": "State that work is governance implementation guidance, not legal advice, certification, or audit attestation.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-022",
+              "name": "Change-order form",
+              "type": "Form",
+              "format": "XLSX",
+              "purpose": "Control additions to scope, schedule, deliverables, or participants.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-023",
+              "name": "Acceptance and sign-off form",
+              "type": "Form",
+              "format": "XLSX",
+              "purpose": "Record client acceptance, open exceptions, and closeout status.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-024",
+              "name": "Invoice and payment schedule standard",
+              "type": "Policy",
+              "format": "DOCX",
+              "purpose": "Define deposit, milestone, monthly, late-payment, and expense handling.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-025",
+              "name": "Cancellation and rescheduling terms",
+              "type": "Policy",
+              "format": "DOCX",
+              "purpose": "Set treatment of workshop dates, participant changes, travel, and postponed work.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-026",
+              "name": "Travel and expense policy",
+              "type": "Policy",
+              "format": "DOCX",
+              "purpose": "Define when travel is billable and what approvals are required.",
+              "phase": "Sellable",
+              "priority": "Medium"
+            },
+            {
+              "id": "EI-INV-027",
+              "name": "Procurement packet index",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Organize vendor forms, tax documentation, insurance, security answers, and contracting materials.",
+              "phase": "Sellable",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Delivery Operations",
+          "assets": [
+            {
+              "id": "EI-INV-028",
+              "name": "Project kickoff agenda",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Confirm objectives, scope, roles, evidence, schedule, communication, and decision rights.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-029",
+              "name": "Client responsibility matrix",
+              "type": "RACI",
+              "format": "XLSX",
+              "purpose": "Clarify sponsor, system owner, evidence owner, legal reviewer, approvers, and participants.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-030",
+              "name": "Stakeholder register",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Track stakeholder roles, authority, availability, conflicts, and communications.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-031",
+              "name": "Engagement workplan",
+              "type": "Project plan",
+              "format": "XLSX",
+              "purpose": "Sequence activities, dependencies, reviews, milestones, and acceptance points.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-032",
+              "name": "Risk, issue, assumption, and dependency log",
+              "type": "RAID log",
+              "format": "XLSX",
+              "purpose": "Maintain a single controlled record of delivery conditions and decisions.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-033",
+              "name": "Decision log",
+              "type": "Register",
+              "format": "XLSX",
+              "purpose": "Capture decisions, decision owner, rationale, evidence, and effective date.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-034",
+              "name": "Meeting notes template",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Record attendees, decisions, actions, evidence requests, and open issues.",
+              "phase": "Delivery-ready",
+              "priority": "Medium"
+            },
+            {
+              "id": "EI-INV-035",
+              "name": "Action register",
+              "type": "Tracker",
+              "format": "XLSX",
+              "purpose": "Track action owner, due date, status, evidence, and escalation.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-036",
+              "name": "Client portal folder structure",
+              "type": "Information architecture",
+              "format": "XLSX",
+              "purpose": "Create a consistent secure structure for intake, evidence, working files, drafts, finals, and closeout.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-037",
+              "name": "File naming and version-control standard",
+              "type": "Standard",
+              "format": "DOCX",
+              "purpose": "Prevent draft confusion and preserve review history.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-038",
+              "name": "Document quality-control checklist",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Verify claims, source traceability, confidentiality, versioning, acceptance criteria, and visual quality.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-039",
+              "name": "Executive review checklist",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Ensure findings are material, decision-relevant, evidence-bound, and free of certification overreach.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-040",
+              "name": "Engagement closeout checklist",
+              "type": "Checklist",
+              "format": "XLSX",
+              "purpose": "Confirm final delivery, acceptance, access revocation, retention, deletion, lessons, and follow-on.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-041",
+              "name": "Data return/deletion certificate",
+              "type": "Certificate",
+              "format": "DOCX",
+              "purpose": "Document return, retention, or deletion of client-provided materials at closeout.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-042",
+              "name": "Lessons-learned template",
+              "type": "Template",
+              "format": "DOCX",
+              "purpose": "Capture delivery improvements, control refinements, and reusable knowledge.",
+              "phase": "Scale-ready",
+              "priority": "Medium"
+            }
+          ]
+        },
+        {
+          "name": "Quality & Claims",
+          "assets": [
+            {
+              "id": "EI-INV-043",
+              "name": "Claim discipline standard",
+              "type": "Standard",
+              "format": "DOCX",
+              "purpose": "Separate findings, observations, inferences, recommendations, and legal determinations.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-044",
+              "name": "Source and citation protocol",
+              "type": "Standard",
+              "format": "DOCX",
+              "purpose": "Define authoritative sources, effective dates, quotation limits, and evidence traceability.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-045",
+              "name": "Conflict-of-interest disclosure",
+              "type": "Form",
+              "format": "XLSX",
+              "purpose": "Identify relationships that could impair independence or perceived neutrality.",
+              "phase": "Sellable",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-046",
+              "name": "Independence and limitation statement",
+              "type": "Disclosure",
+              "format": "DOCX",
+              "purpose": "Explain scope limits, reliance on client evidence, and absence of assurance or certification.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-047",
+              "name": "Confidentiality classification guide",
+              "type": "Standard",
+              "format": "DOCX",
+              "purpose": "Mark and handle public, client-confidential, restricted, and highly sensitive material.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-048",
+              "name": "Accessibility standard",
+              "type": "Standard",
+              "format": "DOCX",
+              "purpose": "Set minimum accessibility requirements for documents, slides, workshops, and digital artifacts.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            }
+          ]
+        },
+        {
+          "name": "Method Library",
+          "assets": [
+            {
+              "id": "EI-INV-204",
+              "name": "Governance domain taxonomy",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Define standard domains used across assessments, crosswalks, training, workshops, and advisory.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-205",
+              "name": "Control ID and naming standard",
+              "type": "Standard",
+              "format": "DOCX",
+              "purpose": "Create stable identifiers for controls, requirements, evidence, findings, and tests.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-206",
+              "name": "Consequence classification model",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Classify AI actions by materiality, reversibility, duration, scale, and rights impact.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-207",
+              "name": "Disclosure classification model",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Classify disclosure by timing, materiality, specificity, persistence, and channel.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-208",
+              "name": "Consent-state model",
+              "type": "State model",
+              "format": "XLSX",
+              "purpose": "Define requested, informed, granted, refused, withdrawn, expired, overridden, and not-applicable states.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-209",
+              "name": "Human-review state model",
+              "type": "State model",
+              "format": "XLSX",
+              "purpose": "Define not-required, pending, completed, overridden, escalated, failed, and user-requested review.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-210",
+              "name": "Remedy taxonomy",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Define correction, explanation, appeal, reversal, escalation, suspension, deletion, and closure.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-211",
+              "name": "Evidence taxonomy",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Classify policy, design, configuration, log, test, approval, training, incident, and user-facing evidence.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-212",
+              "name": "Evidence strength scale",
+              "type": "Rubric",
+              "format": "XLSX",
+              "purpose": "Rate directness, completeness, currency, coverage, independence, and reproducibility.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-213",
+              "name": "Governance maturity model",
+              "type": "Rubric",
+              "format": "XLSX",
+              "purpose": "Define ad hoc, repeatable, defined, implemented, measured, and improving states.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-214",
+              "name": "Risk severity model",
+              "type": "Scoring model",
+              "format": "XLSX",
+              "purpose": "Score consequence, exposure, scale, duration, detectability, reversibility, and control weakness.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-215",
+              "name": "Longitudinal risk indicator library",
+              "type": "Indicator library",
+              "format": "XLSX",
+              "purpose": "Define indicators for accumulated reliance, repeated influence, memory, inference drift, and unresolved remedy.",
+              "phase": "Scale-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-216",
+              "name": "Minimum audit-trail fields",
+              "type": "Data specification",
+              "format": "XLSX",
+              "purpose": "Define actor, action, authority, time, system, evidence, review, change, and remedy fields.",
+              "phase": "Delivery-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-217",
+              "name": "Retention classification model",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Define retention periods and conditions by evidence, receipt, complaint, training, and decision type.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-218",
+              "name": "Exception taxonomy",
+              "type": "Taxonomy",
+              "format": "XLSX",
+              "purpose": "Classify control waiver, emergency override, technical failure, evidence gap, legal hold, and accepted risk.",
+              "phase": "Delivery-ready",
+              "priority": "High"
+            },
+            {
+              "id": "EI-INV-219",
+              "name": "Conformance test pattern library",
+              "type": "Test library",
+              "format": "XLSX",
+              "purpose": "Define positive, negative, boundary, failure, override, and evidence tests.",
+              "phase": "Scale-ready",
+              "priority": "Critical"
+            },
+            {
+              "id": "EI-INV-220",
+              "name": "Glossary and controlled vocabulary",
+              "type": "Glossary",
+              "format": "DOCX",
+              "purpose": "Keep public, client, technical, and training language consistent.",
+              "phase": "Sellable",
+              "priority": "Critical"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

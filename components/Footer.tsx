@@ -12,6 +12,7 @@ const portfolio = [
   ["Framework", "/framework"],
   ["Standards & Tools", "/standards"],
   ["Governance Register", "/governance-register"],
+  ["Delivery Instruments", "/delivery-instruments"],
   ["Policy", "/policy"],
   ["Revenue", "/revenue"],
   ["Downloads", "/downloads"],

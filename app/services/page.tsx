@@ -126,6 +126,7 @@ export default function ServicesPage() {
             <div className="actions">
               <a className="btn primary" href={inquiryHref}>Discuss an engagement →</a>
               <a className="btn secondary" href="#services">Review service lines</a>
+              <Link className="btn secondary" href="/delivery-instruments">See the delivery instruments</Link>
             </div>
             <p className="note">
               Current delivery posture: founder-led professional services. Engagements provide governance analysis,
@@ -223,6 +224,12 @@ export default function ServicesPage() {
             <p className="lead">
               The sequence is modular. A client may begin with a single bounded engagement, but each service is designed
               to produce the evidence and decisions required for the next stage without forcing a larger program.
+            </p>
+            <p className="note">
+              Each stage is delivered with versioned instruments rather than improvised documents. The{" "}
+              <Link href="/delivery-instruments" style={{ color: "var(--cyan)" }}>delivery instrument register</Link>{" "}
+              records all 220 of them — intake forms, evidence registers, scoring models, control libraries, schemas,
+              curricula, and executive outputs — mapped to the service line and stage where each is used.
             </p>
           </div>
           <div className="pathway">
