@@ -133,7 +133,7 @@ jobs:
 
   deploy-production:
     name: Deploy and verify branded production endpoint
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.head_ref == 'deploy/cloudflare-demo-20260724')
     needs: validate
     runs-on: ubuntu-latest
     environment: production
