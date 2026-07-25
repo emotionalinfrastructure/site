@@ -40,6 +40,12 @@ const releases = [
     note: "Tier A download library with SHA-256 ledger; pages preserve candidate-level language."
   },
   {
+    artifact: "Services delivery instrument register",
+    version: "v1.0 (220 instruments)",
+    status: "Canonical",
+    note: "Public inventory of the delivery instruments used across the five service lines. The instruments themselves are controlled base templates and are not published."
+  },
+  {
     artifact: "ei-middleware Helm chart",
     version: "0.2.0",
     status: "Unpublished",
@@ -55,6 +61,7 @@ const superseded = [
 ];
 
 const changes = [
+  ["2026-07", "Delivery instrument register v1.0 published: 220 service delivery instruments recorded and mapped to the five service lines, with a hash-checked CSV of the inventory."],
   ["2026-07", "Governance Register published. Canonical PDEV definition recorded; release matrix and superseded list established."],
   ["2026-07", "Site restructured into a research library: research catalog, program pages, and the Recursive Epistemic Reinforcement working paper page added."],
   ["2026-07", "MRP 8.6 public staging export: ten portfolio pages and the Tier A hash-verified download library published."],
@@ -160,6 +167,7 @@ export default function GovernanceRegisterPage() {
             Related pages: <Link href="/standards" style={{ color: "var(--cyan)" }}>Standards &amp; Tools</Link> ·{" "}
             <Link href="/research" style={{ color: "var(--cyan)" }}>Research catalog</Link> ·{" "}
             <Link href="/downloads" style={{ color: "var(--cyan)" }}>Tier A download library</Link> ·{" "}
+            <Link href="/delivery-instruments" style={{ color: "var(--cyan)" }}>Delivery instruments</Link> ·{" "}
             <Link href="/status" style={{ color: "var(--cyan)" }}>Public status statement</Link>.
           </p>
         </div>

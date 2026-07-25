@@ -83,6 +83,7 @@ out/
 
 - `/`
 - `/services`
+- `/delivery-instruments`
 - `/trust-receipts`
 - `/trust-receipt`
 - `/research`
