@@ -43,7 +43,7 @@ const releases = [
     artifact: "Services delivery instrument register",
     version: "v1.0 (220 instruments)",
     status: "Canonical",
-    note: "Public inventory of the delivery instruments used across the five service lines. The instruments themselves are controlled base templates and are not published."
+    note: "Public inventory of the delivery instruments used across the five service lines. Instruments supply structure and are populated during an engagement; they are not published. Five framework modules are listed under corrected names, with the manifest names retained in the register file."
   },
   {
     artifact: "ei-middleware Helm chart",

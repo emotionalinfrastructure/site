@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   deliveryRegister,
+  instrumentName,
   registerFile,
   registerFileBytes,
-  registerFileSha256
+  registerFileSha256,
+  structureOnlyIds,
+  structureOnlyNote
 } from "@/lib/delivery-instruments";
 
 const email = "brittanywright@emotionalinfrastructure.org";
@@ -43,14 +46,20 @@ export default function DeliveryInstrumentsPage() {
           <h1>What an engagement is actually delivered with.</h1>
           <p className="lead">
             Every Emotional Infrastructure™ service line is delivered using a fixed set of versioned instruments:
-            intake forms, evidence registers, scoring models, control libraries, schemas, curricula, and executive
+            intake forms, evidence registers, scoring models, control structures, schemas, curricula, and executive
             outputs. This register records all {assetCount} of them, mapped to the service line and delivery stage
             where each one is used, so a prospective client can see the working method before signing anything.
           </p>
+          <div className="boundary-note" style={{ maxWidth: 860, marginTop: 26 }}>
+            <strong>What these instruments are:</strong> they supply structure, not findings. An instrument defines
+            the fields, control questions, evidence references, and scoring logic that a stage of the engagement has
+            to produce — and it is populated during that engagement, against the executed scope, from the client&rsquo;s
+            own evidence and from current authoritative sources. A register that arrived pre-filled would be
+            asserting conclusions about a system nobody had looked at yet.
+          </div>
           <p className="note">
-            Recorded {recordedOn}. The register lists instruments; it does not publish them. The instruments are
-            controlled base templates completed against a specific executed scope, and several of them require
-            qualified legal or specialist review before external use.
+            Recorded {recordedOn}. The register lists instruments; it does not publish them. Several require qualified
+            legal or specialist review before external use.
           </p>
         </div>
       </section>
@@ -114,6 +123,17 @@ export default function DeliveryInstrumentsPage() {
               {ws.categories.map((c) => c.name).join(", ")}.
             </p>
 
+            {ws.slug === "regulatory-crosswalk" && (
+              <p className="note" style={{ maxWidth: 900, marginTop: 0, marginBottom: 26 }}>
+                The framework modules below are mapping registers, not cached copies of the frameworks themselves.
+                Each supplies the clause structure, response fields, and evidence references for its framework;
+                requirement text is drawn from the current authoritative source when the crosswalk is scoped, because
+                regulatory and standards material moves and a stale local copy would be worse than none. Five of these
+                instruments are published here under corrected names — the manifest names implied that the requirement
+                text ships with the instrument. The original manifest names are retained in the register file.
+              </p>
+            )}
+
             {ws.categories.map((category) => (
               <details key={`${ws.slug}-${category.name}`} style={{ marginBottom: 12 }}>
                 <summary
@@ -144,9 +164,15 @@ export default function DeliveryInstrumentsPage() {
                       <tr key={asset.id}>
                         <td>{asset.id}</td>
                         <td>
-                          <strong style={{ color: "var(--navy)" }}>{asset.name}</strong>
+                          <strong style={{ color: "var(--navy)" }}>{instrumentName(asset.id, asset.name)}</strong>
                           <br />
                           <small style={{ color: "var(--muted)" }}>{asset.type}</small>
+                          {structureOnlyIds.includes(asset.id) && (
+                            <>
+                              <br />
+                              <small style={{ color: "var(--gold)" }}>{structureOnlyNote}</small>
+                            </>
+                          )}
                         </td>
                         <td>{asset.format}</td>
                         <td>{asset.purpose}</td>
@@ -171,8 +197,9 @@ export default function DeliveryInstrumentsPage() {
               Emotional Infrastructure™ Delivery Instrument Register (CSV)
             </a>
             <p>
-              Inventory ID, workstream, stage, instrument name, type, format, purpose, and review requirement for all{" "}
-              {assetCount} instruments · {formatSize(registerFileBytes)}
+              Inventory ID, workstream, stage, instrument name, original manifest name where the register corrects it,
+              type, format, purpose, review requirement, and register note for all {assetCount} instruments ·{" "}
+              {formatSize(registerFileBytes)}
             </p>
             <small style={{ overflowWrap: "anywhere" }}>SHA-256 {registerFileSha256}</small>
           </div>
