@@ -6,6 +6,20 @@ This runbook governs the production cutover for `demo.emotionalinfrastructure.or
 
 The objective is not merely to deploy code. The objective is to prove that the public endpoint is operational, secure, and serving the intended interactive AI Trust Receipt demo.
 
+## Current production status
+
+Last external verification: `2026-07-25T12:26:21Z`.
+
+Current result:
+
+- `https://demo.emotionalinfrastructure.org/` returns `200`, but still serves the static overview page.
+- `http://demo.emotionalinfrastructure.org/` returns `200`, not a redirect.
+- Required Worker security headers are absent on the public endpoint.
+- The response `Content-Type` is still `text/html`, not `text/html; charset=utf-8`.
+- DNS resolves through Cloudflare edge IPs, but the branded hostname has not cut over to the `ei-trust-receipt` Worker behavior defined in source control.
+
+Interpretation: source-control corrections have merged, but Cloudflare account-level production cutover is still incomplete.
+
 ## Production completion rule
 
 The cutover is not complete until all of the following are true:
@@ -42,6 +56,8 @@ CLOUDFLARE_ACCOUNT_ID
 
 The Cloudflare API token should be scoped narrowly to deploy the Worker and manage the required Worker route/custom-domain configuration for the relevant account and zone.
 
+Do not paste tokens into issues, commits, pull requests, comments, chat, logs, or documentation. Store them only as GitHub Actions secrets or protected environment secrets.
+
 ## GitHub workflow
 
 The production workflow is:
@@ -69,11 +85,12 @@ It performs:
 3. Confirm the existing DNS record and save its rollback value.
 4. Confirm the Worker name is `ei-trust-receipt`.
 5. Confirm `wrangler.jsonc` includes the custom-domain route for `demo.emotionalinfrastructure.org`.
-6. Run the protected GitHub Actions workflow from `main`.
-7. Wait for the Worker custom-domain certificate to become active.
-8. Run the production smoke test.
-9. Run the production browser verification.
-10. Update issue #13 with the results.
+6. Confirm GitHub environment secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` exist.
+7. Run the protected GitHub Actions workflow from `main`.
+8. Wait for the Worker custom-domain certificate to become active.
+9. Run the production smoke test.
+10. Run the production browser verification.
+11. Update issue #13 with the results.
 
 ## Expected production behavior
 
