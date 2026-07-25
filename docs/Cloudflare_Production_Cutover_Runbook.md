@@ -18,6 +18,11 @@ Current result:
 - The response `Content-Type` is still `text/html`, not `text/html; charset=utf-8`.
 - DNS resolves through Cloudflare edge IPs, but the branded hostname has not cut over to the `ei-trust-receipt` Worker behavior defined in source control.
 
+Latest deployment tracking commits:
+
+- `2382a5b8d88e94055c398c4e5940c68b66223135` triggered final validation from `main`.
+- `5ade9a938c376d560da674e3fee55c07b57d62b4` recorded the post-trigger production verification status.
+
 Interpretation: source-control corrections have merged, but Cloudflare account-level production cutover is still incomplete.
 
 ## Production completion rule
