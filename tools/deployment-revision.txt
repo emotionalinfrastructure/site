@@ -1,5 +1,6 @@
 demo.emotionalinfrastructure.org
-Deployment hardening revision: 2026-07-25T12:04:00Z
+Deployment hardening revision: 2026-07-25T12:26:21Z
 Candidate specification version: v0.1.1
-Purpose: trigger final GitHub validation and, if production secrets are present, Cloudflare Worker deployment plus post-deployment verification.
+Purpose: record final GitHub validation trigger and current external production verification status.
+Latest external verification: HTTPS still serves static overview; HTTP still returns 200; required Worker security headers absent.
 Completion rule: do not close issue #13 until the public endpoint serves the interactive demo with HTTPS redirect and required security headers.
