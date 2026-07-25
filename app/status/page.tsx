@@ -4,7 +4,7 @@ import ReleaseStatus from "@/components/ReleaseStatus";
 export const metadata: Metadata = {
   title: "Public Status | Emotional Infrastructure",
   description:
-    "The official maturity statement for the Emotional Infrastructure portfolio, separating internal completion from external validation."
+    "The official maturity statement for the Emotional Infrastructure portfolio, separating internal completion from external validation and institutional status."
 };
 
 const maturity = [
@@ -34,6 +34,11 @@ const maturity = [
     boundary: "Public pages must preserve candidate-level language."
   },
   {
+    area: "Institutional status",
+    position: "Brittany Wright is a University of Phoenix undergraduate cybersecurity student and independent framework developer.",
+    boundary: "No research-center appointment, faculty role, fellowship, principal-investigator designation, institutional sponsorship, institutional adoption, or vendor-collaboration status is asserted unless a separate institutional record expressly establishes it."
+  },
+  {
     area: "Commercial use",
     position: "Pricing, licensing, revenue governance, and offer materials exist.",
     boundary: "Binding use requires legal review and client-specific scoping."
@@ -58,7 +63,9 @@ export default function StatusPage() {
             manuscript is not the same thing as a peer-reviewed publication. A candidate standard is not the same
             thing as an adopted standard. A schema model is not the same thing as a production-certified
             implementation. A policy framework is not the same thing as legal compliance approval. A revenue model
-            is not the same thing as a binding contract. These distinctions are governance controls, not weaknesses.
+            is not the same thing as a binding contract. A potential academic setting is not the same thing as an
+            institutional appointment, sponsorship, adoption, or approved study. These distinctions are governance
+            controls, not weaknesses.
           </p>
         </div>
       </section>
