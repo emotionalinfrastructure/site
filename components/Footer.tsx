@@ -46,16 +46,16 @@ export default function Footer() {
         <div>
           <strong>Brittany Wright</strong>
           <br />
-          Founder of Emotional Infrastructure™ · Undergraduate cybersecurity researcher developing governance
-          tools for AI-mediated trust environments
+          Founder of Emotional Infrastructure™ · University of Phoenix undergraduate cybersecurity student · Independent
+          researcher developing governance tools for AI-mediated trust environments
           <br />
           <span>Disclosure · Consent · Auditability · Human review · Contestability · Longitudinal accountability</span>
         </div>
         <div>
           © {new Date().getFullYear()} Brittany Wright. Materials are presented for review, critique, collaboration,
           research development, and implementation discussion. Do not describe these artifacts as externally certified,
-          regulator-approved, standards-body adopted, legally validated, peer-reviewed accepted, production-proven, or
-          externally validated without separate evidence.
+          regulator-approved, standards-body adopted, legally validated, peer-reviewed accepted, production-proven,
+          institutionally adopted, institutionally sponsored, or externally validated without separate evidence.
         </div>
       </div>
     </footer>
