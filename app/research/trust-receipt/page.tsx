@@ -5,21 +5,25 @@ const repoUrl = "https://github.com/emotionalinfrastructure/Trust-Receipts";
 import { siteConfig } from "@/lib/site";
 
 const demoUrl = siteConfig.demoUrl;
+const demoSourceUrl = `${repoUrl}/tree/main/demo-worker`;
+const serviceUrl = `${repoUrl}/tree/main/service`;
+const openApiUrl = `${repoUrl}/blob/main/service/openapi.json`;
 
 export const metadata: Metadata = {
   title: "AI Trust Receipts — Research Overview | Emotional Infrastructure",
   description:
-    "Research page for AI Trust Receipts v0.1.1: research question, abstract, governance gap, method, contribution, claim boundaries, limitations, artifacts, and citation."
+    "Research page for AI Trust Receipts v0.1.1: research question, abstract, governance gap, method, contribution, claim boundaries, limitations, artifacts, citation, and hosted demo boundary."
 };
 
 const artifacts = [
-  ["Candidate specification", `${repoUrl}`, "Read the v0.1.1 specification, schemas, and conformance materials in the canonical repository."],
-  ["JSON Schemas", `${repoUrl}`, "Inspect the canonical receipt structures and machine-verifiable formats."],
-  ["Reference implementation", `${repoUrl}`, "View deterministic gate behavior, receipt construction, digest verification, and tests."],
-  ["Operational API source", `${repoUrl}/tree/main/service`, "Inspect the Worker, D1 migration, tests, examples, and deployment workflow."],
-  ["OpenAPI 3.1 contract", `${repoUrl}/blob/main/service/openapi.json`, "Review the endpoints, authentication boundaries, and operational methods."],
+  ["Candidate specification", `${repoUrl}`, "Read the v0.1.1 specification, schemas, conformance materials, release notes, and public-claim boundaries in the canonical repository."],
+  ["JSON Schemas", `${repoUrl}/tree/main/schemas`, "Inspect the canonical receipt structures and machine-verifiable formats for the candidate release."],
+  ["Reference implementation", `${repoUrl}/tree/main/src/trust_receipt`, "View the Python reference implementation for gate behavior, receipt construction, digest verification, rendering, and conformance operations."],
+  ["Demo Worker source", demoSourceUrl, "Inspect the source-controlled Cloudflare Worker used for the hosted public demonstration. The demo is unsigned and nonpersistent."],
+  ["Operational API alpha source", serviceUrl, "Inspect the separate production-oriented API source track. It is not the currently hosted public demo."],
+  ["OpenAPI 3.1 contract", openApiUrl, "Review the separate operational API contract, authentication boundaries, and methods."],
   ["Release and verification manifests", `${repoUrl}/releases`, "Download the current candidate release with its release hashes and supporting artifacts."],
-  ["Live demonstration", demoUrl, "Run the browser-based reference implementation and explore receipt verification."]
+  ["Live demonstration", demoUrl, "Run the Worker-hosted public demo and explore unsigned, nonpersistent demonstration receipts."]
 ];
 
 const apa = `Wright, B. (2026). AI Trust Receipts: A candidate governance specification for verifiable
@@ -46,7 +50,7 @@ export default function TrustReceiptResearchPage() {
           <div className="kicker">Research overview · Candidate specification v0.1.1 · 2026</div>
           <h1>AI Trust Receipts and Agentic Accountability.</h1>
           <p className="lead">
-            A candidate governance specification and working implementation system for producing verifiable,
+            A candidate governance specification and working implementation package for producing verifiable,
             human-readable records of consequential AI actions.
           </p>
           <div className="actions">
@@ -83,11 +87,16 @@ export default function TrustReceiptResearchPage() {
               Organizations publish high-level AI governance principles, but users rarely receive evidence of how
               those principles were applied to a specific action. AI Trust Receipts propose an accountability layer
               in which significant AI actions pass pre-execution gates—authority, evidence, consequence, and
-              human-review conditions—and produce a signed, tamper-evident receipt documenting what occurred, why,
+              human-review conditions—and produce a tamper-evident receipt documenting what occurred, why,
               under whose authority, with what evidence, and how the event can be reviewed, verified, contested, or
-              remedied. Version 0.1.1 comprises a candidate specification, JSON schemas, a deterministic reference
-              implementation with positive and negative conformance cases, and an API-backed operational alpha with
-              durable persistence, detached issuer signatures, revocation records, and a remedy workflow.
+              remedied.
+            </p>
+            <p>
+              Version 0.1.1 comprises a candidate specification, JSON schemas, a deterministic Python reference
+              implementation, positive and negative conformance cases, release manifests, digest verification, and
+              browser/Python digest-parity evidence. The hosted Cloudflare demo is a separate source-controlled
+              public demonstration: it generates unsigned, nonpersistent demonstration receipts and does not claim
+              durable server custody, issuer authentication, revocation, or production deployment status.
             </p>
           </div>
         </div>
@@ -107,8 +116,8 @@ export default function TrustReceiptResearchPage() {
             <article className="tile">
               <div className="label">Method</div>
               <p>
-                Normative specification design paired with a working reference implementation: deterministic gate
-                logic, canonical receipt construction, content-integrity digests, browser verification, and an
+                Normative specification design paired with a reference implementation: deterministic gate logic,
+                canonical receipt construction, content-integrity digests, browser/Python digest parity, and an
                 automated conformance matrix covering allow and deny paths.
               </p>
             </article>
@@ -116,8 +125,8 @@ export default function TrustReceiptResearchPage() {
               <div className="label">Contribution</div>
               <p>
                 A candidate specification whose claims are testable: every normative statement maps to schema
-                structures, gate behavior, or conformance cases, and the full chain from specification to live
-                demonstration is publicly inspectable.
+                structures, gate behavior, conformance cases, or documented implementation boundaries, and the
+                evidence chain is publicly inspectable.
               </p>
             </article>
           </div>
@@ -132,14 +141,21 @@ export default function TrustReceiptResearchPage() {
           </div>
           <div className="copy">
             <p>
-              Demonstrated: deterministic gate behavior, signed receipt issuance, digest verification,
-              tamper-evidence, revocation, remedy workflow, OpenAPI contract checks, and conformance test results.
-              The operational API is an alpha deployment candidate whose source and validation controls are public.
+              Demonstrated in the candidate package: deterministic gate behavior, canonical receipt construction,
+              digest verification, tamper-evidence under the documented integrity model, conformance test results,
+              release manifests, and browser/Python digest parity within the documented restricted input domain.
+            </p>
+            <p>
+              Demonstrated in the hosted public demo: Cloudflare Worker routing, scenario evaluation, unsigned
+              demonstration-receipt generation, JSON download, digest verification, tamper detection, and baseline
+              security headers. The hosted demo is not a persistent receipt service and does not authenticate the
+              issuer.
             </p>
             <p>
               Not claimed: adoption as an external standard, certification, external audit, legal-compliance
-              determination, regulatory status, or a publicly provisioned production service. Version 0.1.1 is a
-              candidate specification open for technical review.
+              determination, regulatory status, production issuer-key custody, durable public receipt storage, or a
+              publicly provisioned production API. Version 0.1.1 is a candidate specification open for technical
+              review.
             </p>
           </div>
         </div>
@@ -154,9 +170,10 @@ export default function TrustReceiptResearchPage() {
           <div className="copy">
             <p>
               The specification has not yet undergone independent security review or third-party interoperability
-              testing. Issuer-key custody, deployment provisioning, and post-deployment verification remain pending
-              for the operational layer. Consequence classification currently reflects the reference policy set and
-              requires evaluation across more domains before generalization claims are appropriate.
+              testing. Issuer-key custody, production deployment provisioning, post-deployment verification, sector
+              profiles, and persistent receipt lifecycle controls remain pending for later implementation work.
+              Consequence classification currently reflects the reference policy set and requires evaluation across
+              more domains before generalization claims are appropriate.
             </p>
           </div>
         </div>
