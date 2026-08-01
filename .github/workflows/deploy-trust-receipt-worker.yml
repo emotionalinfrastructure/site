@@ -43,22 +43,27 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Require Cloudflare deployment credentials
+      - name: Check Cloudflare deployment credentials
+        id: creds
         shell: bash
         run: |
           missing=()
           [ -n "${CLOUDFLARE_ACCOUNT_ID}" ] || missing+=("secret CLOUDFLARE_ACCOUNT_ID")
           [ -n "${CLOUDFLARE_API_TOKEN}" ] || missing+=("secret CLOUDFLARE_API_TOKEN")
           if [ "${#missing[@]}" -ne 0 ]; then
-            echo "::error::Deployment blocked: configure the following in repository or organization Actions secrets:"
-            printf '::error::  - %s\n' "${missing[@]}"
-            exit 1
+            echo "::notice::Skipping Cloudflare deployment: configure the following in repository or organization Actions secrets, then re-run this workflow:"
+            printf '::notice::  - %s\n' "${missing[@]}"
+            echo "ready=false" >> "${GITHUB_OUTPUT}"
+          else
+            echo "ready=true" >> "${GITHUB_OUTPUT}"
           fi
 
       - name: Deploy Worker
+        if: steps.creds.outputs.ready == 'true'
         run: npx --yes wrangler@${WRANGLER_VERSION} deploy
 
       - name: Verify public deployment
+        if: steps.creds.outputs.ready == 'true'
         shell: bash
         run: |
           set -euo pipefail
