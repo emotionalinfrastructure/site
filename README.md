@@ -86,16 +86,32 @@ out/
 - `/delivery-instruments`
 - `/trust-receipts`
 - `/trust-receipt`
+- `/demo`
 - `/research`
+- `/research/trust-receipt`
+- `/research/pdev-runtime-governance`
+- `/research/recursive-epistemic-reinforcement`
+- `/research/trajectory-governance`
 - `/implementation`
-- `/artifacts`
 - `/review`
+- `/governance-register`
+- `/standards`
+- `/framework`
+- `/policy`
+- `/status`
+- `/revenue`
+- `/downloads`
 - `/contact`
 - `/creator-kit`
 - `/audit`
 - `/articles`
 - `/media-kit`
 - `/proof`
+- `/ai-disclosure`
+- `/ai-disclosure-checklist`
+- `/ai-disclosure-guide`
+- `/privacy`
+- `/terms`
 
 ## Release consistency requirements
 
